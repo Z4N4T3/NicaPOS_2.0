@@ -14,13 +14,15 @@ namespace interfaces.Formularios
             InitializeComponent();
             objDB = new Clases.ClsDatabase();
             objDB.conectarBD();
-        }
+            textBox2.UseSystemPasswordChar = true;
 
+        }
         // Iniciar sesión
         private void button2_Click(object sender, EventArgs e)
         {
             String TxtUsername = textBox1.Text;
             String TxtPassword = textBox2.Text;
+            
             int count = 0;
             do
             {
@@ -38,6 +40,7 @@ namespace interfaces.Formularios
                     FrmMain FrmMain = new FrmMain();
                     FrmMain.Show();
                     this.Hide();
+                    break;
                 }
                 else
                 {
@@ -55,7 +58,7 @@ namespace interfaces.Formularios
             }
         }
 
-           
+           /*dasddasd*/
 
         private bool AuthUsuario(string username, string password)
         {
