@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35410.144 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentacion", "Presentacion", "{01FD27E1-F5B2-4A70-866B-E5F4E48D3536}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "interfaces", "interfaces\interfaces.csproj", "{6FAD020A-F12B-465F-98DA-2DC092D4FC9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccesoDatos", "AccesoDatos", "{A23A895D-CB0B-4446-86D9-2CFBE5BA3ABE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FAD020A-F12B-465F-98DA-2DC092D4FC9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FAD020A-F12B-465F-98DA-2DC092D4FC9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FAD020A-F12B-465F-98DA-2DC092D4FC9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FAD020A-F12B-465F-98DA-2DC092D4FC9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6FAD020A-F12B-465F-98DA-2DC092D4FC9B} = {01FD27E1-F5B2-4A70-866B-E5F4E48D3536}
+	EndGlobalSection
+EndGlobal
