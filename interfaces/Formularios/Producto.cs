@@ -14,13 +14,12 @@ namespace interfaces.Formularios
     public partial class Producto : Form
     {
         private Clases.ClsDatabase objDB;
-
         public Producto()
         {
             InitializeComponent();
             objDB = new Clases.ClsDatabase();
             objDB.conectarBD();
-            CargarData();
+            //CargarData();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -42,11 +41,11 @@ namespace interfaces.Formularios
         {
 
         }
-        private void CargarData()
+        private void CargarData(String nombreSP)
         {
             try
             {
-                DataTable dataTable = objDB.ExecStoredProc("sp_mostrar_informacion_productos");
+                DataTable dataTable = objDB.ExecStoredProc(nombreSP);
                 dataGridView1.DataSource = dataTable;
             }
             catch (SqlException ex)
