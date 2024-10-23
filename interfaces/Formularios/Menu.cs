@@ -24,5 +24,15 @@ namespace interfaces.Formularios
             this.Hide();
 
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

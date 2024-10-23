@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using interfaces.Clases;
 
 namespace interfaces.Formularios
 {
     public partial class FrmMain : Form
     {
+        private ClsNavbar menuHandler;
         public FrmMain()
         {
             InitializeComponent();
+            menuHandler = new ClsNavbar(this);
+            menuHandler.SetupMenu(menuStrip1);
         }
 
         private void ocultar()
@@ -36,8 +40,8 @@ namespace interfaces.Formularios
     
         private void negocioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ocultar();
-            panelNegocio.Visible = true;
+            this.Close();
+
         }
 
         private void panelBtn_Paint(object sender, PaintEventArgs e)
@@ -97,8 +101,7 @@ namespace interfaces.Formularios
 
         private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ocultar();
-            panel_inventario.Visible = true;
+       
         }
 
         private void cajaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,8 +116,7 @@ namespace interfaces.Formularios
 
         private void sistemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ocultar();
-            panelSistema.Visible = true;
+            
         }
 
         private void panelSistema_Paint(object sender, PaintEventArgs e)
@@ -128,6 +130,16 @@ namespace interfaces.Formularios
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ventaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
         {
 
         }
