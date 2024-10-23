@@ -35,11 +35,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.messageTextBox = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(89, 299);
+            this.button1.Location = new System.Drawing.Point(85, 299);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -78,7 +79,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(197, 76);
+            this.label3.Location = new System.Drawing.Point(172, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 4;
@@ -99,11 +100,24 @@
             this.textBox2.Size = new System.Drawing.Size(160, 20);
             this.textBox2.TabIndex = 6;
             // 
+            // messageTextBox
+            // 
+            this.messageTextBox.AutoSize = true;
+            this.messageTextBox.ForeColor = System.Drawing.Color.Crimson;
+            this.messageTextBox.Location = new System.Drawing.Point(124, 273);
+            this.messageTextBox.Name = "messageTextBox";
+            this.messageTextBox.Size = new System.Drawing.Size(148, 13);
+            this.messageTextBox.TabIndex = 7;
+            this.messageTextBox.Text = "Numero de Intentos Agotados";
+            this.messageTextBox.Visible = false;
+            this.messageTextBox.Click += new System.EventHandler(this.messageTextBox_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 422);
+            this.Controls.Add(this.messageTextBox);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
@@ -127,5 +141,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label messageTextBox;
     }
 }

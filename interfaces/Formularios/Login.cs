@@ -21,26 +21,41 @@ namespace interfaces.Formularios
         {
             String TxtUsername = textBox1.Text;
             String TxtPassword = textBox2.Text;
+            int count = 0;
+            do
+            {
+                if (string.IsNullOrEmpty(TxtUsername) || string.IsNullOrEmpty(TxtPassword))
+                {
+                    MessageBox.Show("No se permiten campos vacíos");
+                    count++;
+                    //return;
+                }
 
-            if (string.IsNullOrEmpty(TxtUsername) || string.IsNullOrEmpty(TxtPassword))
-            {
-                MessageBox.Show("No se permiten campos vacíos");
-                return;
-            }
+                if (AuthUsuario(TxtUsername, TxtPassword))
+                {
+                    MessageBox.Show("Inicio de sesión exitoso!");
 
-            if (AuthUsuario(TxtUsername, TxtPassword))
+                    FrmMain FrmMain = new FrmMain();
+                    FrmMain.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos");
+                    count++;
+                }
+            } while (count <= 3);
+
+            if (count >= 3)
             {
-                MessageBox.Show("Inicio de sesión exitoso!");
-                
-                FrmMain FrmMain = new FrmMain();
-                FrmMain.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Usuario o contraseña incorrectos");
+                messageTextBox.Visible = true;
+                button1.Visible = false;
+                button2.Visible=false;
+                textBox1.Text=String.Empty; textBox2.Text=String.Empty;
             }
         }
+
+           
 
         private bool AuthUsuario(string username, string password)
         {
@@ -88,6 +103,11 @@ namespace interfaces.Formularios
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void messageTextBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

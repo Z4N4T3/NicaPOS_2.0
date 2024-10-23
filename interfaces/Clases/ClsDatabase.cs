@@ -13,7 +13,7 @@ namespace interfaces.Clases
     internal class ClsDatabase
     {
         SqlConnection conn = new SqlConnection();
-        String StringConnection = Properties.Settings.Default.NicaPOS_DBC_String;
+        String StringConnection = Properties.Settings.Default.Labo_NicaPOS;
 
         public SqlConnection conectarBD()
         {
