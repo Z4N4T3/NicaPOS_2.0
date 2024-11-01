@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace interfaces.Formularios
 {
@@ -22,15 +23,20 @@ namespace interfaces.Formularios
         {
             String TxtUsername = textBox1.Text;
             String TxtPassword = textBox2.Text;
-            
+            bool isLoging = false;
             int count = 0;
+
+
+
             do
             {
+
+                //if(TxtUsername == "" || TxtPassword =="")
                 if (string.IsNullOrEmpty(TxtUsername) || string.IsNullOrEmpty(TxtPassword))
                 {
                     MessageBox.Show("No se permiten campos vacíos");
                     count++;
-                    //return;
+                    return;
                 }
 
                 if (AuthUsuario(TxtUsername, TxtPassword))
@@ -40,16 +46,20 @@ namespace interfaces.Formularios
                     FrmMain FrmMain = new FrmMain();
                     FrmMain.Show();
                     this.Hide();
+                    isLoging = true;
                     break;
                 }
                 else
                 {
                     MessageBox.Show("Usuario o contraseña incorrectos");
+                    textBox1.Text = "";
+                    textBox2.Text = "";
                     count++;
+                    return;
                 }
-            } while (count <= 3);
+            } while (count <= 3 && !isLoging);
 
-            if (count >= 3)
+            if (!isLoging)
             {
                 messageTextBox.Visible = true;
                 button1.Visible = false;

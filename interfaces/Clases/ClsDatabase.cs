@@ -13,7 +13,7 @@ namespace interfaces.Clases
     internal class ClsDatabase
     {
         SqlConnection conn = new SqlConnection();
-        String StringConnection = Properties.Settings.Default.Labo_NicaPOS;
+        String StringConnection = Properties.Settings.Default.NicaPOS_DBC_String;
 
         public SqlConnection conectarBD()
         {
@@ -46,7 +46,7 @@ namespace interfaces.Clases
             }
         }
 
-        // para procedimientos almacenados
+        // para procedimientos almacenados select
         public DataTable ExecStoredProc(string procName, SqlParameter[] parameters = null)
         {
             SqlCommand cmd = new SqlCommand(procName, conn);
@@ -74,5 +74,34 @@ namespace interfaces.Clases
 
             return dataTable;
         }
+
+
+        // para SP de inserccion
+
+        public int ExectSP_insertar(string procName, SqlParameter[] parameters)
+        {
+            SqlCommand cmd = new SqlCommand(procName, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            if (parameters != null)
+            {
+                foreach (SqlParameter param in parameters)
+                {
+                    cmd.Parameters.Add(param);
+                }
+            }
+
+            try
+            {
+                object result = cmd.ExecuteScalar();
+                return Convert.ToInt32(result);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error ejecutando el procedimiento: " + ex.ToString());
+                return -1;
+            }
+        }
+
     }
 }
