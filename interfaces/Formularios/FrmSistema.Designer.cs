@@ -29,13 +29,19 @@
         private void InitializeComponent()
         {
             this.FrmUsuario = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_usr_id = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_usr_eid = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnDeshabilitar = new System.Windows.Forms.Button();
-            this.BtnActualizar = new System.Windows.Forms.Button();
-            this.BtnAgregar = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BtnDeshabilitar_usr = new System.Windows.Forms.Button();
+            this.BtnActualizar_usr = new System.Windows.Forms.Button();
+            this.BtnAgregar_usr = new System.Windows.Forms.Button();
+            this.txt_usr_pw = new System.Windows.Forms.TextBox();
+            this.gridUsuario = new System.Windows.Forms.DataGridView();
+            this.txt_usr_name = new System.Windows.Forms.TextBox();
             this.panelSistema = new System.Windows.Forms.Panel();
             this.BtnPermiso = new System.Windows.Forms.Button();
             this.BtnUser = new System.Windows.Forms.Button();
@@ -48,7 +54,7 @@
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FrmUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridUsuario)).BeginInit();
             this.panelSistema.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,76 +62,138 @@
             // FrmUsuario
             // 
             this.FrmUsuario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.FrmUsuario.Controls.Add(this.button1);
+            this.FrmUsuario.Controls.Add(this.label4);
+            this.FrmUsuario.Controls.Add(this.txt_usr_id);
+            this.FrmUsuario.Controls.Add(this.label3);
+            this.FrmUsuario.Controls.Add(this.txt_usr_eid);
+            this.FrmUsuario.Controls.Add(this.label2);
             this.FrmUsuario.Controls.Add(this.label1);
-            this.FrmUsuario.Controls.Add(this.BtnDeshabilitar);
-            this.FrmUsuario.Controls.Add(this.BtnActualizar);
-            this.FrmUsuario.Controls.Add(this.BtnAgregar);
-            this.FrmUsuario.Controls.Add(this.textBox2);
-            this.FrmUsuario.Controls.Add(this.dataGridView1);
-            this.FrmUsuario.Controls.Add(this.textBox1);
+            this.FrmUsuario.Controls.Add(this.BtnDeshabilitar_usr);
+            this.FrmUsuario.Controls.Add(this.BtnActualizar_usr);
+            this.FrmUsuario.Controls.Add(this.BtnAgregar_usr);
+            this.FrmUsuario.Controls.Add(this.txt_usr_pw);
+            this.FrmUsuario.Controls.Add(this.gridUsuario);
+            this.FrmUsuario.Controls.Add(this.txt_usr_name);
             this.FrmUsuario.Location = new System.Drawing.Point(248, 27);
             this.FrmUsuario.Name = "FrmUsuario";
             this.FrmUsuario.Size = new System.Drawing.Size(924, 522);
             this.FrmUsuario.TabIndex = 6;
+            this.FrmUsuario.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmUsuario_Paint);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(842, 26);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(677, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "UUID";
+            // 
+            // txt_usr_id
+            // 
+            this.txt_usr_id.Location = new System.Drawing.Point(717, 26);
+            this.txt_usr_id.Name = "txt_usr_id";
+            this.txt_usr_id.Size = new System.Drawing.Size(119, 20);
+            this.txt_usr_id.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "ID de Empleado";
+            // 
+            // txt_usr_eid
+            // 
+            this.txt_usr_eid.Location = new System.Drawing.Point(125, 103);
+            this.txt_usr_eid.Name = "txt_usr_eid";
+            this.txt_usr_eid.Size = new System.Drawing.Size(100, 20);
+            this.txt_usr_eid.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Contraseña";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(21, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Usuario";
+            this.label1.Text = "Nombre de Usuario";
             // 
-            // BtnDeshabilitar
+            // BtnDeshabilitar_usr
             // 
-            this.BtnDeshabilitar.Location = new System.Drawing.Point(842, 122);
-            this.BtnDeshabilitar.Name = "BtnDeshabilitar";
-            this.BtnDeshabilitar.Size = new System.Drawing.Size(75, 23);
-            this.BtnDeshabilitar.TabIndex = 5;
-            this.BtnDeshabilitar.Text = "Deshabilitar";
-            this.BtnDeshabilitar.UseVisualStyleBackColor = true;
+            this.BtnDeshabilitar_usr.Location = new System.Drawing.Point(842, 122);
+            this.BtnDeshabilitar_usr.Name = "BtnDeshabilitar_usr";
+            this.BtnDeshabilitar_usr.Size = new System.Drawing.Size(75, 23);
+            this.BtnDeshabilitar_usr.TabIndex = 5;
+            this.BtnDeshabilitar_usr.Text = "Eliminar";
+            this.BtnDeshabilitar_usr.UseVisualStyleBackColor = true;
+            this.BtnDeshabilitar_usr.Click += new System.EventHandler(this.BtnDeshabilitar_usr_Click);
             // 
-            // BtnActualizar
+            // BtnActualizar_usr
             // 
-            this.BtnActualizar.Location = new System.Drawing.Point(761, 122);
-            this.BtnActualizar.Name = "BtnActualizar";
-            this.BtnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.BtnActualizar.TabIndex = 4;
-            this.BtnActualizar.Text = "Actualizar";
-            this.BtnActualizar.UseVisualStyleBackColor = true;
+            this.BtnActualizar_usr.Location = new System.Drawing.Point(761, 122);
+            this.BtnActualizar_usr.Name = "BtnActualizar_usr";
+            this.BtnActualizar_usr.Size = new System.Drawing.Size(75, 23);
+            this.BtnActualizar_usr.TabIndex = 4;
+            this.BtnActualizar_usr.Text = "Actualizar";
+            this.BtnActualizar_usr.UseVisualStyleBackColor = true;
+            this.BtnActualizar_usr.Click += new System.EventHandler(this.BtnActualizar_usr_Click);
             // 
-            // BtnAgregar
+            // BtnAgregar_usr
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(680, 122);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.BtnAgregar.TabIndex = 3;
-            this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar_usr.Location = new System.Drawing.Point(680, 122);
+            this.BtnAgregar_usr.Name = "BtnAgregar_usr";
+            this.BtnAgregar_usr.Size = new System.Drawing.Size(75, 23);
+            this.BtnAgregar_usr.TabIndex = 3;
+            this.BtnAgregar_usr.Text = "Agregar";
+            this.BtnAgregar_usr.UseVisualStyleBackColor = true;
+            this.BtnAgregar_usr.Click += new System.EventHandler(this.BtnAgregar_usr_Click);
             // 
-            // textBox2
+            // txt_usr_pw
             // 
-            this.textBox2.Location = new System.Drawing.Point(70, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
+            this.txt_usr_pw.Location = new System.Drawing.Point(125, 65);
+            this.txt_usr_pw.Name = "txt_usr_pw";
+            this.txt_usr_pw.Size = new System.Drawing.Size(100, 20);
+            this.txt_usr_pw.TabIndex = 2;
             // 
-            // dataGridView1
+            // gridUsuario
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 151);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(914, 364);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.gridUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridUsuario.Location = new System.Drawing.Point(3, 151);
+            this.gridUsuario.Name = "gridUsuario";
+            this.gridUsuario.Size = new System.Drawing.Size(914, 364);
+            this.gridUsuario.TabIndex = 1;
+            this.gridUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // textBox1
+            // txt_usr_name
             // 
-            this.textBox1.Location = new System.Drawing.Point(70, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.txt_usr_name.Location = new System.Drawing.Point(125, 28);
+            this.txt_usr_name.Name = "txt_usr_name";
+            this.txt_usr_name.Size = new System.Drawing.Size(100, 20);
+            this.txt_usr_name.TabIndex = 0;
+            this.txt_usr_name.TextChanged += new System.EventHandler(this.txt_usr_name_TextChanged);
             // 
             // panelSistema
             // 
@@ -155,6 +223,7 @@
             this.BtnUser.TabIndex = 8;
             this.BtnUser.Text = "Usuarios";
             this.BtnUser.UseVisualStyleBackColor = true;
+            this.BtnUser.Click += new System.EventHandler(this.BtnUser_Click);
             // 
             // BtnRoles
             // 
@@ -230,7 +299,7 @@
             this.Text = "FrmSistema";
             this.FrmUsuario.ResumeLayout(false);
             this.FrmUsuario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridUsuario)).EndInit();
             this.panelSistema.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -243,12 +312,12 @@
 
         private System.Windows.Forms.Panel FrmUsuario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnDeshabilitar;
-        private System.Windows.Forms.Button BtnActualizar;
-        private System.Windows.Forms.Button BtnAgregar;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button BtnDeshabilitar_usr;
+        private System.Windows.Forms.Button BtnActualizar_usr;
+        private System.Windows.Forms.Button BtnAgregar_usr;
+        private System.Windows.Forms.TextBox txt_usr_pw;
+        private System.Windows.Forms.DataGridView gridUsuario;
+        private System.Windows.Forms.TextBox txt_usr_name;
         private System.Windows.Forms.Panel panelSistema;
         private System.Windows.Forms.Button BtnPermiso;
         private System.Windows.Forms.Button BtnUser;
@@ -260,5 +329,11 @@
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventaToolStripMenuItem;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_usr_eid;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_usr_id;
     }
 }

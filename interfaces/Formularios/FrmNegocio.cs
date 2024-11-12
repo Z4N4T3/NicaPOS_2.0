@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidad;
 using interfaces.Clases;
+using Negocio;
 
 namespace interfaces.Formularios
 {
@@ -128,17 +130,19 @@ namespace interfaces.Formularios
 
         private void CargarDataSucursal()
         {
+
+            E_sucursal e_Sucursal = new E_sucursal();
+            N_sucursal n_Sucursal = new N_sucursal();
+
             try
             {
-                DataTable dataTable = new DataTable();
-                string query = "SELECT nombre FROM sucursal";
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, objDB.conectarBD());
-                dataAdapter.Fill(dataTable);
+                DataTable dt = new DataTable();
+                
 
                 comboBox1.Items.Clear();
-                foreach (DataRow row in dataTable.Rows)
+                foreach (DataRow row in dt.Rows)
                 {
-                    comboBox1.Items.Add(row["nombre"].ToString());
+                    comboBox1.Items.
                 }
             }
             catch (SqlException ex)
@@ -155,5 +159,8 @@ namespace interfaces.Formularios
         {
 
         }
+
+
+    
     }
 }

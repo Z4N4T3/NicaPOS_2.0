@@ -2,113 +2,65 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+
+using Negocio;
+using Entidad;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace interfaces.Formularios
 {
     public partial class Login : Form
     {
-        private Clases.ClsDatabase objDB;
 
         public Login()
         {
             InitializeComponent();
-            objDB = new Clases.ClsDatabase();
-            objDB.conectarBD();
+  
             textBox2.UseSystemPasswordChar = true;
 
         }
         // Iniciar sesión
         private void button2_Click(object sender, EventArgs e)
         {
-            String TxtUsername = textBox1.Text;
-            String TxtPassword = textBox2.Text;
-            bool isLoging = false;
+            //if (!isLoging)
+            //{
+            //    messageTextBox.Visible = true;
+            //    button1.Visible = false;
+            //    button2.Visible=false;
+            //    textBox1.Text=String.Empty; textBox2.Text=String.Empty;
+            //}
+
+
+            E_usuario e_usr = new E_usuario();
+            N_usuario n_usr = new N_usuario();
+
+            e_usr.usr_name = textBox1.Text;
+            e_usr.usr_pw = textBox2.Text;
             int count = 0;
-
-
-
-            do
+            bool isLogin = n_usr.n_auth(e_usr);
+            if (isLogin)
             {
+                MessageBox.Show("Inicio de sesion Exitoso");
 
-                //if(TxtUsername == "" || TxtPassword =="")
-                if (string.IsNullOrEmpty(TxtUsername) || string.IsNullOrEmpty(TxtPassword))
-                {
-                    MessageBox.Show("No se permiten campos vacíos");
-                    count++;
-                    return;
-                }
-
-                if (AuthUsuario(TxtUsername, TxtPassword))
-                {
-                    MessageBox.Show("Inicio de sesión exitoso!");
-
-                    FrmMain FrmMain = new FrmMain();
-                    FrmMain.Show();
-                    this.Hide();
-                    isLoging = true;
-                    break;
-                }
-                else
-                {
-                    MessageBox.Show("Usuario o contraseña incorrectos");
-                    textBox1.Text = "";
-                    textBox2.Text = "";
-                    count++;
-                    return;
-                }
-            } while (count <= 3 && !isLoging);
-
-            if (!isLoging)
-            {
-                messageTextBox.Visible = true;
-                button1.Visible = false;
-                button2.Visible=false;
-                textBox1.Text=String.Empty; textBox2.Text=String.Empty;
+                FrmMain FrmMain = new FrmMain();
+                FrmMain.Show();
+                this.Hide();
             }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos");
+
+                textBox1.Text = "";
+                textBox2.Text = "";
+                count++;
+                
+            }
+
+       
+
         }
 
-           /*dasddasd*/
-
-        private bool AuthUsuario(string username, string password)
-        {
-            SqlParameter[] parameters = {
-                new SqlParameter("@username", SqlDbType.VarChar) { Value = username },
-                new SqlParameter("@password", SqlDbType.VarChar) { Value = password }
-            };
-
-            SqlCommand cmd = new SqlCommand("AuthUsuario", objDB.conectarBD());
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            if (parameters != null)
-            {
-                foreach (SqlParameter param in parameters)
-                {
-                    cmd.Parameters.Add(param);
-                }
-            }
-
-            try
-            {
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    reader.Close();
-                    return true;
-                }
-                else
-                {
-                    reader.Close();
-                    return false;
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Error autenticando el usuario: " + ex.ToString());
-                return false;
-            }
-        }
-
+     
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();

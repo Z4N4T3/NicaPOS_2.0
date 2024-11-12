@@ -73,5 +73,10 @@ namespace interfaces.Formularios
         {
 
         }
+
+        private void menuDePreciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
