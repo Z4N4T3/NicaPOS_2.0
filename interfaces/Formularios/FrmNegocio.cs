@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Entidad;
 using interfaces.Clases;
 using Negocio;
+using Negocio.Division_geografica;
 
 namespace interfaces.Formularios
 {
@@ -27,8 +28,11 @@ namespace interfaces.Formularios
             menuHandler.SetupMenu(menuStrip1);
 
             objDB = new Clases.ClsDatabase();
+            loadDept();
+            
             objDB.conectarBD();
             CargarDataSucursal(); 
+            
 
         }
 
@@ -131,24 +135,44 @@ namespace interfaces.Formularios
         private void CargarDataSucursal()
         {
 
-            E_sucursal e_Sucursal = new E_sucursal();
             N_sucursal n_Sucursal = new N_sucursal();
+            DataTable dt = n_Sucursal.N_listarSucursalAll();
+            comboBox1.DataSource = dt;
+            comboBox1.DisplayMember = "nombre";
+            comboBox1.ValueMember= "id";
+     
+        }
 
-            try
-            {
-                DataTable dt = new DataTable();
-                
 
-                comboBox1.Items.Clear();
-                foreach (DataRow row in dt.Rows)
-                {
-                    //comboBox1.Items.
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Error loading data: " + ex.ToString());
-            }
+
+        void loadDept()
+        {
+            N_departamentos dept = new N_departamentos();
+
+            DataTable dt = dept.n_loadDept();
+            cb_dept.DataSource = dt;
+            cb_dept.DisplayMember = "nombreDep";
+            cb_dept.ValueMember = "idDep";
+        }
+
+        void loadMun(int idDept)
+        {
+            N_municipio municipio = new N_municipio();
+            DataTable dt=municipio.n_loadMun(idDept);
+            cb_mun.DataSource = dt;
+            cb_mun.DisplayMember = "nombreMun";
+            cb_mun.ValueMember= "idMun";
+
+        }
+
+        void loadBa(int idMun)
+        {
+            N_barrio barrio = new N_barrio();
+            DataTable dt = barrio.n_loadBa(idMun);
+
+            cb_barrio.DataSource = dt;
+            cb_barrio.DisplayMember = "nombreB";
+            cb_barrio.ValueMember = "idB";
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -191,6 +215,43 @@ namespace interfaces.Formularios
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_mun.SelectedIndex >= 0)
+            {
+                int munSelec;
+                if (int.TryParse(cb_mun.SelectedValue.ToString(), out munSelec))
+                {
+                    loadBa(munSelec);  
+                }
+                else
+                {
+                    Console.WriteLine("El valor seleccionado no es válido para la conversión a int.");
+                }
+
+            }
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+            if (cb_dept.SelectedIndex >= 0)
+            {
+                int deptSelec;
+                if (int.TryParse(cb_dept.SelectedValue.ToString(), out deptSelec))
+                {
+                    loadMun(deptSelec);  
+                }
+                else
+                {
+                    Console.WriteLine("El valor seleccionado no es válido para la conversión a int.");
+                }
+                cb_barrio.DataSource = null;
+            }
+
+        }
+
+        private void cb_barrio_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -1,25 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entidad;
-namespace Datos
+
+namespace Datos.Division_Geografica
 {
-    public class D_suscursal
+    public class D_barrio
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.db_conn);
 
-
-
-        // leer
-        public DataTable listarSucursales()
+        public DataTable loadBa(int idMun)
         {
-            using (SqlCommand cmd = new SqlCommand("sp_listarSucursales_All", conn))
+            using (SqlCommand cmd = new SqlCommand("sp_mostrar_barrio", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idMun", idMun);
                 using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                 {
                     DataTable dt = new DataTable();
@@ -28,7 +26,5 @@ namespace Datos
                 }
             }
         }
-
-        
     }
 }

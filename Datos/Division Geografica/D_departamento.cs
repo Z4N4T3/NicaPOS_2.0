@@ -5,19 +5,17 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entidad;
-namespace Datos
+
+namespace Datos.Division_Geografica
 {
-    public class D_suscursal
+    public class D_departamento
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.db_conn);
+        
 
-
-
-        // leer
-        public DataTable listarSucursales()
+        public DataTable loadDept()
         {
-            using (SqlCommand cmd = new SqlCommand("sp_listarSucursales_All", conn))
+            using (SqlCommand cmd = new SqlCommand("sp_mostrar_dept", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 using (SqlDataAdapter da = new SqlDataAdapter(cmd))
@@ -28,7 +26,5 @@ namespace Datos
                 }
             }
         }
-
-        
     }
 }

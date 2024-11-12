@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Division Geografica\D_barrio.cs" />
+    <Compile Include="Division Geografica\D_departamento.cs" />
+    <Compile Include="Division Geografica\D_municipio.cs" />
     <Compile Include="D_suscursal.cs" />
     <Compile Include="D_usuario.cs" />
     <Compile Include="Empleado\D_empleado.cs" />
@@ -64,8 +67,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Division Geografica\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

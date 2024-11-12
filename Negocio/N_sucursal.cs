@@ -12,7 +12,7 @@ namespace Negocio
 {
     public class N_sucursal
     {
-        D_suscursal d_suscursal;
+        D_suscursal d_suscursal = new D_suscursal();
         public DataTable N_listarSucursalAll() {
             return d_suscursal.listarSucursales();
         } 

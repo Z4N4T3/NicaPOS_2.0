@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\ClsDatabase.cs" />
-    <Compile Include="Clases\ClsNavbar.cs" />
+    <Compile Include="Utilidades\ClsDatabase.cs" />
+    <Compile Include="Utilidades\ClsNavbar.cs" />
     <Compile Include="Formularios\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
