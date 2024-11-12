@@ -283,8 +283,9 @@
             // ventaToolStripMenuItem
             // 
             this.ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
-            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.ventaToolStripMenuItem.Text = "Venta";
+            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.ventaToolStripMenuItem.Text = "Facturacion";
+            this.ventaToolStripMenuItem.Click += new System.EventHandler(this.ventaToolStripMenuItem_Click);
             // 
             // FrmSistema
             // 

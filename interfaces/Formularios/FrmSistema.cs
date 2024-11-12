@@ -171,6 +171,9 @@ namespace interfaces.Formularios
 
         }
 
+        private void ventaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

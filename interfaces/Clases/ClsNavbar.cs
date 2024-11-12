@@ -43,7 +43,10 @@ namespace interfaces.Clases
                 case "sistemaToolStripMenuItem":
                     abrirFrm(new FrmSistema());
                     break;
-                // Add cases for other forms
+                case "ventaToolStripMenuItem":
+                    abrirFrm(new FrmFacturacion());
+                    break;
+                    
                 default:
                     MessageBox.Show("Modulo no disponible");
                     break;

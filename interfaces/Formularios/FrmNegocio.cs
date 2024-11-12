@@ -142,7 +142,7 @@ namespace interfaces.Formularios
                 comboBox1.Items.Clear();
                 foreach (DataRow row in dt.Rows)
                 {
-                    comboBox1.Items.
+                    //comboBox1.Items.
                 }
             }
             catch (SqlException ex)
@@ -160,7 +160,39 @@ namespace interfaces.Formularios
 
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
 
-    
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

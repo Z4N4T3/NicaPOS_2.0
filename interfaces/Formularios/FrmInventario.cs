@@ -78,5 +78,10 @@ namespace interfaces.Formularios
         {
 
         }
+
+        private void sistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

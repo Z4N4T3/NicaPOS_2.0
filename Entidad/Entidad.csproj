@@ -41,10 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Division Geografica\E_barrio.cs" />
+    <Compile Include="Division Geografica\E_departamento.cs" />
+    <Compile Include="Division Geografica\E_municipio.cs" />
     <Compile Include="Empleado\E_empleado.cs" />
     <Compile Include="Empleado\E_EmpleadoDireccion.cs" />
     <Compile Include="Empleado\E_EmpleadoEmail.cs" />
     <Compile Include="Empleado\E_EmpleadoTelefono.cs" />
+    <Compile Include="E_CompaniaTelefono.cs" />
+    <Compile Include="E_Estado.cs" />
     <Compile Include="E_sucursal.cs" />
     <Compile Include="E_usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
