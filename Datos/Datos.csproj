@@ -44,6 +44,7 @@
     <Compile Include="Division Geografica\D_barrio.cs" />
     <Compile Include="Division Geografica\D_departamento.cs" />
     <Compile Include="Division Geografica\D_municipio.cs" />
+    <Compile Include="D_categoria.cs" />
     <Compile Include="D_suscursal.cs" />
     <Compile Include="D_usuario.cs" />
     <Compile Include="Empleado\D_empleado.cs" />

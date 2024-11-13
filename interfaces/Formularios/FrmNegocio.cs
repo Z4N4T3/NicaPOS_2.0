@@ -18,8 +18,7 @@ namespace interfaces.Formularios
     public partial class FrmNegocio : Form
     {
         private ClsNavbar menuHandler;
-        private Clases.ClsDatabase objDB;
-
+       
 
         public FrmNegocio()
         {
@@ -27,11 +26,9 @@ namespace interfaces.Formularios
             menuHandler = new ClsNavbar(this);
             menuHandler.SetupMenu(menuStrip1);
 
-            objDB = new Clases.ClsDatabase();
             loadDept();
             
-            objDB.conectarBD();
-            CargarDataSucursal(); 
+            loadSuc(); 
             
 
         }
@@ -64,27 +61,6 @@ namespace interfaces.Formularios
             else if (checkBoxM.Checked) { genero = true; }
 
 
-            SqlParameter[] parameters = {
-                new SqlParameter("@nombre1", SqlDbType.VarChar) { Value = txtPrimerNombre.Text },
-                new SqlParameter("@nombre2", SqlDbType.VarChar) { Value = string.IsNullOrEmpty(txtSegundoNombre.Text) ? (object)DBNull.Value : txtSegundoNombre.Text },
-                new SqlParameter("@apellido1", SqlDbType.VarChar) { Value = txtPrimerApellido.Text },
-                new SqlParameter("@apellido2", SqlDbType.VarChar) { Value = string.IsNullOrEmpty(txtSegundoApellido.Text) ? (object)DBNull.Value : txtSegundoApellido.Text },
-                new SqlParameter("@genero", SqlDbType.Bit) { Value = genero },
-                new SqlParameter("@fecha_nacimiento", SqlDbType.Date) { Value = fechaNacimiento.Value },
-                new SqlParameter("@identificacion", SqlDbType.VarChar) { Value = txtIdentificacion.Text },
-                new SqlParameter("@id_estado", SqlDbType.Int) { Value = checkBox_estado.Checked ? 1 : 0 },
-                new SqlParameter("@id_sucursal", SqlDbType.Int) { Value = Convert.ToInt32(comboBox1.SelectedValue) }
-            };
-
-            int newEmpleadoID = objDB.ExectSP_insertar("sp_Crear_Empleado", parameters);
-            if (newEmpleadoID > 0)
-            {
-                MessageBox.Show("Empleado creado con éxito! Nuevo ID: " + newEmpleadoID);
-            }
-            else
-            {
-                MessageBox.Show("Error creando el empleado.");
-            }
 
 
         }
@@ -119,20 +95,11 @@ namespace interfaces.Formularios
 
         private void CargarData(String nombreSP)
         {
-            try
-            {
-                DataTable dataTable = objDB.ExecStoredProc(nombreSP);
-                dataGridView1.DataSource = dataTable;
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Error al cargar la data: " + ex.ToString());
-
-            }
+           
         }
 
 
-        private void CargarDataSucursal()
+        private void loadSuc()
         {
 
             N_sucursal n_Sucursal = new N_sucursal();

@@ -33,17 +33,21 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cb_mun = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.checkBox_estado = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.cb_dept = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cb_barrio = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cb_company = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_email = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_numero = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -69,10 +73,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.checkBox_estado = new System.Windows.Forms.CheckBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panelNegocio = new System.Windows.Forms.Panel();
             this.BtnPromo = new System.Windows.Forms.Button();
             this.BtnEmpleado = new System.Windows.Forms.Button();
@@ -84,6 +84,7 @@
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btn_cargo = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panelEmpleado.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -136,11 +137,11 @@
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.cb_company);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txt_email);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txt_numero);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(418, 3);
@@ -168,6 +169,25 @@
             this.label18.TabIndex = 65;
             this.label18.Text = "Municipio";
             // 
+            // checkBox_estado
+            // 
+            this.checkBox_estado.AutoSize = true;
+            this.checkBox_estado.Location = new System.Drawing.Point(178, 154);
+            this.checkBox_estado.Name = "checkBox_estado";
+            this.checkBox_estado.Size = new System.Drawing.Size(57, 19);
+            this.checkBox_estado.TabIndex = 49;
+            this.checkBox_estado.Text = "Activo";
+            this.checkBox_estado.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(175, 135);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 15);
+            this.label10.TabIndex = 48;
+            this.label10.Text = "Estado";
+            // 
             // cb_dept
             // 
             this.cb_dept.FormattingEnabled = true;
@@ -177,6 +197,15 @@
             this.cb_dept.TabIndex = 64;
             this.cb_dept.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(29, 135);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 15);
+            this.label9.TabIndex = 45;
+            this.label9.Text = "Sucursal";
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -185,6 +214,15 @@
             this.label17.Size = new System.Drawing.Size(86, 15);
             this.label17.TabIndex = 63;
             this.label17.Text = "Departamento";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(32, 153);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 47;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // cb_barrio
             // 
@@ -221,13 +259,13 @@
             this.label14.TabIndex = 59;
             this.label14.Text = "Direccion Domiciliaria";
             // 
-            // comboBox2
+            // cb_company
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(134, 51);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(100, 23);
-            this.comboBox2.TabIndex = 58;
+            this.cb_company.FormattingEnabled = true;
+            this.cb_company.Location = new System.Drawing.Point(134, 51);
+            this.cb_company.Name = "cb_company";
+            this.cb_company.Size = new System.Drawing.Size(100, 23);
+            this.cb_company.TabIndex = 58;
             // 
             // label13
             // 
@@ -238,12 +276,12 @@
             this.label13.TabIndex = 57;
             this.label13.Text = "Compañia";
             // 
-            // textBox3
+            // txt_email
             // 
-            this.textBox3.Location = new System.Drawing.Point(134, 81);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 56;
+            this.txt_email.Location = new System.Drawing.Point(134, 81);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(100, 21);
+            this.txt_email.TabIndex = 56;
             // 
             // label7
             // 
@@ -254,13 +292,13 @@
             this.label7.TabIndex = 55;
             this.label7.Text = "Correo Electronico";
             // 
-            // textBox2
+            // txt_numero
             // 
-            this.textBox2.Location = new System.Drawing.Point(134, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 54;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txt_numero.Location = new System.Drawing.Point(134, 24);
+            this.txt_numero.Name = "txt_numero";
+            this.txt_numero.Size = new System.Drawing.Size(100, 21);
+            this.txt_numero.TabIndex = 54;
+            this.txt_numero.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label12
             // 
@@ -325,7 +363,7 @@
             // 
             // txtSegundoNombre
             // 
-            this.txtSegundoNombre.Location = new System.Drawing.Point(112, 65);
+            this.txtSegundoNombre.Location = new System.Drawing.Point(112, 39);
             this.txtSegundoNombre.Name = "txtSegundoNombre";
             this.txtSegundoNombre.Size = new System.Drawing.Size(121, 21);
             this.txtSegundoNombre.TabIndex = 34;
@@ -333,7 +371,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(2, 68);
+            this.label3.Location = new System.Drawing.Point(2, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 15);
             this.label3.TabIndex = 33;
@@ -349,7 +387,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 46);
+            this.label2.Location = new System.Drawing.Point(16, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 15);
             this.label2.TabIndex = 31;
@@ -358,7 +396,7 @@
             // 
             // txtPrimerApellido
             // 
-            this.txtPrimerApellido.Location = new System.Drawing.Point(112, 39);
+            this.txtPrimerApellido.Location = new System.Drawing.Point(112, 64);
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.Size = new System.Drawing.Size(121, 21);
             this.txtPrimerApellido.TabIndex = 35;
@@ -497,46 +535,10 @@
             this.dataGridView1.Size = new System.Drawing.Size(913, 266);
             this.dataGridView1.TabIndex = 16;
             // 
-            // checkBox_estado
-            // 
-            this.checkBox_estado.AutoSize = true;
-            this.checkBox_estado.Location = new System.Drawing.Point(178, 154);
-            this.checkBox_estado.Name = "checkBox_estado";
-            this.checkBox_estado.Size = new System.Drawing.Size(57, 19);
-            this.checkBox_estado.TabIndex = 49;
-            this.checkBox_estado.Text = "Activo";
-            this.checkBox_estado.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(175, 135);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 15);
-            this.label10.TabIndex = 48;
-            this.label10.Text = "Estado";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(32, 153);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 47;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(29, 135);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 15);
-            this.label9.TabIndex = 45;
-            this.label9.Text = "Sucursal";
-            // 
             // panelNegocio
             // 
             this.panelNegocio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelNegocio.Controls.Add(this.btn_cargo);
             this.panelNegocio.Controls.Add(this.BtnPromo);
             this.panelNegocio.Controls.Add(this.BtnEmpleado);
             this.panelNegocio.Location = new System.Drawing.Point(12, 31);
@@ -614,6 +616,15 @@
             this.ventaToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.ventaToolStripMenuItem.Text = "Facturacion";
             // 
+            // btn_cargo
+            // 
+            this.btn_cargo.Location = new System.Drawing.Point(3, 87);
+            this.btn_cargo.Name = "btn_cargo";
+            this.btn_cargo.Size = new System.Drawing.Size(221, 36);
+            this.btn_cargo.TabIndex = 2;
+            this.btn_cargo.Text = "Cargos";
+            this.btn_cargo.UseVisualStyleBackColor = true;
+            // 
             // FrmNegocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -682,16 +693,16 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_numero;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cb_company;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cb_barrio;
         private System.Windows.Forms.Label label15;
@@ -700,5 +711,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox cb_dept;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btn_cargo;
     }
 }

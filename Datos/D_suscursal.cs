@@ -14,7 +14,7 @@ namespace Datos
 
 
 
-        // leer
+     
         public DataTable listarSucursales()
         {
             using (SqlCommand cmd = new SqlCommand("sp_listarSucursales_All", conn))

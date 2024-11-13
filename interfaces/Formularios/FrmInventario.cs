@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using interfaces.Clases;
+using interfaces.Formularios.Clasificacion;
 
 namespace interfaces.Formularios
 {
@@ -82,6 +83,23 @@ namespace interfaces.Formularios
         private void sistemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Categoria_Prod frm_Categoria_Prod = new Frm_Categoria_Prod();
+            frm_Categoria_Prod.Show();
+        }
+
+        private void menuDeCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+    
+        }
+
+        private void subcategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_Subcategoria frm_Subcategoria = new Frm_Subcategoria();
+            frm_Subcategoria.Show();
         }
     }
 }
