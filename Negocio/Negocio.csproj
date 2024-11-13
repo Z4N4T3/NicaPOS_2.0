@@ -46,6 +46,7 @@
     <Compile Include="Division geografica\N_municipio.cs" />
     <Compile Include="Empleado\N_empleado.cs" />
     <Compile Include="N_categoria.cs" />
+    <Compile Include="N_subcategoria.cs" />
     <Compile Include="N_sucursal.cs" />
     <Compile Include="N_usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

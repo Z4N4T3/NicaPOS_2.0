@@ -43,12 +43,12 @@
             this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subcategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dataGridView_categoria = new System.Windows.Forms.DataGridView();
+            this.dataGridView_sub = new System.Windows.Forms.DataGridView();
             this.comboBox_cate = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_categoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_sub)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -129,6 +129,7 @@
             this.btn_agregar.TabIndex = 2;
             this.btn_agregar.Text = "Agregar";
             this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // label1
             // 
@@ -145,6 +146,7 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(114, 20);
             this.txt_nombre.TabIndex = 0;
+            this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
             // 
             // menuStrip1
             // 
@@ -176,13 +178,14 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // dataGridView_categoria
+            // dataGridView_sub
             // 
-            this.dataGridView_categoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_categoria.Location = new System.Drawing.Point(12, 161);
-            this.dataGridView_categoria.Name = "dataGridView_categoria";
-            this.dataGridView_categoria.Size = new System.Drawing.Size(549, 113);
-            this.dataGridView_categoria.TabIndex = 4;
+            this.dataGridView_sub.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_sub.Location = new System.Drawing.Point(12, 161);
+            this.dataGridView_sub.Name = "dataGridView_sub";
+            this.dataGridView_sub.Size = new System.Drawing.Size(549, 113);
+            this.dataGridView_sub.TabIndex = 4;
+            this.dataGridView_sub.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_categoria_CellContentClick);
             // 
             // comboBox_cate
             // 
@@ -209,7 +212,7 @@
             this.ClientSize = new System.Drawing.Size(573, 280);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.dataGridView_categoria);
+            this.Controls.Add(this.dataGridView_sub);
             this.Name = "Frm_Subcategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Subcategoria";
@@ -217,7 +220,7 @@
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_categoria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_sub)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,6 +244,6 @@
         private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem subcategoriaToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.DataGridView dataGridView_categoria;
+        private System.Windows.Forms.DataGridView dataGridView_sub;
     }
 }

@@ -18,10 +18,12 @@ namespace interfaces.Formularios.Clasificacion
         {
             InitializeComponent();
             loadCate();
+            loadSubCate();
         }
 
         private void comboBox_cate_SelectedIndexChanged(object sender, EventArgs e)
         {
+
 
         }
 
@@ -33,6 +35,13 @@ namespace interfaces.Formularios.Clasificacion
             comboBox_cate.DisplayMember = "nombre";
             comboBox_cate.ValueMember = "id";
            
+        }
+
+        private void loadSubCate()
+        {
+            N_subcategoria subcategoria = new N_subcategoria();
+            DataTable dt = subcategoria.listar();
+            dataGridView_sub.DataSource = dt;
         }
 
         private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -47,6 +56,46 @@ namespace interfaces.Formularios.Clasificacion
             Frm_Subcategoria frm_Subcategoria = new Frm_Subcategoria();
             this.Close();
             frm_Subcategoria.Show();
+        }
+
+        private void dataGridView_categoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_agregar_Click(object sender, EventArgs e)
+        {
+            N_subcategoria sub = new N_subcategoria();
+            insertarSub(sub);
+
+        }
+
+        void insertarSub(N_subcategoria nSub)
+        {
+            E_subcategoria eSub = new E_subcategoria();
+
+            eSub.nombre = txt_nombre.Text;
+            eSub.descripcion = txt_desc.Text;
+            if (String.IsNullOrEmpty(txt_nombre.Text))
+            {
+                MessageBox.Show("No se permiten campos vacios");
+            }
+            int CateSelected;
+            eSub.IdCat = (int)comboBox_cate.SelectedValue;
+
+         
+            nSub.insertar(eSub);
+            bool creada = nSub.insertar(eSub);
+            MessageBox.Show(creada ? "Subcategoria creada exitosamente." : "Error al crear el Subcategoria.");
+
+            loadSubCate();
+
+
+        }
+
+        private void txt_nombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

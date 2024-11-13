@@ -91,6 +91,8 @@ namespace interfaces.Formularios.Clasificacion
         private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Categoria_Prod frm_Categoria_Prod = new Frm_Categoria_Prod();
+            this.Close();
+
             frm_Categoria_Prod.Show();
         }
 
@@ -100,7 +102,8 @@ namespace interfaces.Formularios.Clasificacion
         private void subcategoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Subcategoria frm_Subcategoria = new Frm_Subcategoria();
-            this.Hide();
+            this.Close();
+
             frm_Subcategoria.Show();
         }
     }
