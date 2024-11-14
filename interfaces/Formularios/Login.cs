@@ -42,8 +42,8 @@ namespace interfaces.Formularios
             {
                 MessageBox.Show("Inicio de sesion Exitoso");
 
-                FrmMain FrmMain = new FrmMain();
-                FrmMain.Show();
+                FrmFacturacion facturacion = new FrmFacturacion();
+                facturacion.Show();
                 this.Hide();
             }
             else

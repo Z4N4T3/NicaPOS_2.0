@@ -31,10 +31,10 @@ namespace interfaces.Formularios.Clasificacion
         {
             N_categoria cate = new N_categoria();
             DataTable dt = cate.N_mostrarCategorias();
-            comboBox_cate.DataSource = dt;
             comboBox_cate.DisplayMember = "nombre";
             comboBox_cate.ValueMember = "id";
-           
+            comboBox_cate.DataSource = dt;
+
         }
 
         private void loadSubCate()
@@ -76,15 +76,28 @@ namespace interfaces.Formularios.Clasificacion
 
             eSub.nombre = txt_nombre.Text;
             eSub.descripcion = txt_desc.Text;
+            if (isActive.Checked)
+            {
+                eSub.Estado = 1;
+            }
+            else
+            {
+                eSub.Estado = 2;
+            }
             if (String.IsNullOrEmpty(txt_nombre.Text))
             {
                 MessageBox.Show("No se permiten campos vacios");
             }
             int CateSelected;
-            eSub.IdCat = (int)comboBox_cate.SelectedValue;
 
-         
-            nSub.insertar(eSub);
+            if (int.TryParse(comboBox_cate.SelectedValue.ToString(), out CateSelected))
+            {
+                eSub.IdCat = CateSelected;
+            }
+            else {
+                MessageBox.Show("Selecciona una categoria");
+            }
+            
             bool creada = nSub.insertar(eSub);
             MessageBox.Show(creada ? "Subcategoria creada exitosamente." : "Error al crear el Subcategoria.");
 

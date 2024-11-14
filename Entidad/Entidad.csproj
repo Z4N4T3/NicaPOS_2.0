@@ -54,6 +54,7 @@
     <Compile Include="E_subcategoria.cs" />
     <Compile Include="E_sucursal.cs" />
     <Compile Include="E_usuario.cs" />
+    <Compile Include="Producto\E_Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -49,6 +49,7 @@
     <Compile Include="N_subcategoria.cs" />
     <Compile Include="N_sucursal.cs" />
     <Compile Include="N_usuario.cs" />
+    <Compile Include="Producto\N_Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

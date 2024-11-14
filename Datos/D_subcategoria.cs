@@ -40,7 +40,7 @@ namespace Datos
                     cmd.Parameters.AddWithValue("@nombre", sub.nombre);
                     cmd.Parameters.AddWithValue("@descripcion", sub.descripcion);
                     cmd.Parameters.AddWithValue("@estado", sub.Estado);
-                    cmd.Parameters.AddWithValue("@@idCat", sub.IdCat);
+                    cmd.Parameters.AddWithValue("@idCat", sub.IdCat);
                     
                     conn.Open();
                     int result = cmd.ExecuteNonQuery();
