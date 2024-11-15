@@ -67,6 +67,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lb_nombre_negocio = new System.Windows.Forms.Label();
             this.panelSide = new System.Windows.Forms.Panel();
+            this.btn_caja = new System.Windows.Forms.Button();
+            this.btn_fact = new System.Windows.Forms.Button();
             this.negocioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,8 +76,6 @@
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.btn_fact = new System.Windows.Forms.Button();
-            this.btn_caja = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -503,11 +503,30 @@
             this.panelSide.Visible = false;
             this.panelSide.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNegocio_Paint);
             // 
+            // btn_caja
+            // 
+            this.btn_caja.Location = new System.Drawing.Point(3, 45);
+            this.btn_caja.Name = "btn_caja";
+            this.btn_caja.Size = new System.Drawing.Size(221, 36);
+            this.btn_caja.TabIndex = 5;
+            this.btn_caja.Text = "Opciones de Caja";
+            this.btn_caja.UseVisualStyleBackColor = true;
+            // 
+            // btn_fact
+            // 
+            this.btn_fact.Location = new System.Drawing.Point(3, 3);
+            this.btn_fact.Name = "btn_fact";
+            this.btn_fact.Size = new System.Drawing.Size(221, 36);
+            this.btn_fact.TabIndex = 4;
+            this.btn_fact.Text = "Facturacion";
+            this.btn_fact.UseVisualStyleBackColor = true;
+            // 
             // negocioToolStripMenuItem
             // 
             this.negocioToolStripMenuItem.Name = "negocioToolStripMenuItem";
             this.negocioToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.negocioToolStripMenuItem.Text = "Negocio";
+            this.negocioToolStripMenuItem.Click += new System.EventHandler(this.negocioToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem
             // 
@@ -554,24 +573,6 @@
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
-            // btn_fact
-            // 
-            this.btn_fact.Location = new System.Drawing.Point(3, 3);
-            this.btn_fact.Name = "btn_fact";
-            this.btn_fact.Size = new System.Drawing.Size(221, 36);
-            this.btn_fact.TabIndex = 4;
-            this.btn_fact.Text = "Facturacion";
-            this.btn_fact.UseVisualStyleBackColor = true;
-            // 
-            // btn_caja
-            // 
-            this.btn_caja.Location = new System.Drawing.Point(3, 45);
-            this.btn_caja.Name = "btn_caja";
-            this.btn_caja.Size = new System.Drawing.Size(221, 36);
-            this.btn_caja.TabIndex = 5;
-            this.btn_caja.Text = "Opciones de Caja";
-            this.btn_caja.UseVisualStyleBackColor = true;
             // 
             // FrmFacturacion
             // 

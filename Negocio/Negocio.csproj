@@ -51,6 +51,7 @@
     <Compile Include="N_usuario.cs" />
     <Compile Include="Producto\N_Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\N_seguridad.cs" />
     <Compile Include="Tienda\N_tienda.cs" />
   </ItemGroup>
   <ItemGroup>

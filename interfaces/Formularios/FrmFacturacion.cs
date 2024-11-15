@@ -27,6 +27,7 @@ namespace interfaces.Formularios
             menuHandler = new ClsNavbar(this);
            
             menuHandler.SetupMenu(menuStrip1);
+            menuHandler.configAcceso(menuStrip1);
             loadProdPrecio();
             getTienda();
 
@@ -208,6 +209,9 @@ namespace interfaces.Formularios
             lb_total.Text = total.ToString("F2");
         }
 
-        
+        private void negocioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

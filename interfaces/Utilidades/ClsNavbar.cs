@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using interfaces.Formularios;
 using System.Windows.Forms;
+using Negocio;
+using Negocio.Seguridad;
 namespace interfaces.Clases
 {
     public class ClsNavbar
@@ -28,10 +30,26 @@ namespace interfaces.Clases
             }
         }
 
+        public void configAcceso(MenuStrip menuStrip)
+        {
+            N_seguridad seguridad = new N_seguridad();
+            
+            List<string> AccesosPermitidos = seguridad.getAccceso(1);
+
+            foreach (ToolStripMenuItem item in menuStrip.Items)
+            {
+                item.Enabled = AccesosPermitidos.Contains(item.Text);
+            }
+        }
+
         private void MenuItem_Click(object sender, EventArgs e)
         {
             ToolStripItem menuItem = sender as ToolStripItem;
-
+            if (!menuItem.Enabled)
+            {
+                MessageBox.Show("No tiene permisos para acceder a este módulo.");
+                return;
+            }
             switch (menuItem.Name)
             {
                 case "negocioToolStripMenuItem":

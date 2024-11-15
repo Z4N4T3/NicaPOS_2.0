@@ -8,10 +8,17 @@ namespace Entidad.Seguridad
 {
     public class E_seguridad
     {
+
     }
 
     public class E_perfiles
     {
 
     }
+
+    public class E_Accesos
+    {
+
+    }
+    
 }
