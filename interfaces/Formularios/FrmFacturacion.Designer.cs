@@ -39,8 +39,8 @@
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.btb_buscar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lb_categoria = new System.Windows.Forms.Label();
+            this.lb_nombreItem = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lb_total = new System.Windows.Forms.Label();
             this.lb_iva = new System.Windows.Forms.Label();
@@ -54,6 +54,10 @@
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_facturar = new System.Windows.Forms.Button();
             this.dtGrid_det = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lb_tasa = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -70,10 +74,8 @@
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_fact = new System.Windows.Forms.Button();
+            this.btn_caja = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -88,6 +90,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid_det)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panelSide.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,8 +172,8 @@
             this.groupBox_DatosGenerales.Controls.Add(this.txt_buscar);
             this.groupBox_DatosGenerales.Controls.Add(this.btb_buscar);
             this.groupBox_DatosGenerales.Controls.Add(this.label3);
-            this.groupBox_DatosGenerales.Controls.Add(this.label2);
-            this.groupBox_DatosGenerales.Controls.Add(this.label1);
+            this.groupBox_DatosGenerales.Controls.Add(this.lb_categoria);
+            this.groupBox_DatosGenerales.Controls.Add(this.lb_nombreItem);
             this.groupBox_DatosGenerales.Location = new System.Drawing.Point(3, 3);
             this.groupBox_DatosGenerales.Name = "groupBox_DatosGenerales";
             this.groupBox_DatosGenerales.Size = new System.Drawing.Size(648, 162);
@@ -207,6 +210,7 @@
             this.btb_buscar.TabIndex = 4;
             this.btb_buscar.Text = "Buscar";
             this.btb_buscar.UseVisualStyleBackColor = true;
+            this.btb_buscar.Click += new System.EventHandler(this.btb_buscar_Click);
             // 
             // label3
             // 
@@ -217,23 +221,26 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Codigo";
             // 
-            // label2
+            // lb_categoria
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Categoria";
+            this.lb_categoria.AutoSize = true;
+            this.lb_categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_categoria.Location = new System.Drawing.Point(39, 29);
+            this.lb_categoria.Name = "lb_categoria";
+            this.lb_categoria.Size = new System.Drawing.Size(61, 13);
+            this.lb_categoria.TabIndex = 1;
+            this.lb_categoria.Text = "Categoria";
+            this.lb_categoria.Click += new System.EventHandler(this.lb_categoria_Click);
             // 
-            // label1
+            // lb_nombreItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre";
+            this.lb_nombreItem.AutoSize = true;
+            this.lb_nombreItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nombreItem.Location = new System.Drawing.Point(39, 54);
+            this.lb_nombreItem.Name = "lb_nombreItem";
+            this.lb_nombreItem.Size = new System.Drawing.Size(50, 13);
+            this.lb_nombreItem.TabIndex = 0;
+            this.lb_nombreItem.Text = "Nombre";
             // 
             // groupBox3
             // 
@@ -256,7 +263,7 @@
             // 
             this.lb_total.AutoSize = true;
             this.lb_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_total.Location = new System.Drawing.Point(210, 92);
+            this.lb_total.Location = new System.Drawing.Point(210, 84);
             this.lb_total.Name = "lb_total";
             this.lb_total.Size = new System.Drawing.Size(39, 13);
             this.lb_total.TabIndex = 7;
@@ -266,7 +273,7 @@
             // 
             this.lb_iva.AutoSize = true;
             this.lb_iva.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_iva.Location = new System.Drawing.Point(210, 70);
+            this.lb_iva.Location = new System.Drawing.Point(210, 62);
             this.lb_iva.Name = "lb_iva";
             this.lb_iva.Size = new System.Drawing.Size(39, 13);
             this.lb_iva.TabIndex = 6;
@@ -296,7 +303,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(38, 92);
+            this.label10.Location = new System.Drawing.Point(38, 84);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 13);
             this.label10.TabIndex = 3;
@@ -306,7 +313,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 70);
+            this.label9.Location = new System.Drawing.Point(16, 62);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 13);
             this.label9.TabIndex = 2;
@@ -380,6 +387,26 @@
             this.dtGrid_det.TabIndex = 1;
             this.dtGrid_det.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGrid_det_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Cantidad";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Articulo";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "P.Unit";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "TOTAL\'";
+            this.Column4.Name = "Column4";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lb_tasa);
@@ -418,18 +445,20 @@
             // lb_cliente
             // 
             this.lb_cliente.AutoSize = true;
+            this.lb_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_cliente.Location = new System.Drawing.Point(56, 69);
             this.lb_cliente.Name = "lb_cliente";
-            this.lb_cliente.Size = new System.Drawing.Size(79, 13);
+            this.lb_cliente.Size = new System.Drawing.Size(94, 13);
             this.lb_cliente.TabIndex = 4;
             this.lb_cliente.Text = "Cliente Regular";
             // 
             // lb_ruc
             // 
             this.lb_ruc.AutoSize = true;
+            this.lb_ruc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ruc.Location = new System.Drawing.Point(56, 45);
             this.lb_ruc.Name = "lb_ruc";
-            this.lb_ruc.Size = new System.Drawing.Size(79, 13);
+            this.lb_ruc.Size = new System.Drawing.Size(91, 13);
             this.lb_ruc.TabIndex = 3;
             this.lb_ruc.Text = "111111111111";
             // 
@@ -454,15 +483,19 @@
             // lb_nombre_negocio
             // 
             this.lb_nombre_negocio.AutoSize = true;
+            this.lb_nombre_negocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_nombre_negocio.Location = new System.Drawing.Point(83, 16);
             this.lb_nombre_negocio.Name = "lb_nombre_negocio";
-            this.lb_nombre_negocio.Size = new System.Drawing.Size(104, 13);
+            this.lb_nombre_negocio.Size = new System.Drawing.Size(122, 13);
             this.lb_nombre_negocio.TabIndex = 0;
             this.lb_nombre_negocio.Text = "Nombre del Negocio";
+            this.lb_nombre_negocio.Click += new System.EventHandler(this.lb_nombre_negocio_Click);
             // 
             // panelSide
             // 
             this.panelSide.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelSide.Controls.Add(this.btn_caja);
+            this.panelSide.Controls.Add(this.btn_fact);
             this.panelSide.Location = new System.Drawing.Point(12, 31);
             this.panelSide.Name = "panelSide";
             this.panelSide.Size = new System.Drawing.Size(231, 525);
@@ -522,25 +555,23 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
-            // Column1
+            // btn_fact
             // 
-            this.Column1.HeaderText = "Cantidad";
-            this.Column1.Name = "Column1";
+            this.btn_fact.Location = new System.Drawing.Point(3, 3);
+            this.btn_fact.Name = "btn_fact";
+            this.btn_fact.Size = new System.Drawing.Size(221, 36);
+            this.btn_fact.TabIndex = 4;
+            this.btn_fact.Text = "Facturacion";
+            this.btn_fact.UseVisualStyleBackColor = true;
             // 
-            // Column2
+            // btn_caja
             // 
-            this.Column2.HeaderText = "Articulo";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "P.Unit";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "TOTAL\'";
-            this.Column4.Name = "Column4";
+            this.btn_caja.Location = new System.Drawing.Point(3, 45);
+            this.btn_caja.Name = "btn_caja";
+            this.btn_caja.Size = new System.Drawing.Size(221, 36);
+            this.btn_caja.TabIndex = 5;
+            this.btn_caja.Text = "Opciones de Caja";
+            this.btn_caja.UseVisualStyleBackColor = true;
             // 
             // FrmFacturacion
             // 
@@ -570,6 +601,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid_det)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panelSide.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -592,8 +624,8 @@
         private System.Windows.Forms.GroupBox groupBox_DatosGenerales;
         private System.Windows.Forms.GroupBox groupBox_Servicios;
         private System.Windows.Forms.GroupBox groupBox_Productos;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_categoria;
+        private System.Windows.Forms.Label lb_nombreItem;
         private System.Windows.Forms.Button btb_buscar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dtGrid_servicio;
@@ -625,5 +657,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button btn_caja;
+        private System.Windows.Forms.Button btn_fact;
     }
 }

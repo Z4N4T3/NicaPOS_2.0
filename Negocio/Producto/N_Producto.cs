@@ -18,5 +18,10 @@ namespace Negocio.Producto
         {
             return d_Producto.listarProductoPrecio();
         }
+
+        public DataTable buscarProd(string cod)
+        {
+            return d_Producto.BuscarProductoPrecio(cod);
+        }
     }
 }

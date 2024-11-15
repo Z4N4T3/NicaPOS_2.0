@@ -47,6 +47,7 @@
     <Compile Include="D_categoria.cs" />
     <Compile Include="D_subcategoria.cs" />
     <Compile Include="D_suscursal.cs" />
+    <Compile Include="D_tienda.cs" />
     <Compile Include="D_usuario.cs" />
     <Compile Include="Empleado\D_empleado.cs" />
     <Compile Include="Producto\D_producto.cs" />

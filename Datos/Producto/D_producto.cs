@@ -24,9 +24,24 @@ namespace Datos.Producto
                     da.Fill(dt);
                     return dt;
                 }
-            
+            }
         }
 
-    }
+        public DataTable BuscarProductoPrecio(string cod)
+        {
+            using (SqlCommand cmd = new SqlCommand("sp_FlistarProducto", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codProd", cod);
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
+
     }
 }
