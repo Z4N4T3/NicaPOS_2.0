@@ -20,7 +20,6 @@ namespace interfaces.Formularios
     {
         private ClsNavbar menuHandler;
        
-        bool genero = true;
         public FrmNegocio()
         {
             InitializeComponent();
@@ -61,18 +60,17 @@ namespace interfaces.Formularios
             }
             else if (checkBoxM.Checked) { genero = true; }
 
-
-
+            N_empleado n_Empleado = new N_empleado();
+            insertarEmpleado(n_Empleado,genero);
 
         }
 
-        private void insertarEmpleado(E_empleado e_Empleado)
+        private void insertarEmpleado(N_empleado nemp, bool genero)
         {
             E_empleado emp = new E_empleado();
             E_EmpleadoDireccion eDir = new E_EmpleadoDireccion();
             E_EmpleadoEmail email = new E_EmpleadoEmail();
             E_EmpleadoTelefono eTel = new E_EmpleadoTelefono();
-            E_CompaniaTelefono eComp = new E_CompaniaTelefono();
 
             emp.Nombre1 = txtPrimerNombre.Text;
             emp.Nombre2 = txtSegundoNombre.Text;
@@ -89,8 +87,24 @@ namespace interfaces.Formularios
             } else
             { emp.IdEstado = 2;}
 
+            eTel.Telefono = txt_numero.Text;
+            eTel.IdCompania = Int32.Parse(cb_company.SelectedValue.ToString());
 
+            eDir.Direccion = textBox4.Text;
+            int baSelec;
+            if (int.TryParse(cb_barrio.SelectedValue.ToString(), out baSelec))
+            {
+                eDir.IdBarrio = baSelec;
+            }
+            else
+            {
+                Console.WriteLine("El valor seleccionado no es válido");
+            }
 
+            email.Email = txt_email.Text;
+            
+            bool creado = nemp.insertar(emp,eDir,eTel,email);
+            MessageBox.Show(creado ? "Empleado creado exitosamente." : "Error al crear el Empleado.");
 
         }
 
@@ -223,7 +237,7 @@ namespace interfaces.Formularios
                 }
                 else
                 {
-                    Console.WriteLine("El valor seleccionado no es válido para la conversión a int.");
+                    Console.WriteLine("El valor seleccionado no es válido");
                 }
 
             }
@@ -242,7 +256,7 @@ namespace interfaces.Formularios
                 }
                 else
                 {
-                    Console.WriteLine("El valor seleccionado no es válido para la conversión a int.");
+                    Console.WriteLine("El valor seleccionado no es válido");
                 }
                 cb_barrio.DataSource = null;
             }
