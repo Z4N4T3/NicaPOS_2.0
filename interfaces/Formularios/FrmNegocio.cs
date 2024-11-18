@@ -115,20 +115,12 @@ namespace interfaces.Formularios
 
         private void checkBoxM_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxM.Checked)
-            {
-                checkBoxF.Checked = false;
-                genero = true;
-            }
+   
         }
 
         private void checkBoxF_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxF.Checked)
-            {
-                checkBoxM.Checked = false;
-                genero = false;
-            }
+   
         }
 
         private void fechaNacimiento_ValueChanged(object sender, EventArgs e)
