@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelMain = new System.Windows.Forms.Panel();
             this.panelEmpleado = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cb_mun = new System.Windows.Forms.ComboBox();
@@ -84,25 +83,16 @@
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btn_cargo = new System.Windows.Forms.Button();
-            this.panelMain.SuspendLayout();
+            this.menuEmpleado = new System.Windows.Forms.MenuStrip();
+            this.cargosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelEmpleado.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelNegocio.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.menuEmpleado.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelMain
-            // 
-            this.panelMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelMain.Controls.Add(this.panelEmpleado);
-            this.panelMain.Location = new System.Drawing.Point(249, 31);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(923, 525);
-            this.panelMain.TabIndex = 6;
-            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // panelEmpleado
             // 
@@ -117,7 +107,8 @@
             this.panelEmpleado.Controls.Add(this.button1);
             this.panelEmpleado.Controls.Add(this.label5);
             this.panelEmpleado.Controls.Add(this.dataGridView1);
-            this.panelEmpleado.Location = new System.Drawing.Point(-2, -2);
+            this.panelEmpleado.Controls.Add(this.menuEmpleado);
+            this.panelEmpleado.Location = new System.Drawing.Point(249, 31);
             this.panelEmpleado.Name = "panelEmpleado";
             this.panelEmpleado.Size = new System.Drawing.Size(923, 525);
             this.panelEmpleado.TabIndex = 8;
@@ -144,9 +135,9 @@
             this.groupBox2.Controls.Add(this.txt_numero);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(418, 3);
+            this.groupBox2.Location = new System.Drawing.Point(418, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(498, 217);
+            this.groupBox2.Size = new System.Drawing.Size(498, 190);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion de Contacto";
@@ -178,6 +169,7 @@
             this.checkBox_estado.TabIndex = 49;
             this.checkBox_estado.Text = "Activo";
             this.checkBox_estado.UseVisualStyleBackColor = true;
+            this.checkBox_estado.CheckedChanged += new System.EventHandler(this.checkBox_estado_CheckedChanged);
             // 
             // label10
             // 
@@ -328,9 +320,9 @@
             this.groupBox1.Controls.Add(this.txtIdentificacion);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(3, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(409, 217);
+            this.groupBox1.Size = new System.Drawing.Size(409, 190);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
@@ -538,7 +530,6 @@
             // panelNegocio
             // 
             this.panelNegocio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelNegocio.Controls.Add(this.btn_cargo);
             this.panelNegocio.Controls.Add(this.BtnPromo);
             this.panelNegocio.Controls.Add(this.BtnEmpleado);
             this.panelNegocio.Location = new System.Drawing.Point(12, 31);
@@ -616,28 +607,35 @@
             this.ventaToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.ventaToolStripMenuItem.Text = "Facturacion";
             // 
-            // btn_cargo
+            // menuEmpleado
             // 
-            this.btn_cargo.Location = new System.Drawing.Point(3, 87);
-            this.btn_cargo.Name = "btn_cargo";
-            this.btn_cargo.Size = new System.Drawing.Size(221, 36);
-            this.btn_cargo.TabIndex = 2;
-            this.btn_cargo.Text = "Cargos";
-            this.btn_cargo.UseVisualStyleBackColor = true;
+            this.menuEmpleado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cargosToolStripMenuItem});
+            this.menuEmpleado.Location = new System.Drawing.Point(0, 0);
+            this.menuEmpleado.Name = "menuEmpleado";
+            this.menuEmpleado.Size = new System.Drawing.Size(919, 24);
+            this.menuEmpleado.TabIndex = 56;
+            this.menuEmpleado.Text = "menuStrip2";
+            // 
+            // cargosToolStripMenuItem
+            // 
+            this.cargosToolStripMenuItem.Name = "cargosToolStripMenuItem";
+            this.cargosToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.cargosToolStripMenuItem.Text = "Cargos";
             // 
             // FrmNegocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 561);
-            this.Controls.Add(this.panelMain);
+            this.Controls.Add(this.panelEmpleado);
             this.Controls.Add(this.panelNegocio);
             this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuEmpleado;
             this.Name = "FrmNegocio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNegocio";
             this.Load += new System.EventHandler(this.FrmNegocio_Load);
-            this.panelMain.ResumeLayout(false);
             this.panelEmpleado.ResumeLayout(false);
             this.panelEmpleado.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -648,14 +646,14 @@
             this.panelNegocio.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.menuEmpleado.ResumeLayout(false);
+            this.menuEmpleado.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panelNegocio;
         private System.Windows.Forms.Button BtnPromo;
         private System.Windows.Forms.Button BtnEmpleado;
@@ -711,6 +709,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox cb_dept;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button btn_cargo;
+        private System.Windows.Forms.MenuStrip menuEmpleado;
+        private System.Windows.Forms.ToolStripMenuItem cargosToolStripMenuItem;
     }
 }

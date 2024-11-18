@@ -58,6 +58,18 @@
     <Compile Include="Formularios\Clasificacion\Frm_Subcategoria.Designer.cs">
       <DependentUpon>Frm_Subcategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Empleados\FrmAsignarCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Empleados\FrmAsignarCargo.Designer.cs">
+      <DependentUpon>FrmAsignarCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Empleados\FrmCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Empleados\FrmCargo.Designer.cs">
+      <DependentUpon>FrmCargo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades\ClsDatabase.cs" />
     <Compile Include="Utilidades\ClsNavbar.cs" />
     <Compile Include="Formularios\FrmFacturacion.cs">
@@ -102,12 +114,6 @@
     <Compile Include="Formularios\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Producto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Producto.Designer.cs">
-      <DependentUpon>Producto.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Clasificacion\Frm_Categoria_Prod.resx">
@@ -115,6 +121,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Clasificacion\Frm_Subcategoria.resx">
       <DependentUpon>Frm_Subcategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Empleados\FrmAsignarCargo.resx">
+      <DependentUpon>FrmAsignarCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Empleados\FrmCargo.resx">
+      <DependentUpon>FrmCargo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmFacturacion.resx">
       <DependentUpon>FrmFacturacion.cs</DependentUpon>
@@ -136,9 +148,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Producto.resx">
-      <DependentUpon>Producto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

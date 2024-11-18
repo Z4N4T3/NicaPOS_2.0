@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad;
+using Entidad.Empleado;
 using interfaces.Clases;
 using Negocio;
 using Negocio.Division_geografica;
@@ -19,7 +20,7 @@ namespace interfaces.Formularios
     {
         private ClsNavbar menuHandler;
        
-
+        bool genero = true;
         public FrmNegocio()
         {
             InitializeComponent();
@@ -65,6 +66,34 @@ namespace interfaces.Formularios
 
         }
 
+        private void insertarEmpleado(E_empleado e_Empleado)
+        {
+            E_empleado emp = new E_empleado();
+            E_EmpleadoDireccion eDir = new E_EmpleadoDireccion();
+            E_EmpleadoEmail email = new E_EmpleadoEmail();
+            E_EmpleadoTelefono eTel = new E_EmpleadoTelefono();
+            E_CompaniaTelefono eComp = new E_CompaniaTelefono();
+
+            emp.Nombre1 = txtPrimerNombre.Text;
+            emp.Nombre2 = txtSegundoNombre.Text;
+            emp.Apellido1 = txtPrimerApellido.Text;
+            emp.Apellido2 = txtSegundoApellido.Text;
+            emp.Genero = genero;
+            emp.FechaNacimiento = fechaNacimiento.Value.Date;
+            emp.Identificacion = txtIdentificacion.Text;
+            emp.IdSucursal = Int32.Parse(comboBox1.SelectedValue.ToString());
+
+            if (checkBox_estado.Checked)
+            {
+                emp.IdEstado = 1;
+            } else
+            { emp.IdEstado = 2;}
+
+
+
+
+        }
+
         private void txtPrimerNombre_TextChanged(object sender, EventArgs e)
         {
 
@@ -75,6 +104,7 @@ namespace interfaces.Formularios
             if (checkBoxM.Checked)
             {
                 checkBoxF.Checked = false;
+                genero = true;
             }
         }
 
@@ -83,6 +113,7 @@ namespace interfaces.Formularios
             if (checkBoxF.Checked)
             {
                 checkBoxM.Checked = false;
+                genero = false;
             }
         }
 
@@ -221,6 +252,11 @@ namespace interfaces.Formularios
         private void cb_barrio_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox_estado_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

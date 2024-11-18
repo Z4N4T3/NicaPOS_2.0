@@ -27,7 +27,7 @@ namespace interfaces.Formularios
             menuHandler = new ClsNavbar(this);
            
             menuHandler.SetupMenu(menuStrip1);
-            menuHandler.configAcceso(menuStrip1);
+            //menuHandler.configAcceso(menuStrip1);
             loadProdPrecio();
             getTienda();
 

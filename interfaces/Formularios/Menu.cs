@@ -19,8 +19,6 @@ namespace interfaces.Formularios
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Producto productoForm = new Producto();
-            productoForm.Show();
             this.Hide();
 
         }
