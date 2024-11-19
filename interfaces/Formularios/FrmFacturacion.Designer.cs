@@ -122,10 +122,10 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox3);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer1.Panel2.Controls.Add(this.dtGrid_det);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer1.Panel2.Controls.Add(this.dtGrid_det);
             this.splitContainer1.Size = new System.Drawing.Size(919, 521);
-            this.splitContainer1.SplitterDistance = 654;
+            this.splitContainer1.SplitterDistance = 587;
             this.splitContainer1.TabIndex = 0;
             // 
             // groupBox_Servicios
@@ -133,7 +133,7 @@
             this.groupBox_Servicios.Controls.Add(this.dtGrid_servicio);
             this.groupBox_Servicios.Location = new System.Drawing.Point(3, 380);
             this.groupBox_Servicios.Name = "groupBox_Servicios";
-            this.groupBox_Servicios.Size = new System.Drawing.Size(648, 136);
+            this.groupBox_Servicios.Size = new System.Drawing.Size(580, 136);
             this.groupBox_Servicios.TabIndex = 2;
             this.groupBox_Servicios.TabStop = false;
             this.groupBox_Servicios.Text = "Servicios";
@@ -144,7 +144,7 @@
             this.dtGrid_servicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrid_servicio.Location = new System.Drawing.Point(6, 19);
             this.dtGrid_servicio.Name = "dtGrid_servicio";
-            this.dtGrid_servicio.Size = new System.Drawing.Size(636, 111);
+            this.dtGrid_servicio.Size = new System.Drawing.Size(568, 111);
             this.dtGrid_servicio.TabIndex = 0;
             // 
             // groupBox_Productos
@@ -152,7 +152,7 @@
             this.groupBox_Productos.Controls.Add(this.dtGrid_producto);
             this.groupBox_Productos.Location = new System.Drawing.Point(3, 171);
             this.groupBox_Productos.Name = "groupBox_Productos";
-            this.groupBox_Productos.Size = new System.Drawing.Size(648, 203);
+            this.groupBox_Productos.Size = new System.Drawing.Size(577, 203);
             this.groupBox_Productos.TabIndex = 1;
             this.groupBox_Productos.TabStop = false;
             this.groupBox_Productos.Text = "Productos";
@@ -164,7 +164,7 @@
             this.dtGrid_producto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtGrid_producto.Location = new System.Drawing.Point(3, 16);
             this.dtGrid_producto.Name = "dtGrid_producto";
-            this.dtGrid_producto.Size = new System.Drawing.Size(642, 184);
+            this.dtGrid_producto.Size = new System.Drawing.Size(571, 184);
             this.dtGrid_producto.TabIndex = 0;
             this.dtGrid_producto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGrid_producto_CellContentClick);
             // 
@@ -179,7 +179,7 @@
             this.groupBox_DatosGenerales.Controls.Add(this.lb_nombreItem);
             this.groupBox_DatosGenerales.Location = new System.Drawing.Point(3, 3);
             this.groupBox_DatosGenerales.Name = "groupBox_DatosGenerales";
-            this.groupBox_DatosGenerales.Size = new System.Drawing.Size(648, 162);
+            this.groupBox_DatosGenerales.Size = new System.Drawing.Size(574, 162);
             this.groupBox_DatosGenerales.TabIndex = 0;
             this.groupBox_DatosGenerales.TabStop = false;
             this.groupBox_DatosGenerales.Text = "Datos Generales";
@@ -189,7 +189,7 @@
             this.btn_agregar.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_agregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_agregar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_agregar.Location = new System.Drawing.Point(567, 133);
+            this.btn_agregar.Location = new System.Drawing.Point(493, 136);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(75, 23);
             this.btn_agregar.TabIndex = 1;
@@ -201,13 +201,13 @@
             // 
             this.txt_buscar.Location = new System.Drawing.Point(52, 133);
             this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Size = new System.Drawing.Size(378, 20);
+            this.txt_buscar.Size = new System.Drawing.Size(304, 20);
             this.txt_buscar.TabIndex = 5;
             // 
             // btb_buscar
             // 
             this.btb_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btb_buscar.Location = new System.Drawing.Point(436, 133);
+            this.btb_buscar.Location = new System.Drawing.Point(362, 133);
             this.btb_buscar.Name = "btb_buscar";
             this.btb_buscar.Size = new System.Drawing.Size(75, 23);
             this.btb_buscar.TabIndex = 4;
@@ -257,7 +257,7 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Location = new System.Drawing.Point(3, 285);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(255, 108);
+            this.groupBox3.Size = new System.Drawing.Size(325, 108);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Retenciones";
@@ -266,7 +266,7 @@
             // 
             this.lb_total.AutoSize = true;
             this.lb_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_total.Location = new System.Drawing.Point(210, 84);
+            this.lb_total.Location = new System.Drawing.Point(277, 84);
             this.lb_total.Name = "lb_total";
             this.lb_total.Size = new System.Drawing.Size(39, 13);
             this.lb_total.TabIndex = 7;
@@ -276,7 +276,7 @@
             // 
             this.lb_iva.AutoSize = true;
             this.lb_iva.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_iva.Location = new System.Drawing.Point(210, 62);
+            this.lb_iva.Location = new System.Drawing.Point(277, 62);
             this.lb_iva.Name = "lb_iva";
             this.lb_iva.Size = new System.Drawing.Size(39, 13);
             this.lb_iva.TabIndex = 6;
@@ -286,7 +286,7 @@
             // 
             this.lb_descuento.AutoSize = true;
             this.lb_descuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_descuento.Location = new System.Drawing.Point(210, 40);
+            this.lb_descuento.Location = new System.Drawing.Point(277, 40);
             this.lb_descuento.Name = "lb_descuento";
             this.lb_descuento.Size = new System.Drawing.Size(39, 13);
             this.lb_descuento.TabIndex = 5;
@@ -296,7 +296,7 @@
             // 
             this.lb_subtotal.AutoSize = true;
             this.lb_subtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_subtotal.Location = new System.Drawing.Point(210, 16);
+            this.lb_subtotal.Location = new System.Drawing.Point(277, 16);
             this.lb_subtotal.Name = "lb_subtotal";
             this.lb_subtotal.Size = new System.Drawing.Size(39, 13);
             this.lb_subtotal.TabIndex = 4;
@@ -348,7 +348,7 @@
             this.groupBox2.Controls.Add(this.btn_facturar);
             this.groupBox2.Location = new System.Drawing.Point(3, 399);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(255, 119);
+            this.groupBox2.Size = new System.Drawing.Size(322, 119);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Facturar";
@@ -360,7 +360,7 @@
             this.btn_cancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_cancelar.Location = new System.Drawing.Point(6, 71);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(243, 42);
+            this.btn_cancelar.Size = new System.Drawing.Size(310, 42);
             this.btn_cancelar.TabIndex = 1;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
@@ -370,7 +370,7 @@
             this.btn_facturar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_facturar.Location = new System.Drawing.Point(6, 19);
             this.btn_facturar.Name = "btn_facturar";
-            this.btn_facturar.Size = new System.Drawing.Size(243, 42);
+            this.btn_facturar.Size = new System.Drawing.Size(310, 42);
             this.btn_facturar.TabIndex = 0;
             this.btn_facturar.Text = "Facturar";
             this.btn_facturar.UseVisualStyleBackColor = true;
@@ -387,7 +387,7 @@
             this.Column4});
             this.dtGrid_det.Location = new System.Drawing.Point(3, 129);
             this.dtGrid_det.Name = "dtGrid_det";
-            this.dtGrid_det.Size = new System.Drawing.Size(255, 150);
+            this.dtGrid_det.Size = new System.Drawing.Size(322, 150);
             this.dtGrid_det.TabIndex = 1;
             this.dtGrid_det.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGrid_det_CellContentClick);
             // 
@@ -422,7 +422,7 @@
             this.groupBox1.Controls.Add(this.lb_nombre_negocio);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(255, 120);
+            this.groupBox1.Size = new System.Drawing.Size(322, 120);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la Factura";
@@ -431,7 +431,7 @@
             // 
             this.lb_tasa.AutoSize = true;
             this.lb_tasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_tasa.Location = new System.Drawing.Point(96, 95);
+            this.lb_tasa.Location = new System.Drawing.Point(252, 95);
             this.lb_tasa.Name = "lb_tasa";
             this.lb_tasa.Size = new System.Drawing.Size(39, 13);
             this.lb_tasa.TabIndex = 6;
@@ -450,7 +450,7 @@
             // 
             this.lb_cliente.AutoSize = true;
             this.lb_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_cliente.Location = new System.Drawing.Point(56, 69);
+            this.lb_cliente.Location = new System.Drawing.Point(212, 69);
             this.lb_cliente.Name = "lb_cliente";
             this.lb_cliente.Size = new System.Drawing.Size(94, 13);
             this.lb_cliente.TabIndex = 4;
@@ -460,7 +460,7 @@
             // 
             this.lb_ruc.AutoSize = true;
             this.lb_ruc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_ruc.Location = new System.Drawing.Point(56, 45);
+            this.lb_ruc.Location = new System.Drawing.Point(212, 45);
             this.lb_ruc.Name = "lb_ruc";
             this.lb_ruc.Size = new System.Drawing.Size(91, 13);
             this.lb_ruc.TabIndex = 3;
@@ -488,7 +488,7 @@
             // 
             this.lb_nombre_negocio.AutoSize = true;
             this.lb_nombre_negocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_nombre_negocio.Location = new System.Drawing.Point(83, 16);
+            this.lb_nombre_negocio.Location = new System.Drawing.Point(107, 16);
             this.lb_nombre_negocio.Name = "lb_nombre_negocio";
             this.lb_nombre_negocio.Size = new System.Drawing.Size(122, 13);
             this.lb_nombre_negocio.TabIndex = 0;
@@ -580,7 +580,7 @@
             // 
             // input_qty
             // 
-            this.input_qty.Location = new System.Drawing.Point(517, 136);
+            this.input_qty.Location = new System.Drawing.Point(443, 136);
             this.input_qty.Name = "input_qty";
             this.input_qty.Size = new System.Drawing.Size(44, 20);
             this.input_qty.TabIndex = 6;

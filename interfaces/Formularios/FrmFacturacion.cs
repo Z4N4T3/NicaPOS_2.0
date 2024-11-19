@@ -137,7 +137,7 @@ namespace interfaces.Formularios
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dtGrid_producto.Rows[e.RowIndex];
-                int idProducto = Convert.ToInt32(selectedRow.Cells["ID"].Value);  
+                idProd = Convert.ToInt32(selectedRow.Cells["ID"].Value);  
                 cate = selectedRow.Cells["CATEGORIA"].Value.ToString();
                  subCate = selectedRow.Cells["SUBCATEGORIA"].Value.ToString();
                  prod = selectedRow.Cells["PRODUCTO"].Value.ToString();
@@ -148,10 +148,13 @@ namespace interfaces.Formularios
 
             
         }
-        private void AgregarProductoDetalle(string prod, decimal precioU,int qty)
+        List<E_Det_venta> listaDetVenta = new List<E_Det_venta>();
+
+        private void AgregarProductoDetalle(string prod, decimal precioU,int qty, int idProducto)
         {
 
-            int nuevaFilaIndex = dtGrid_det.Rows.Add(); // Agrega una nueva fila al DataGridView
+            
+            int nuevaFilaIndex = dtGrid_det.Rows.Add(); 
 
             // Obtener la nueva fila y asignar los valores
             
@@ -162,9 +165,19 @@ namespace interfaces.Formularios
 
             nuevaFila.Cells["Column2"].Value = prod;
             nuevaFila.Cells["Column3"].Value = precioU;
-            nuevaFila.Cells["Column4"].Value = precioU* qty;
+            nuevaFila.Cells["Column4"].Value = precioU * qty;
+            E_Det_venta detalleVenta = new E_Det_venta()
+            {
+                Id = idProducto,        
+                Cantidad = qty,         
+                PrecioU = precioU,
+                Total = qty * precioU
+            };
 
+            listaDetVenta.Add(detalleVenta);
         }
+
+       
 
         private void lb_nombre_negocio_Click(object sender, EventArgs e)
         {
@@ -199,8 +212,7 @@ namespace interfaces.Formularios
             dtGrid_producto.DataSource = dt;
         }
 
-        E_venta e_Venta = new E_venta();
-
+        
         private void cal_subtotal(double iva)
         {
             double subtotal = 0, total =0, impuesto =0,descuento=0.0;
@@ -215,11 +227,7 @@ namespace interfaces.Formularios
 
             impuesto = subtotal * iva;
             total = subtotal+ impuesto - descuento;
-            e_Venta.Subtotal = Convert.ToDecimal(subtotal);
-            e_Venta.Descuento = Convert.ToDecimal(descuento);
-            e_Venta.Impuesto = Convert.ToDecimal(impuesto);
-            e_Venta.Total = Convert.ToDecimal(total);
-
+           
             lb_subtotal.Text = subtotal.ToString("F2");
             lb_descuento.Text = descuento.ToString("F2");
             lb_iva.Text = impuesto.ToString("F2");
@@ -236,21 +244,6 @@ namespace interfaces.Formularios
 
         }
 
-        private List<E_Producto> exportarData(DataGridView dtGrid)
-        {
-            List<E_Producto> listaDeProd = new List<E_Producto>();
-            foreach(DataGridView row in dtGrid.Rows)
-            {
-                E_Producto prod = new E_Producto();
-                //prod.Id = ;
-                //prod.Nombre = ;
-                
-
-            }
-
-
-
-            return listaDeProd;
-        }
+       
     }
 }
