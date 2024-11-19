@@ -76,6 +76,7 @@
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.input_qty = new System.Windows.Forms.NumericUpDown();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -92,6 +93,7 @@
             this.groupBox1.SuspendLayout();
             this.panelSide.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.input_qty)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -168,6 +170,7 @@
             // 
             // groupBox_DatosGenerales
             // 
+            this.groupBox_DatosGenerales.Controls.Add(this.input_qty);
             this.groupBox_DatosGenerales.Controls.Add(this.btn_agregar);
             this.groupBox_DatosGenerales.Controls.Add(this.txt_buscar);
             this.groupBox_DatosGenerales.Controls.Add(this.btb_buscar);
@@ -198,13 +201,13 @@
             // 
             this.txt_buscar.Location = new System.Drawing.Point(52, 133);
             this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Size = new System.Drawing.Size(428, 20);
+            this.txt_buscar.Size = new System.Drawing.Size(378, 20);
             this.txt_buscar.TabIndex = 5;
             // 
             // btb_buscar
             // 
             this.btb_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btb_buscar.Location = new System.Drawing.Point(486, 133);
+            this.btb_buscar.Location = new System.Drawing.Point(436, 133);
             this.btb_buscar.Name = "btb_buscar";
             this.btb_buscar.Size = new System.Drawing.Size(75, 23);
             this.btb_buscar.TabIndex = 4;
@@ -371,6 +374,7 @@
             this.btn_facturar.TabIndex = 0;
             this.btn_facturar.Text = "Facturar";
             this.btn_facturar.UseVisualStyleBackColor = true;
+            this.btn_facturar.Click += new System.EventHandler(this.btn_facturar_Click);
             // 
             // dtGrid_det
             // 
@@ -574,6 +578,13 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
+            // input_qty
+            // 
+            this.input_qty.Location = new System.Drawing.Point(517, 136);
+            this.input_qty.Name = "input_qty";
+            this.input_qty.Size = new System.Drawing.Size(44, 20);
+            this.input_qty.TabIndex = 6;
+            // 
             // FrmFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -605,6 +616,7 @@
             this.panelSide.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.input_qty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -660,5 +672,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Button btn_caja;
         private System.Windows.Forms.Button btn_fact;
+        private System.Windows.Forms.NumericUpDown input_qty;
     }
 }

@@ -142,7 +142,7 @@ namespace Datos
                     return result > 0;
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine("Error al eliminar el usuario: " + ex.Message);
                 return false;

@@ -134,17 +134,11 @@ namespace interfaces.Formularios
             DialogResult dr= MessageBox.Show("Deseas eliminar el Usuario?","Eliminar",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
-               
-
-
                 eliminarUsuario(n_usr);
-
             }
 
-            
             txt_usr_id.Text = String.Empty;
             loadData();
-
         }
 
         private void BtnActualizar_usr_Click(object sender, EventArgs e)
