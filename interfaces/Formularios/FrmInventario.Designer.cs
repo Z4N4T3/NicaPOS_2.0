@@ -350,14 +350,14 @@
             // categoriasToolStripMenuItem
             // 
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.categoriasToolStripMenuItem.Text = "Categorias";
             this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
             // 
             // subcategoriaToolStripMenuItem
             // 
             this.subcategoriaToolStripMenuItem.Name = "subcategoriaToolStripMenuItem";
-            this.subcategoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.subcategoriaToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.subcategoriaToolStripMenuItem.Text = "Subcategoria";
             this.subcategoriaToolStripMenuItem.Click += new System.EventHandler(this.subcategoriaToolStripMenuItem_Click);
             // 

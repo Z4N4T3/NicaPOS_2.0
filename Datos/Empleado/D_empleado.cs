@@ -15,6 +15,38 @@ namespace Datos
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.db_conn);
 
+
+        public DataTable D_listarDetEmpl()
+        {
+
+            using (SqlCommand cmd = new SqlCommand("sp_listar_det_empleado", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
+        public DataTable D_buscarDetEmpl(int eid)
+        {
+
+            using (SqlCommand cmd = new SqlCommand("sp_buscar_det_empleado", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@eid", eid);
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
         public bool insertarEmpleado(E_empleado empleado, E_EmpleadoDireccion eDir =null, E_EmpleadoTelefono eTel = null, E_EmpleadoEmail eEmail = null)
         {
 

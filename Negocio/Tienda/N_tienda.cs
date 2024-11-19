@@ -17,4 +17,16 @@ namespace Negocio.Tienda
             return tienda.D_listar();
         }
     }
+
+
+    public class N_comp_tel
+    {
+
+        D_comp_tel comp_Tel = new D_comp_tel();
+
+        public DataTable listar()
+        {
+            return comp_Tel.d_listar();
+        }
+    }
 }

@@ -66,12 +66,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.menuEmpleado = new System.Windows.Forms.MenuStrip();
+            this.cargosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelNegocio = new System.Windows.Forms.Panel();
             this.BtnPromo = new System.Windows.Forms.Button();
             this.BtnEmpleado = new System.Windows.Forms.Button();
@@ -83,15 +85,13 @@
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.menuEmpleado = new System.Windows.Forms.MenuStrip();
-            this.cargosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelEmpleado.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.menuEmpleado.SuspendLayout();
             this.panelNegocio.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.menuEmpleado.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelEmpleado
@@ -101,7 +101,7 @@
             this.panelEmpleado.Controls.Add(this.groupBox1);
             this.panelEmpleado.Controls.Add(this.button4);
             this.panelEmpleado.Controls.Add(this.label11);
-            this.panelEmpleado.Controls.Add(this.textBox1);
+            this.panelEmpleado.Controls.Add(this.txtBuscar);
             this.panelEmpleado.Controls.Add(this.button3);
             this.panelEmpleado.Controls.Add(this.button2);
             this.panelEmpleado.Controls.Add(this.button1);
@@ -258,6 +258,7 @@
             this.cb_company.Name = "cb_company";
             this.cb_company.Size = new System.Drawing.Size(100, 23);
             this.cb_company.TabIndex = 58;
+            this.cb_company.SelectedIndexChanged += new System.EventHandler(this.cb_company_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -465,6 +466,7 @@
             this.button4.TabIndex = 52;
             this.button4.Text = "Buscar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label11
             // 
@@ -475,12 +477,12 @@
             this.label11.TabIndex = 51;
             this.label11.Text = "Buscar Empleado";
             // 
-            // textBox1
+            // txtBuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(265, 226);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
-            this.textBox1.TabIndex = 50;
+            this.txtBuscar.Location = new System.Drawing.Point(265, 226);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(158, 20);
+            this.txtBuscar.TabIndex = 50;
             // 
             // button3
             // 
@@ -521,11 +523,29 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 252);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(913, 266);
             this.dataGridView1.TabIndex = 16;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // menuEmpleado
+            // 
+            this.menuEmpleado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cargosToolStripMenuItem});
+            this.menuEmpleado.Location = new System.Drawing.Point(0, 0);
+            this.menuEmpleado.Name = "menuEmpleado";
+            this.menuEmpleado.Size = new System.Drawing.Size(919, 24);
+            this.menuEmpleado.TabIndex = 56;
+            this.menuEmpleado.Text = "menuStrip2";
+            // 
+            // cargosToolStripMenuItem
+            // 
+            this.cargosToolStripMenuItem.Name = "cargosToolStripMenuItem";
+            this.cargosToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.cargosToolStripMenuItem.Text = "Cargos";
             // 
             // panelNegocio
             // 
@@ -607,22 +627,6 @@
             this.ventaToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.ventaToolStripMenuItem.Text = "Facturacion";
             // 
-            // menuEmpleado
-            // 
-            this.menuEmpleado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cargosToolStripMenuItem});
-            this.menuEmpleado.Location = new System.Drawing.Point(0, 0);
-            this.menuEmpleado.Name = "menuEmpleado";
-            this.menuEmpleado.Size = new System.Drawing.Size(919, 24);
-            this.menuEmpleado.TabIndex = 56;
-            this.menuEmpleado.Text = "menuStrip2";
-            // 
-            // cargosToolStripMenuItem
-            // 
-            this.cargosToolStripMenuItem.Name = "cargosToolStripMenuItem";
-            this.cargosToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.cargosToolStripMenuItem.Text = "Cargos";
-            // 
             // FrmNegocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -643,11 +647,11 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.menuEmpleado.ResumeLayout(false);
+            this.menuEmpleado.PerformLayout();
             this.panelNegocio.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.menuEmpleado.ResumeLayout(false);
-            this.menuEmpleado.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -690,7 +694,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.TextBox txt_numero;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox1;

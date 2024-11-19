@@ -13,6 +13,7 @@ using Entidad.Empleado;
 using interfaces.Clases;
 using Negocio;
 using Negocio.Division_geografica;
+using Negocio.Tienda;
 
 namespace interfaces.Formularios
 {
@@ -25,12 +26,12 @@ namespace interfaces.Formularios
             InitializeComponent();
             menuHandler = new ClsNavbar(this);
             menuHandler.SetupMenu(menuStrip1);
-
             loadDept();
             
-            loadSuc(); 
-            
+            loadSuc();
 
+            cargarCompTel();
+            loadEmpleados();
         }
 
         private void FrmNegocio_Load(object sender, EventArgs e)
@@ -46,7 +47,6 @@ namespace interfaces.Formularios
         private void BtnEmpleado_Click(object sender, EventArgs e)
         {
            panelEmpleado.Visible = true;
-            CargarData("sp_Leer_Empleados_Todos");
         }
 
 
@@ -92,19 +92,17 @@ namespace interfaces.Formularios
 
             eDir.Direccion = textBox4.Text;
             int baSelec;
-            if (int.TryParse(cb_barrio.SelectedValue.ToString(), out baSelec))
-            {
-                eDir.IdBarrio = baSelec;
-            }
-            else
-            {
-                Console.WriteLine("El valor seleccionado no es válido");
-            }
+            eDir.IdBarrio = Int32.Parse(cb_barrio.SelectedValue.ToString());
+
+            
+
+            
+
 
             email.Email = txt_email.Text;
             
             bool creado = nemp.insertar(emp,eDir,eTel,email);
-            MessageBox.Show(creado ? "Empleado creado exitosamente." : "Error al crear el Empleado.");
+            MessageBox.Show(creado ? "Empleado creado correctamente." : "Error al crear el Empleado.");
 
         }
 
@@ -130,10 +128,7 @@ namespace interfaces.Formularios
 
 
 
-        private void CargarData(String nombreSP)
-        {
-           
-        }
+      
 
 
         private void loadSuc()
@@ -142,8 +137,8 @@ namespace interfaces.Formularios
             N_sucursal n_Sucursal = new N_sucursal();
             DataTable dt = n_Sucursal.N_listarSucursalAll();
             comboBox1.DataSource = dt;
-            comboBox1.DisplayMember = "nombre";
-            comboBox1.ValueMember= "id";
+            comboBox1.DisplayMember = "Sucursal";
+            comboBox1.ValueMember= "ID";
      
         }
 
@@ -225,11 +220,13 @@ namespace interfaces.Formularios
                 int munSelec;
                 if (int.TryParse(cb_mun.SelectedValue.ToString(), out munSelec))
                 {
-                    loadBa(munSelec);  
+                    loadBa(munSelec);
+                    MessageBox.Show("" + munSelec);
+
                 }
                 else
                 {
-                    Console.WriteLine("El valor seleccionado no es válido");
+                    MessageBox.Show("El municipio seleccionado no es válido", "Advertencia");
                 }
 
             }
@@ -244,11 +241,13 @@ namespace interfaces.Formularios
                 int deptSelec;
                 if (int.TryParse(cb_dept.SelectedValue.ToString(), out deptSelec))
                 {
-                    loadMun(deptSelec);  
+                    loadMun(deptSelec);
+                    MessageBox.Show("" + deptSelec);
+
                 }
                 else
                 {
-                    Console.WriteLine("El valor seleccionado no es válido");
+                    MessageBox.Show("El Departamento seleccionado no es válido", "Advertencia");
                 }
                 cb_barrio.DataSource = null;
             }
@@ -263,6 +262,38 @@ namespace interfaces.Formularios
         private void checkBox_estado_CheckedChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void cb_company_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cargarCompTel()
+        {
+            N_comp_tel comp = new N_comp_tel();
+            cb_company.DataSource = comp.listar();
+            cb_company.DisplayMember = "nombre";
+            cb_company.ValueMember = "id";
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+        private void loadEmpleados()
+        {
+            N_empleado empleado = new N_empleado();
+
+            dataGridView1.DataSource = empleado.listar();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
