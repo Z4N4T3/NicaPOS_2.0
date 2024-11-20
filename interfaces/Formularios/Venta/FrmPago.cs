@@ -7,21 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidad.Venta;
 
 namespace interfaces.Formularios.Venta
 {
     public partial class FrmPago : Form
     {
         int tipoPago = 1;
-        public FrmPago()
+        private List<E_Det_venta> listaDetalleVenta;
+
+        public FrmPago(List<E_Det_venta> listaDetalle)
         {
+            this.listaDetalleVenta = listaDetalle;
+
             InitializeComponent();
         }
 
         void colores(Button btn)
         {
             
-            btn.BackColor = Color.Azure;
+            btn.BackColor = Color.DeepSkyBlue;
 
             if (btn != btn_cash)
             {
@@ -63,6 +68,16 @@ namespace interfaces.Formularios.Venta
         }
 
         private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmPago_Load(object sender, EventArgs e)
         {
 
         }

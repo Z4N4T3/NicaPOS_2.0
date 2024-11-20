@@ -11,6 +11,7 @@ using Entidad.Producto;
 using Entidad.Tienda;
 using Entidad.Venta;
 using interfaces.Clases;
+using interfaces.Formularios.Venta;
 using Negocio.Producto;
 using Negocio.Tienda;
 
@@ -108,7 +109,7 @@ namespace interfaces.Formularios
             }
             else {
                 qty = Convert.ToInt32(input_qty.Value);
-                AgregarProductoDetalle(prod, precioUnitario, qty);
+                AgregarProductoDetalle(prod, precioUnitario, qty,idProd);
                 txt_buscar.Text = String.Empty;
                 input_qty.Value = 1;
                 loadProdPrecio();
@@ -171,7 +172,9 @@ namespace interfaces.Formularios
                 Id = idProducto,        
                 Cantidad = qty,         
                 PrecioU = precioU,
-                Total = qty * precioU
+                Total = qty * precioU,
+                Descuento = 1,
+                Impuesto = 0,
             };
 
             listaDetVenta.Add(detalleVenta);
@@ -241,7 +244,17 @@ namespace interfaces.Formularios
 
         private void btn_facturar_Click(object sender, EventArgs e)
         {
-
+            // verificar si contiene filas
+            if (dtGrid_det.Rows.Count <= 1)
+            {
+                MessageBox.Show("Lista de productos vacía", "Advertencia");
+                return;
+            }
+            else
+            {
+                FrmPago frmPago = new FrmPago(listaDetVenta);
+                frmPago.Show();
+            }
         }
 
        
