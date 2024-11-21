@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Datos.Empleado;
+using Entidad.Empleado;
 
 namespace Negocio.Empleado
 {
@@ -17,5 +18,18 @@ namespace Negocio.Empleado
         {
             return cargo.d_listarCargo();
         }
+
+
+        public DataTable buscar(int id) { 
+            return cargo.d_buscarCargo(id);
+        }
+
+
+        public bool asginar(E_historial_cargo hCargo)
+        {
+
+            return cargo.d_asignarCargo(hCargo);
+        }
+
     }
 }

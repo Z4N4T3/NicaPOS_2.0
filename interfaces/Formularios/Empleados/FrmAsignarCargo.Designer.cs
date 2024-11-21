@@ -115,6 +115,7 @@
             this.btn_asignar.TabIndex = 12;
             this.btn_asignar.Text = "Asignar";
             this.btn_asignar.UseVisualStyleBackColor = true;
+            this.btn_asignar.Click += new System.EventHandler(this.btn_asignar_Click);
             // 
             // label1
             // 
@@ -285,18 +286,19 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(7, 63);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 13);
+            this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 27;
-            this.label9.Text = "Codigo(eid)";
+            this.label9.Text = "Cargo";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(7, 50);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 13);
+            this.label8.Size = new System.Drawing.Size(68, 13);
             this.label8.TabIndex = 26;
-            this.label8.Text = "Codigo de Empleado";
+            this.label8.Text = "Cargo Actual";
             // 
             // label6
             // 
@@ -307,6 +309,7 @@
             this.label6.Size = new System.Drawing.Size(153, 20);
             this.label6.TabIndex = 24;
             this.label6.Text = "Nombre y Apellido";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -341,6 +344,7 @@
             this.btn_buscar.TabIndex = 26;
             this.btn_buscar.Text = "Buscar";
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // FrmAsignarCargo
             // 

@@ -294,13 +294,15 @@ namespace interfaces.Formularios
 
         private void button4_Click(object sender, EventArgs e)
         {
+            N_empleado empleado = new N_empleado();
 
+            dataGridView1.DataSource = empleado.listar();
         }
 
         private void cargosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmCargo frmCargo = new FrmCargo();
-            frmCargo.ShowDialog();
+            frmCargo.Show();
         }
     }
 }

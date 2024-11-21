@@ -39,7 +39,7 @@ namespace Datos
                     return result != null && Convert.ToBoolean(result);
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 Console.WriteLine("Error al validar el login: " + ex.Message);
                 return false;
