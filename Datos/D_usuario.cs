@@ -20,10 +20,8 @@ namespace Datos
 
 
         // autenticacion del usuario
-        public bool auth(E_usuario usuario)
+        public int auth(E_usuario usuario)
         {
-
-
             try
             {
                 using (SqlCommand cmd = new SqlCommand("AuthUsuario", conn))
@@ -36,13 +34,20 @@ namespace Datos
                     var result = cmd.ExecuteScalar();
                     conn.Close();
 
-                    return result != null && Convert.ToBoolean(result);
+                    if (result != null && int.TryParse(result.ToString(), out int idEmpleado))
+                    {
+                        return idEmpleado;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
                 }
             }
             catch (SqlException ex)
             {
                 Console.WriteLine("Error al validar el login: " + ex.Message);
-                return false;
+                return -1; 
             }
             finally
             {
@@ -51,8 +56,8 @@ namespace Datos
                     conn.Close();
                 }
             }
-
         }
+
 
 
         // crear usuario

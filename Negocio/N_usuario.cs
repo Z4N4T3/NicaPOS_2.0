@@ -13,7 +13,7 @@ namespace Negocio
     public class N_usuario
     {
         D_usuario usr = new D_usuario();
-        public bool n_auth(E_usuario usuario)
+        public int n_auth(E_usuario usuario)
         {
             return usr.auth(usuario);
         }

@@ -35,6 +35,7 @@
             this.groupBox_Productos = new System.Windows.Forms.GroupBox();
             this.dtGrid_producto = new System.Windows.Forms.DataGridView();
             this.groupBox_DatosGenerales = new System.Windows.Forms.GroupBox();
+            this.input_qty = new System.Windows.Forms.NumericUpDown();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.btb_buscar = new System.Windows.Forms.Button();
@@ -53,11 +54,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_facturar = new System.Windows.Forms.Button();
-            this.dtGrid_det = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lb_tasa = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -66,6 +62,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lb_nombre_negocio = new System.Windows.Forms.Label();
+            this.dtGrid_det = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelSide = new System.Windows.Forms.Panel();
             this.btn_caja = new System.Windows.Forms.Button();
             this.btn_fact = new System.Windows.Forms.Button();
@@ -76,7 +77,6 @@
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.input_qty = new System.Windows.Forms.NumericUpDown();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -87,13 +87,13 @@
             this.groupBox_Productos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid_producto)).BeginInit();
             this.groupBox_DatosGenerales.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.input_qty)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtGrid_det)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrid_det)).BeginInit();
             this.panelSide.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.input_qty)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -183,6 +183,13 @@
             this.groupBox_DatosGenerales.TabIndex = 0;
             this.groupBox_DatosGenerales.TabStop = false;
             this.groupBox_DatosGenerales.Text = "Datos Generales";
+            // 
+            // input_qty
+            // 
+            this.input_qty.Location = new System.Drawing.Point(443, 136);
+            this.input_qty.Name = "input_qty";
+            this.input_qty.Size = new System.Drawing.Size(44, 20);
+            this.input_qty.TabIndex = 6;
             // 
             // btn_agregar
             // 
@@ -376,41 +383,6 @@
             this.btn_facturar.UseVisualStyleBackColor = true;
             this.btn_facturar.Click += new System.EventHandler(this.btn_facturar_Click);
             // 
-            // dtGrid_det
-            // 
-            this.dtGrid_det.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtGrid_det.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGrid_det.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
-            this.dtGrid_det.Location = new System.Drawing.Point(3, 129);
-            this.dtGrid_det.Name = "dtGrid_det";
-            this.dtGrid_det.Size = new System.Drawing.Size(322, 150);
-            this.dtGrid_det.TabIndex = 1;
-            this.dtGrid_det.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGrid_det_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Cantidad";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Articulo";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "P.Unit";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "TOTAL\'";
-            this.Column4.Name = "Column4";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lb_tasa);
@@ -495,8 +467,44 @@
             this.lb_nombre_negocio.Text = "Nombre del Negocio";
             this.lb_nombre_negocio.Click += new System.EventHandler(this.lb_nombre_negocio_Click);
             // 
+            // dtGrid_det
+            // 
+            this.dtGrid_det.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtGrid_det.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGrid_det.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dtGrid_det.Location = new System.Drawing.Point(3, 129);
+            this.dtGrid_det.Name = "dtGrid_det";
+            this.dtGrid_det.Size = new System.Drawing.Size(322, 150);
+            this.dtGrid_det.TabIndex = 1;
+            this.dtGrid_det.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGrid_det_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Cantidad";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Articulo";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "P.Unit";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "TOTAL\'";
+            this.Column4.Name = "Column4";
+            // 
             // panelSide
             // 
+            this.panelSide.BackColor = System.Drawing.Color.DarkTurquoise;
             this.panelSide.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelSide.Controls.Add(this.btn_caja);
             this.panelSide.Controls.Add(this.btn_fact);
@@ -578,13 +586,6 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
-            // input_qty
-            // 
-            this.input_qty.Location = new System.Drawing.Point(443, 136);
-            this.input_qty.Name = "input_qty";
-            this.input_qty.Size = new System.Drawing.Size(44, 20);
-            this.input_qty.TabIndex = 6;
-            // 
             // FrmFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -607,16 +608,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid_producto)).EndInit();
             this.groupBox_DatosGenerales.ResumeLayout(false);
             this.groupBox_DatosGenerales.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.input_qty)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtGrid_det)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrid_det)).EndInit();
             this.panelSide.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.input_qty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
