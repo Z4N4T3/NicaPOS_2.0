@@ -16,5 +16,20 @@ namespace interfaces.Formularios.Empleados
         {
             InitializeComponent();
         }
+
+        private void cargosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCargo frmCargo = new FrmCargo();
+            this.Close();
+            frmCargo.Show();
+        }
+
+        private void promoverEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FrmAsignarCargo frmAsignarCargo = new FrmAsignarCargo();
+            this.Close();
+            frmAsignarCargo.Show();
+        }
     }
 }

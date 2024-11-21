@@ -546,6 +546,7 @@
             this.cargosToolStripMenuItem.Name = "cargosToolStripMenuItem";
             this.cargosToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.cargosToolStripMenuItem.Text = "Cargos";
+            this.cargosToolStripMenuItem.Click += new System.EventHandler(this.cargosToolStripMenuItem_Click);
             // 
             // panelNegocio
             // 

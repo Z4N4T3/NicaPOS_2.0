@@ -25,5 +25,11 @@ namespace Negocio
         {
             return d_Empleado.D_listarDetEmpl();
         }
+
+
+        public DataTable detCargoEmp()
+        {
+            return d_Empleado.D_listarDetCargoEmp();
+        }
     }
 }

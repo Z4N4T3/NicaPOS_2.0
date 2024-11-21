@@ -79,12 +79,14 @@
             this.cargosToolStripMenuItem.Name = "cargosToolStripMenuItem";
             this.cargosToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.cargosToolStripMenuItem.Text = "Cargos";
+            this.cargosToolStripMenuItem.Click += new System.EventHandler(this.cargosToolStripMenuItem_Click);
             // 
             // promoverEmpleadoToolStripMenuItem
             // 
             this.promoverEmpleadoToolStripMenuItem.Name = "promoverEmpleadoToolStripMenuItem";
             this.promoverEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
             this.promoverEmpleadoToolStripMenuItem.Text = "Asignar Cargos";
+            this.promoverEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.promoverEmpleadoToolStripMenuItem_Click);
             // 
             // label3
             // 
@@ -170,6 +172,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmCargo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCargo";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

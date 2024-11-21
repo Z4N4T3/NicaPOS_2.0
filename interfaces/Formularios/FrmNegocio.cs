@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Entidad;
 using Entidad.Empleado;
 using interfaces.Clases;
+using interfaces.Formularios.Empleados;
 using Negocio;
 using Negocio.Division_geografica;
 using Negocio.Tienda;
@@ -294,6 +295,12 @@ namespace interfaces.Formularios
         private void button4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cargosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCargo frmCargo = new FrmCargo();
+            frmCargo.ShowDialog();
         }
     }
 }

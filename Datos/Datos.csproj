@@ -49,6 +49,7 @@
     <Compile Include="D_suscursal.cs" />
     <Compile Include="D_tienda.cs" />
     <Compile Include="D_usuario.cs" />
+    <Compile Include="Empleado\D_cargo.cs" />
     <Compile Include="Empleado\D_empleado.cs" />
     <Compile Include="Producto\D_producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

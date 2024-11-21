@@ -47,6 +47,20 @@ namespace Datos
             }
         }
 
+        public DataTable D_listarDetCargoEmp()
+        {
+
+            using (SqlCommand cmd = new SqlCommand("sp_listar_empleado_cargo", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
         public bool insertarEmpleado(E_empleado empleado, E_EmpleadoDireccion eDir =null, E_EmpleadoTelefono eTel = null, E_EmpleadoEmail eEmail = null)
         {
 
