@@ -23,6 +23,8 @@ namespace interfaces.Formularios
             InitializeComponent();
             menuHandler = new ClsNavbar(this, eid);
             menuHandler.SetupMenu(menuStrip1);
+            menuHandler.configAcceso(menuStrip1);
+
         }
 
         private void ocultar()
@@ -151,6 +153,22 @@ namespace interfaces.Formularios
         private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Close();
+
+            login.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Close();
+
+            login.Show();
         }
     }
 }

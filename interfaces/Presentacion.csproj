@@ -192,6 +192,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Formularios\usuarios\" />
+    <Folder Include="img\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

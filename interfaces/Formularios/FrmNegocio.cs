@@ -226,12 +226,12 @@ namespace interfaces.Formularios
                 if (int.TryParse(cb_mun.SelectedValue.ToString(), out munSelec))
                 {
                     loadBa(munSelec);
-                    MessageBox.Show("" + munSelec);
+                    //MessageBox.Show("" + munSelec);
 
                 }
                 else
                 {
-                    MessageBox.Show("El municipio seleccionado no es válido", "Advertencia");
+                    Console.WriteLine("El municipio seleccionado no es válido");
                 }
 
             }
@@ -247,12 +247,12 @@ namespace interfaces.Formularios
                 if (int.TryParse(cb_dept.SelectedValue.ToString(), out deptSelec))
                 {
                     loadMun(deptSelec);
-                    MessageBox.Show("" + deptSelec);
+                    //MessageBox.Show("" + deptSelec);
 
                 }
                 else
                 {
-                    MessageBox.Show("El Departamento seleccionado no es válido", "Advertencia");
+                    Console.WriteLine("El Departamento seleccionado no es válido");
                 }
                 cb_barrio.DataSource = null;
             }

@@ -36,10 +36,10 @@ namespace interfaces.Formularios
             {
                 MessageBox.Show("Inicio de sesion Exitoso");
 
-                FrmFacturacion facturacion = new FrmFacturacion(e_usr.id_emp);
+                FrmMain main = new FrmMain(e_usr.id_emp);
                 //ClsNavbar navy = new ClsNavbar(facturacion, e_usr.id_emp);
 
-                facturacion.Show();
+                main.Show();
                 this.Hide();
                 
             }
