@@ -77,6 +77,7 @@
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.img_producto = new System.Windows.Forms.PictureBox();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -94,10 +95,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid_det)).BeginInit();
             this.panelSide.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_producto)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
             // 
+            this.panelMain.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panelMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelMain.Controls.Add(this.splitContainer1);
             this.panelMain.Location = new System.Drawing.Point(249, 31);
@@ -141,6 +144,7 @@
             // dtGrid_servicio
             // 
             this.dtGrid_servicio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtGrid_servicio.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dtGrid_servicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrid_servicio.Location = new System.Drawing.Point(6, 19);
             this.dtGrid_servicio.Name = "dtGrid_servicio";
@@ -160,6 +164,7 @@
             // dtGrid_producto
             // 
             this.dtGrid_producto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtGrid_producto.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dtGrid_producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrid_producto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtGrid_producto.Location = new System.Drawing.Point(3, 16);
@@ -170,6 +175,7 @@
             // 
             // groupBox_DatosGenerales
             // 
+            this.groupBox_DatosGenerales.Controls.Add(this.img_producto);
             this.groupBox_DatosGenerales.Controls.Add(this.input_qty);
             this.groupBox_DatosGenerales.Controls.Add(this.btn_agregar);
             this.groupBox_DatosGenerales.Controls.Add(this.txt_buscar);
@@ -195,6 +201,7 @@
             // 
             this.btn_agregar.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_agregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_agregar.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_agregar.Location = new System.Drawing.Point(493, 136);
             this.btn_agregar.Name = "btn_agregar";
@@ -364,6 +371,7 @@
             // 
             this.btn_cancelar.BackColor = System.Drawing.Color.Tomato;
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_cancelar.Location = new System.Drawing.Point(6, 71);
             this.btn_cancelar.Name = "btn_cancelar";
@@ -374,13 +382,16 @@
             // 
             // btn_facturar
             // 
+            this.btn_facturar.BackColor = System.Drawing.Color.Orange;
             this.btn_facturar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_facturar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_facturar.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_facturar.Location = new System.Drawing.Point(6, 19);
             this.btn_facturar.Name = "btn_facturar";
             this.btn_facturar.Size = new System.Drawing.Size(310, 42);
             this.btn_facturar.TabIndex = 0;
             this.btn_facturar.Text = "Facturar";
-            this.btn_facturar.UseVisualStyleBackColor = true;
+            this.btn_facturar.UseVisualStyleBackColor = false;
             this.btn_facturar.Click += new System.EventHandler(this.btn_facturar_Click);
             // 
             // groupBox1
@@ -470,6 +481,7 @@
             // dtGrid_det
             // 
             this.dtGrid_det.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtGrid_det.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dtGrid_det.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrid_det.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -504,7 +516,7 @@
             // 
             // panelSide
             // 
-            this.panelSide.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.panelSide.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panelSide.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelSide.Controls.Add(this.btn_caja);
             this.panelSide.Controls.Add(this.btn_fact);
@@ -512,7 +524,6 @@
             this.panelSide.Name = "panelSide";
             this.panelSide.Size = new System.Drawing.Size(231, 525);
             this.panelSide.TabIndex = 5;
-            this.panelSide.Visible = false;
             this.panelSide.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNegocio_Paint);
             // 
             // btn_caja
@@ -586,10 +597,19 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
+            // img_producto
+            // 
+            this.img_producto.Location = new System.Drawing.Point(468, 19);
+            this.img_producto.Name = "img_producto";
+            this.img_producto.Size = new System.Drawing.Size(100, 100);
+            this.img_producto.TabIndex = 7;
+            this.img_producto.TabStop = false;
+            // 
             // FrmFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1184, 561);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelSide);
@@ -618,6 +638,7 @@
             this.panelSide.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_producto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -674,5 +695,6 @@
         private System.Windows.Forms.Button btn_caja;
         private System.Windows.Forms.Button btn_fact;
         private System.Windows.Forms.NumericUpDown input_qty;
+        private System.Windows.Forms.PictureBox img_producto;
     }
 }

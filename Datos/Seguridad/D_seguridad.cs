@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entidad;
 
 namespace Datos.Seguridad
 {
@@ -14,29 +15,45 @@ namespace Datos.Seguridad
 
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.db_conn);
 
-        public List<string> D_get_Accesos(int uuid)
+        public int D_get_Accesos(int eid)
         {
-            List<string> perfiles = new List<string>();
-            using (SqlCommand cmd = new SqlCommand("sp_control_acceso_u", conn))
+            try
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@UUID", uuid);
-                conn.Open();
-
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                using (SqlCommand cmd = new SqlCommand("sp_control_acceso_cargo", conn))
                 {
-                    while (reader.Read())
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@eid", eid);
+              
+                    conn.Open();
+                    var result = cmd.ExecuteScalar();
+                    conn.Close();
+
+                    if (result != null && int.TryParse(result.ToString(), out int idEmpleado))
                     {
-                        perfiles.Add(reader["Accesso"].ToString());
+                        return idEmpleado;
+                    }
+                    else
+                    {
+                        return -1;
                     }
                 }
-                conn.Close();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al validar acceso: "+ex.Message);
+                return -1;
 
             }
-            return perfiles;
+            finally {
 
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+
+            }
         }
+
 
     }
 }
