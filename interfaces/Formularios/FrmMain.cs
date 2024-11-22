@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidad;
 using interfaces.Clases;
 
 namespace interfaces.Formularios
@@ -14,10 +15,12 @@ namespace interfaces.Formularios
     public partial class FrmMain : Form
     {
         private ClsNavbar menuHandler;
+        private E_usuario e_usr = new E_usuario();
+        private int eid;
         public FrmMain()
         {
             InitializeComponent();
-            menuHandler = new ClsNavbar(this);
+            menuHandler = new ClsNavbar(this, eid);
             menuHandler.SetupMenu(menuStrip1);
         }
 
@@ -140,6 +143,11 @@ namespace interfaces.Formularios
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

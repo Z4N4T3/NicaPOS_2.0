@@ -5,9 +5,11 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidad;
 using interfaces.Clases;
 using interfaces.Formularios.Clasificacion;
 
@@ -17,12 +19,14 @@ namespace interfaces.Formularios
     {
         private ClsNavbar menuHandler;
         private Clases.ClsDatabase objDB;
-
+        private E_usuario e_usr = new E_usuario();
+        private int eid;
         public FrmInventario()
         {
             InitializeComponent();
-            menuHandler = new ClsNavbar(this);
+            menuHandler = new ClsNavbar(this, eid);
             menuHandler.SetupMenu(menuStrip1);
+            menuHandler.configAcceso(menuStrip1);
             objDB = new Clases.ClsDatabase();
             objDB.conectarBD();
         }

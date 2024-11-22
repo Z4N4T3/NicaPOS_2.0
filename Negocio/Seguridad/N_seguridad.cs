@@ -14,9 +14,14 @@ namespace Negocio.Seguridad
         D_seguridad d_Seguridad = new D_seguridad();
 
 
-        public List<string> getAccceso(int uuid)
+        public int getCargoActual(int eid)
         {
-            return d_Seguridad.D_get_Accesos(uuid);
+            return d_Seguridad.D_get_Cargo_actual(eid);
+        }
+
+        public List<string> getAccesos(int cargo)
+        {
+            return d_Seguridad.D_get_Accesos(cargo);
         }
     }
 }

@@ -7,16 +7,20 @@ using interfaces.Formularios;
 using System.Windows.Forms;
 using Negocio;
 using Negocio.Seguridad;
+using Entidad;
 namespace interfaces.Clases
 {
     public class ClsNavbar
     {
         private Form mainForm;
-
-        public ClsNavbar(Form mainForm)
+        private E_usuario usr;
+        private int e_id;
+        public ClsNavbar(Form mainForm, int eid)
         {
             this.mainForm = mainForm;
+            this.e_id = eid;
         }
+      
 
         public void SetupMenu(MenuStrip menuStrip)
         {
@@ -29,30 +33,35 @@ namespace interfaces.Clases
                 }
             }
         }
-
         public void configAcceso(MenuStrip menuStrip)
         {
             N_seguridad seguridad = new N_seguridad();
-            
-            List<string> AccesosPermitidos = seguridad.getAccceso(1);
-
+            // revisar esa mierda porque no esta capturando los parametros del login 
+            int cargo = seguridad.getCargoActual(e_id);
+            List<string> AccesosPermitidos = seguridad.getAccesos(2);
+            Console.WriteLine("cargo: " + e_id);
+            foreach (string acceso in AccesosPermitidos)
+            {
+                Console.WriteLine(acceso);
+            }
             foreach (ToolStripMenuItem item in menuStrip.Items)
             {
+                // Si el acceso está permitido, habilitar y asignar evento
                 item.Enabled = AccesosPermitidos.Contains(item.Text);
+
             }
         }
+
+     
 
         private void MenuItem_Click(object sender, EventArgs e)
         {
             ToolStripItem menuItem = sender as ToolStripItem;
-            if (!menuItem.Enabled)
-            {
-                MessageBox.Show("No tiene permisos para acceder a este módulo.");
-                return;
-            }
+        
             switch (menuItem.Name)
             {
                 case "negocioToolStripMenuItem":
+                    
                     abrirFrm(new FrmNegocio());
                     break;
                 case "inventarioToolStripMenuItem":

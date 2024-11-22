@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Negocio;
 using Entidad;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using interfaces.Clases;
 
 namespace interfaces.Formularios
 {
@@ -29,14 +30,18 @@ namespace interfaces.Formularios
             e_usr.usr_name = textBox1.Text;
             e_usr.usr_pw = textBox2.Text;
             int count = 0;
-            int isLogin = n_usr.n_auth(e_usr);
-            if (isLogin >=1)
+
+            e_usr.id_emp = n_usr.n_auth(e_usr);
+            if (e_usr.id_emp >= 1)
             {
                 MessageBox.Show("Inicio de sesion Exitoso");
 
                 FrmFacturacion facturacion = new FrmFacturacion();
+                ClsNavbar navy = new ClsNavbar(facturacion, e_usr.id_emp);
+
                 facturacion.Show();
                 this.Hide();
+                
             }
             else
             {
@@ -47,6 +52,8 @@ namespace interfaces.Formularios
                 count++;
                 
             }
+
+
 
        
 

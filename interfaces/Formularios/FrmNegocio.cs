@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,12 +22,14 @@ namespace interfaces.Formularios
     public partial class FrmNegocio : Form
     {
         private ClsNavbar menuHandler;
-       
+        private E_usuario e_usr = new E_usuario();
+        private int eid;
         public FrmNegocio()
         {
             InitializeComponent();
-            menuHandler = new ClsNavbar(this);
+            menuHandler = new ClsNavbar(this, eid);
             menuHandler.SetupMenu(menuStrip1);
+            menuHandler.configAcceso(menuStrip1);
             loadDept();
             
             loadSuc();
@@ -303,6 +306,11 @@ namespace interfaces.Formularios
         {
             FrmCargo frmCargo = new FrmCargo();
             frmCargo.Show();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
