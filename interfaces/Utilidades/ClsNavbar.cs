@@ -38,8 +38,8 @@ namespace interfaces.Clases
             N_seguridad seguridad = new N_seguridad();
             // revisar esa mierda porque no esta capturando los parametros del login 
             int cargo = seguridad.getCargoActual(e_id);
-            List<string> AccesosPermitidos = seguridad.getAccesos(2);
-            Console.WriteLine("cargo: " + e_id);
+            List<string> AccesosPermitidos = seguridad.getAccesos(cargo);
+            Console.WriteLine("cargo: " + cargo);
             foreach (string acceso in AccesosPermitidos)
             {
                 Console.WriteLine(acceso);
@@ -62,16 +62,16 @@ namespace interfaces.Clases
             {
                 case "negocioToolStripMenuItem":
                     
-                    abrirFrm(new FrmNegocio());
+                    abrirFrm(new FrmNegocio(e_id));
                     break;
                 case "inventarioToolStripMenuItem":
-                    abrirFrm(new FrmInventario());
+                    abrirFrm(new FrmInventario(e_id));
                     break;
                 case "sistemaToolStripMenuItem":
-                    abrirFrm(new FrmSistema());
+                    abrirFrm(new FrmSistema(e_id));
                     break;
                 case "ventaToolStripMenuItem":
-                    abrirFrm(new FrmFacturacion());
+                    abrirFrm(new FrmFacturacion(e_id));
                     break;
                     
                 default:

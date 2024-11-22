@@ -25,10 +25,10 @@ namespace interfaces.Formularios
         double iva = E_tienda.IVA;
         double tasa = E_tienda.TASA;
         private E_usuario e_usr = new E_usuario();
-        private int eid;
-        public FrmFacturacion()
+        private int e_id;
+        public FrmFacturacion(int eid)
         {
-
+            this.e_id = eid;
             InitializeComponent();
             menuHandler = new ClsNavbar(this, eid);
 

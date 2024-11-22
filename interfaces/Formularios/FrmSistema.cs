@@ -18,10 +18,11 @@ namespace interfaces.Formularios
     {
         private ClsNavbar menuHandler;
 
-        private int eid;
+        private int e_id;
        
-        public FrmSistema()
+        public FrmSistema(int eid)
         {
+            this.e_id = eid;
             InitializeComponent();
             menuHandler = new ClsNavbar(this, eid);
             menuHandler.SetupMenu(menuStrip1);

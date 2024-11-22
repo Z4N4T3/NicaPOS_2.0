@@ -35,6 +35,7 @@
             this.groupBox_Productos = new System.Windows.Forms.GroupBox();
             this.dtGrid_producto = new System.Windows.Forms.DataGridView();
             this.groupBox_DatosGenerales = new System.Windows.Forms.GroupBox();
+            this.img_producto = new System.Windows.Forms.PictureBox();
             this.input_qty = new System.Windows.Forms.NumericUpDown();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.txt_buscar = new System.Windows.Forms.TextBox();
@@ -77,7 +78,6 @@
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.img_producto = new System.Windows.Forms.PictureBox();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -88,6 +88,7 @@
             this.groupBox_Productos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid_producto)).BeginInit();
             this.groupBox_DatosGenerales.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_producto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.input_qty)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -95,7 +96,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid_det)).BeginInit();
             this.panelSide.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_producto)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -189,6 +189,14 @@
             this.groupBox_DatosGenerales.TabIndex = 0;
             this.groupBox_DatosGenerales.TabStop = false;
             this.groupBox_DatosGenerales.Text = "Datos Generales";
+            // 
+            // img_producto
+            // 
+            this.img_producto.Location = new System.Drawing.Point(468, 19);
+            this.img_producto.Name = "img_producto";
+            this.img_producto.Size = new System.Drawing.Size(100, 100);
+            this.img_producto.TabIndex = 7;
+            this.img_producto.TabStop = false;
             // 
             // input_qty
             // 
@@ -597,14 +605,6 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
-            // img_producto
-            // 
-            this.img_producto.Location = new System.Drawing.Point(468, 19);
-            this.img_producto.Name = "img_producto";
-            this.img_producto.Size = new System.Drawing.Size(100, 100);
-            this.img_producto.TabIndex = 7;
-            this.img_producto.TabStop = false;
-            // 
             // FrmFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -628,6 +628,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid_producto)).EndInit();
             this.groupBox_DatosGenerales.ResumeLayout(false);
             this.groupBox_DatosGenerales.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_producto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.input_qty)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -638,7 +639,6 @@
             this.panelSide.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_producto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
