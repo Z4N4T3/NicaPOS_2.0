@@ -76,6 +76,12 @@
     <Compile Include="Formularios\Venta\FrmPago.Designer.cs">
       <DependentUpon>FrmPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Nav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Nav.Designer.cs">
+      <DependentUpon>Frm_Nav.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades\ClsDatabase.cs" />
     <Compile Include="Utilidades\ClsNavbar.cs" />
     <Compile Include="Formularios\FrmFacturacion.cs">
@@ -122,6 +128,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilidades\Navy.cs" />
     <EmbeddedResource Include="Formularios\Clasificacion\Frm_Categoria_Prod.resx">
       <DependentUpon>Frm_Categoria_Prod.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Venta\FrmPago.resx">
       <DependentUpon>FrmPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Nav.resx">
+      <DependentUpon>Frm_Nav.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

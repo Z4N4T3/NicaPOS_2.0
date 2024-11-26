@@ -29,11 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel_inventario = new System.Windows.Forms.Panel();
-            this.BtnMovInventario = new System.Windows.Forms.Button();
-            this.BtnCatServicios = new System.Windows.Forms.Button();
-            this.BtnCatProductos = new System.Windows.Forms.Button();
-            this.BtnProveedor = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInventario));
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelProducto = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -61,77 +57,38 @@
             this.subcategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.preciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.negocioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.panel_inventario.SuspendLayout();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSistema = new System.Windows.Forms.Button();
+            this.btnCompra = new System.Windows.Forms.Button();
+            this.btnVenta = new System.Windows.Forms.Button();
+            this.btnCaja = new System.Windows.Forms.Button();
+            this.btnNegocio = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_cargo = new System.Windows.Forms.Label();
+            this.lb_eid = new System.Windows.Forms.Label();
+            this.lbl_name = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelOpt = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_salir = new System.Windows.Forms.Button();
+            this.BtnCatProd = new System.Windows.Forms.Button();
+            this.BtnSoli = new System.Windows.Forms.Button();
+            this.BtnProveedor = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panelProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelOpt.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel_inventario
-            // 
-            this.panel_inventario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel_inventario.Controls.Add(this.BtnMovInventario);
-            this.panel_inventario.Controls.Add(this.BtnCatServicios);
-            this.panel_inventario.Controls.Add(this.BtnCatProductos);
-            this.panel_inventario.Controls.Add(this.BtnProveedor);
-            this.panel_inventario.Location = new System.Drawing.Point(12, 27);
-            this.panel_inventario.Name = "panel_inventario";
-            this.panel_inventario.Size = new System.Drawing.Size(231, 522);
-            this.panel_inventario.TabIndex = 5;
-            this.panel_inventario.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_inventario_Paint);
-            // 
-            // BtnMovInventario
-            // 
-            this.BtnMovInventario.Location = new System.Drawing.Point(7, 131);
-            this.BtnMovInventario.Name = "BtnMovInventario";
-            this.BtnMovInventario.Size = new System.Drawing.Size(221, 36);
-            this.BtnMovInventario.TabIndex = 6;
-            this.BtnMovInventario.Text = "Movimientos de Inventario";
-            this.BtnMovInventario.UseVisualStyleBackColor = true;
-            // 
-            // BtnCatServicios
-            // 
-            this.BtnCatServicios.Location = new System.Drawing.Point(8, 89);
-            this.BtnCatServicios.Name = "BtnCatServicios";
-            this.BtnCatServicios.Size = new System.Drawing.Size(221, 36);
-            this.BtnCatServicios.TabIndex = 5;
-            this.BtnCatServicios.Text = "Catalogo de Servicios";
-            this.BtnCatServicios.UseVisualStyleBackColor = true;
-            // 
-            // BtnCatProductos
-            // 
-            this.BtnCatProductos.Location = new System.Drawing.Point(7, 47);
-            this.BtnCatProductos.Name = "BtnCatProductos";
-            this.BtnCatProductos.Size = new System.Drawing.Size(221, 36);
-            this.BtnCatProductos.TabIndex = 4;
-            this.BtnCatProductos.Text = "Catalogo de Productos";
-            this.BtnCatProductos.UseVisualStyleBackColor = true;
-            this.BtnCatProductos.Click += new System.EventHandler(this.BtnCatProductos_Click);
-            // 
-            // BtnProveedor
-            // 
-            this.BtnProveedor.Location = new System.Drawing.Point(7, 5);
-            this.BtnProveedor.Name = "BtnProveedor";
-            this.BtnProveedor.Size = new System.Drawing.Size(221, 36);
-            this.BtnProveedor.TabIndex = 3;
-            this.BtnProveedor.Text = "Proveedores";
-            this.BtnProveedor.UseVisualStyleBackColor = true;
             // 
             // panelMain
             // 
             this.panelMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelMain.Controls.Add(this.panelProducto);
-            this.panelMain.Location = new System.Drawing.Point(249, 24);
+            this.panelMain.Location = new System.Drawing.Point(249, 116);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(923, 525);
             this.panelMain.TabIndex = 6;
@@ -375,105 +332,263 @@
             this.preciosToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.preciosToolStripMenuItem.Text = "Precios";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.negocioToolStripMenuItem,
-            this.inventarioToolStripMenuItem,
-            this.cajaToolStripMenuItem,
-            this.reportesToolStripMenuItem,
-            this.sistemaToolStripMenuItem,
-            this.ventaToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1184, 24);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
-            // negocioToolStripMenuItem
-            // 
-            this.negocioToolStripMenuItem.Name = "negocioToolStripMenuItem";
-            this.negocioToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.negocioToolStripMenuItem.Text = "Negocio";
-            // 
-            // inventarioToolStripMenuItem
-            // 
-            this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.inventarioToolStripMenuItem.Text = "Inventario";
-            // 
-            // cajaToolStripMenuItem
-            // 
-            this.cajaToolStripMenuItem.Name = "cajaToolStripMenuItem";
-            this.cajaToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.cajaToolStripMenuItem.Text = "Caja";
-            // 
-            // reportesToolStripMenuItem
-            // 
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.reportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // sistemaToolStripMenuItem
-            // 
-            this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
-            this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.sistemaToolStripMenuItem.Text = "Sistema";
-            this.sistemaToolStripMenuItem.Click += new System.EventHandler(this.sistemaToolStripMenuItem_Click);
-            // 
-            // ventaToolStripMenuItem
-            // 
-            this.ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
-            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.ventaToolStripMenuItem.Text = "Facturacion";
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(232)))));
+            this.flowLayoutPanel1.Controls.Add(this.btnSistema);
+            this.flowLayoutPanel1.Controls.Add(this.btnCompra);
+            this.flowLayoutPanel1.Controls.Add(this.btnVenta);
+            this.flowLayoutPanel1.Controls.Add(this.btnCaja);
+            this.flowLayoutPanel1.Controls.Add(this.btnNegocio);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1187, 110);
+            this.flowLayoutPanel1.TabIndex = 7;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
+            // btnSistema
+            // 
+            this.btnSistema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(232)))));
+            this.btnSistema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSistema.ForeColor = System.Drawing.Color.White;
+            this.btnSistema.Image = ((System.Drawing.Image)(resources.GetObject("btnSistema.Image")));
+            this.btnSistema.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSistema.Location = new System.Drawing.Point(3, 3);
+            this.btnSistema.Name = "btnSistema";
+            this.btnSistema.Size = new System.Drawing.Size(100, 100);
+            this.btnSistema.TabIndex = 3;
+            this.btnSistema.Text = "Sistema";
+            this.btnSistema.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSistema.UseVisualStyleBackColor = false;
+            // 
+            // btnCompra
+            // 
+            this.btnCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(232)))));
+            this.btnCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompra.ForeColor = System.Drawing.Color.White;
+            this.btnCompra.Image = ((System.Drawing.Image)(resources.GetObject("btnCompra.Image")));
+            this.btnCompra.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCompra.Location = new System.Drawing.Point(109, 3);
+            this.btnCompra.Name = "btnCompra";
+            this.btnCompra.Size = new System.Drawing.Size(100, 100);
+            this.btnCompra.TabIndex = 4;
+            this.btnCompra.Text = "Compra";
+            this.btnCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCompra.UseVisualStyleBackColor = false;
+            // 
+            // btnVenta
+            // 
+            this.btnVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(232)))));
+            this.btnVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVenta.ForeColor = System.Drawing.Color.White;
+            this.btnVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnVenta.Image")));
+            this.btnVenta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVenta.Location = new System.Drawing.Point(215, 3);
+            this.btnVenta.Name = "btnVenta";
+            this.btnVenta.Size = new System.Drawing.Size(100, 100);
+            this.btnVenta.TabIndex = 5;
+            this.btnVenta.Text = "Venta";
+            this.btnVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnVenta.UseVisualStyleBackColor = false;
+            // 
+            // btnCaja
+            // 
+            this.btnCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(232)))));
+            this.btnCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaja.ForeColor = System.Drawing.Color.White;
+            this.btnCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCaja.Image")));
+            this.btnCaja.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCaja.Location = new System.Drawing.Point(321, 3);
+            this.btnCaja.Name = "btnCaja";
+            this.btnCaja.Size = new System.Drawing.Size(100, 100);
+            this.btnCaja.TabIndex = 6;
+            this.btnCaja.Text = "Caja";
+            this.btnCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCaja.UseVisualStyleBackColor = false;
+            // 
+            // btnNegocio
+            // 
+            this.btnNegocio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(232)))));
+            this.btnNegocio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNegocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNegocio.ForeColor = System.Drawing.Color.White;
+            this.btnNegocio.Image = ((System.Drawing.Image)(resources.GetObject("btnNegocio.Image")));
+            this.btnNegocio.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNegocio.Location = new System.Drawing.Point(427, 3);
+            this.btnNegocio.Name = "btnNegocio";
+            this.btnNegocio.Size = new System.Drawing.Size(100, 100);
+            this.btnNegocio.TabIndex = 7;
+            this.btnNegocio.Text = "Negocio";
+            this.btnNegocio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNegocio.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(167)))));
+            this.panel1.Controls.Add(this.lbl_cargo);
+            this.panel1.Controls.Add(this.lb_eid);
+            this.panel1.Controls.Add(this.lbl_name);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(1, 109);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(214, 289);
+            this.panel1.TabIndex = 11;
+            // 
+            // lbl_cargo
+            // 
+            this.lbl_cargo.AutoSize = true;
+            this.lbl_cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cargo.ForeColor = System.Drawing.Color.White;
+            this.lbl_cargo.Location = new System.Drawing.Point(28, 243);
+            this.lbl_cargo.Name = "lbl_cargo";
+            this.lbl_cargo.Size = new System.Drawing.Size(57, 20);
+            this.lbl_cargo.TabIndex = 3;
+            this.lbl_cargo.Text = "Cargo";
+            // 
+            // lb_eid
+            // 
+            this.lb_eid.AutoSize = true;
+            this.lb_eid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_eid.ForeColor = System.Drawing.Color.White;
+            this.lb_eid.Location = new System.Drawing.Point(28, 212);
+            this.lb_eid.Name = "lb_eid";
+            this.lb_eid.Size = new System.Drawing.Size(116, 20);
+            this.lb_eid.TabIndex = 2;
+            this.lb_eid.Text = "ID_empleado";
+            // 
+            // lbl_name
+            // 
+            this.lbl_name.AutoSize = true;
+            this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_name.ForeColor = System.Drawing.Color.White;
+            this.lbl_name.Location = new System.Drawing.Point(22, 177);
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.Size = new System.Drawing.Size(155, 20);
+            this.lbl_name.TabIndex = 1;
+            this.lbl_name.Text = "Nombre Y apellido";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(26, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 140);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panelOpt
+            // 
+            this.panelOpt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(167)))));
+            this.panelOpt.Controls.Add(this.btn_salir);
+            this.panelOpt.Controls.Add(this.BtnCatProd);
+            this.panelOpt.Controls.Add(this.BtnSoli);
+            this.panelOpt.Controls.Add(this.BtnProveedor);
+            this.panelOpt.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
+            this.panelOpt.Location = new System.Drawing.Point(-2, 394);
+            this.panelOpt.Name = "panelOpt";
+            this.panelOpt.Size = new System.Drawing.Size(217, 370);
+            this.panelOpt.TabIndex = 10;
+            // 
+            // btn_salir
+            // 
+            this.btn_salir.AutoSize = true;
+            this.btn_salir.BackColor = System.Drawing.Color.White;
+            this.btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(23)))), ((int)(((byte)(31)))));
+            this.btn_salir.Location = new System.Drawing.Point(3, 309);
+            this.btn_salir.Name = "btn_salir";
+            this.btn_salir.Size = new System.Drawing.Size(211, 58);
+            this.btn_salir.TabIndex = 1;
+            this.btn_salir.Text = "Salir";
+            this.btn_salir.UseVisualStyleBackColor = false;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
+            // 
+            // BtnCatProd
+            // 
+            this.BtnCatProd.AutoSize = true;
+            this.BtnCatProd.BackColor = System.Drawing.Color.White;
+            this.BtnCatProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCatProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCatProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(23)))), ((int)(((byte)(31)))));
+            this.BtnCatProd.Location = new System.Drawing.Point(3, 245);
+            this.BtnCatProd.Name = "BtnCatProd";
+            this.BtnCatProd.Size = new System.Drawing.Size(211, 58);
+            this.BtnCatProd.TabIndex = 0;
+            this.BtnCatProd.Text = "Productos";
+            this.BtnCatProd.UseVisualStyleBackColor = false;
+            this.BtnCatProd.Click += new System.EventHandler(this.BtnCatProd_Click);
+            // 
+            // BtnSoli
+            // 
+            this.BtnSoli.AutoSize = true;
+            this.BtnSoli.BackColor = System.Drawing.Color.White;
+            this.BtnSoli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSoli.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSoli.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(23)))), ((int)(((byte)(31)))));
+            this.BtnSoli.Location = new System.Drawing.Point(3, 181);
+            this.BtnSoli.Name = "BtnSoli";
+            this.BtnSoli.Size = new System.Drawing.Size(211, 58);
+            this.BtnSoli.TabIndex = 2;
+            this.BtnSoli.Text = "Solicitud de Compra";
+            this.BtnSoli.UseVisualStyleBackColor = false;
+            // 
+            // BtnProveedor
+            // 
+            this.BtnProveedor.AutoSize = true;
+            this.BtnProveedor.BackColor = System.Drawing.Color.White;
+            this.BtnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(23)))), ((int)(((byte)(31)))));
+            this.BtnProveedor.Location = new System.Drawing.Point(3, 117);
+            this.BtnProveedor.Name = "BtnProveedor";
+            this.BtnProveedor.Size = new System.Drawing.Size(211, 58);
+            this.BtnProveedor.TabIndex = 3;
+            this.BtnProveedor.Text = "Proveedores";
+            this.BtnProveedor.UseVisualStyleBackColor = false;
+            // 
             // FrmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 561);
-            this.Controls.Add(this.panel_inventario);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelOpt);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelMain);
-            this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip2;
             this.Name = "FrmInventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInventario";
-            this.panel_inventario.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.FrmInventario_Load);
             this.panelMain.ResumeLayout(false);
             this.panelProducto.ResumeLayout(false);
             this.panelProducto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelOpt.ResumeLayout(false);
+            this.panelOpt.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel_inventario;
-        private System.Windows.Forms.Button BtnMovInventario;
-        private System.Windows.Forms.Button BtnCatServicios;
-        private System.Windows.Forms.Button BtnCatProductos;
-        private System.Windows.Forms.Button BtnProveedor;
         private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem negocioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cajaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ventaToolStripMenuItem;
         private System.Windows.Forms.Panel panelProducto;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button3;
@@ -501,5 +616,21 @@
         private System.Windows.Forms.ToolStripMenuItem configuracionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem preciosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnSistema;
+        private System.Windows.Forms.Button btnCompra;
+        private System.Windows.Forms.Button btnVenta;
+        private System.Windows.Forms.Button btnCaja;
+        private System.Windows.Forms.Button btnNegocio;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbl_cargo;
+        private System.Windows.Forms.Label lb_eid;
+        private System.Windows.Forms.Label lbl_name;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.FlowLayoutPanel panelOpt;
+        private System.Windows.Forms.Button btn_salir;
+        private System.Windows.Forms.Button BtnCatProd;
+        private System.Windows.Forms.Button BtnSoli;
+        private System.Windows.Forms.Button BtnProveedor;
     }
 }

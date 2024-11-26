@@ -13,6 +13,7 @@ using Entidad;
 using Entidad.Empleado;
 using interfaces.Clases;
 using interfaces.Formularios.Empleados;
+using interfaces.Utilidades;
 using Negocio;
 using Negocio.Division_geografica;
 using Negocio.Tienda;
@@ -21,22 +22,21 @@ namespace interfaces.Formularios
 {
     public partial class FrmNegocio : Form
     {
-        private ClsNavbar menuHandler;
+        private Navy menuHandler;
         private E_usuario e_usr = new E_usuario();
         private int e_id;
         public FrmNegocio(int eid)
         {
             this.e_id = eid;
             InitializeComponent();
-            menuHandler = new ClsNavbar(this, eid);
-            menuHandler.SetupMenu(menuStrip1);
-            menuHandler.configAcceso(menuStrip1);
+            menuHandler = new Navy(this, eid);
+            menuHandler.SetupMenu(flowLayoutPanel1);
+            menuHandler.configAcceso(flowLayoutPanel1);
             loadDept();
             
             loadSuc();
 
             cargarCompTel();
-            loadEmpleados();
         }
 
         private void FrmNegocio_Load(object sender, EventArgs e)
@@ -49,10 +49,7 @@ namespace interfaces.Formularios
 
         }
 
-        private void BtnEmpleado_Click(object sender, EventArgs e)
-        {
-           panelEmpleado.Visible = true;
-        }
+
 
 
         // agregar
@@ -311,6 +308,17 @@ namespace interfaces.Formularios
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+
+        }
+
+        private void BtnEmpleado_Click_1(object sender, EventArgs e)
+        {
+            panelEmpleado.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            loadEmpleados();
 
         }
     }

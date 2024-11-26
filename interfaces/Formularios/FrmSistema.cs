@@ -10,13 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad;
 using interfaces.Clases;
+using interfaces.Utilidades;
 using Negocio;
 
 namespace interfaces.Formularios
 {
     public partial class FrmSistema : Form
     {
-        private ClsNavbar menuHandler;
+        private Navy menuHandler;
 
         private int e_id;
        
@@ -24,9 +25,9 @@ namespace interfaces.Formularios
         {
             this.e_id = eid;
             InitializeComponent();
-            menuHandler = new ClsNavbar(this, eid);
-            menuHandler.SetupMenu(menuStrip1);
-            menuHandler.configAcceso(menuStrip1);
+            menuHandler = new Navy(this, eid);
+            menuHandler.SetupMenu(flowLayoutPanel1);
+            menuHandler.configAcceso(flowLayoutPanel1);
             loadData();
         }
 
@@ -169,6 +170,11 @@ namespace interfaces.Formularios
         }
 
         private void ventaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmSistema_Load(object sender, EventArgs e)
         {
 
         }

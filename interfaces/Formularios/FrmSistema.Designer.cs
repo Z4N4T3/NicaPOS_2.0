@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSistema));
             this.FrmUsuario = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,17 +47,16 @@
             this.BtnPermiso = new System.Windows.Forms.Button();
             this.BtnUser = new System.Windows.Forms.Button();
             this.BtnRoles = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.negocioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSistema = new System.Windows.Forms.Button();
+            this.btnCompra = new System.Windows.Forms.Button();
+            this.btnVenta = new System.Windows.Forms.Button();
+            this.btnCaja = new System.Windows.Forms.Button();
+            this.btnNegocio = new System.Windows.Forms.Button();
             this.FrmUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridUsuario)).BeginInit();
             this.panelSistema.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // FrmUsuario
@@ -75,9 +75,9 @@
             this.FrmUsuario.Controls.Add(this.txt_usr_pw);
             this.FrmUsuario.Controls.Add(this.gridUsuario);
             this.FrmUsuario.Controls.Add(this.txt_usr_name);
-            this.FrmUsuario.Location = new System.Drawing.Point(248, 27);
+            this.FrmUsuario.Location = new System.Drawing.Point(248, 140);
             this.FrmUsuario.Name = "FrmUsuario";
-            this.FrmUsuario.Size = new System.Drawing.Size(924, 522);
+            this.FrmUsuario.Size = new System.Drawing.Size(924, 409);
             this.FrmUsuario.TabIndex = 6;
             this.FrmUsuario.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmUsuario_Paint);
             // 
@@ -201,9 +201,9 @@
             this.panelSistema.Controls.Add(this.BtnPermiso);
             this.panelSistema.Controls.Add(this.BtnUser);
             this.panelSistema.Controls.Add(this.BtnRoles);
-            this.panelSistema.Location = new System.Drawing.Point(11, 27);
+            this.panelSistema.Location = new System.Drawing.Point(11, 140);
             this.panelSistema.Name = "panelSistema";
-            this.panelSistema.Size = new System.Drawing.Size(231, 522);
+            this.panelSistema.Size = new System.Drawing.Size(231, 409);
             this.panelSistema.TabIndex = 5;
             // 
             // BtnPermiso
@@ -234,78 +234,117 @@
             this.BtnRoles.Text = "Roles";
             this.BtnRoles.UseVisualStyleBackColor = true;
             // 
-            // menuStrip1
+            // flowLayoutPanel1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.negocioToolStripMenuItem,
-            this.inventarioToolStripMenuItem,
-            this.cajaToolStripMenuItem,
-            this.reportesToolStripMenuItem,
-            this.sistemaToolStripMenuItem,
-            this.ventaToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1184, 24);
-            this.menuStrip1.TabIndex = 7;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(232)))));
+            this.flowLayoutPanel1.Controls.Add(this.btnSistema);
+            this.flowLayoutPanel1.Controls.Add(this.btnCompra);
+            this.flowLayoutPanel1.Controls.Add(this.btnVenta);
+            this.flowLayoutPanel1.Controls.Add(this.btnCaja);
+            this.flowLayoutPanel1.Controls.Add(this.btnNegocio);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 1);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1187, 110);
+            this.flowLayoutPanel1.TabIndex = 7;
             // 
-            // negocioToolStripMenuItem
+            // btnSistema
             // 
-            this.negocioToolStripMenuItem.Name = "negocioToolStripMenuItem";
-            this.negocioToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.negocioToolStripMenuItem.Text = "Negocio";
+            this.btnSistema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(232)))));
+            this.btnSistema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSistema.ForeColor = System.Drawing.Color.White;
+            this.btnSistema.Image = ((System.Drawing.Image)(resources.GetObject("btnSistema.Image")));
+            this.btnSistema.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSistema.Location = new System.Drawing.Point(3, 3);
+            this.btnSistema.Name = "btnSistema";
+            this.btnSistema.Size = new System.Drawing.Size(100, 100);
+            this.btnSistema.TabIndex = 3;
+            this.btnSistema.Text = "Sistema";
+            this.btnSistema.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSistema.UseVisualStyleBackColor = false;
             // 
-            // inventarioToolStripMenuItem
+            // btnCompra
             // 
-            this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.inventarioToolStripMenuItem.Text = "Inventario";
+            this.btnCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(232)))));
+            this.btnCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompra.ForeColor = System.Drawing.Color.White;
+            this.btnCompra.Image = ((System.Drawing.Image)(resources.GetObject("btnCompra.Image")));
+            this.btnCompra.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCompra.Location = new System.Drawing.Point(109, 3);
+            this.btnCompra.Name = "btnCompra";
+            this.btnCompra.Size = new System.Drawing.Size(100, 100);
+            this.btnCompra.TabIndex = 4;
+            this.btnCompra.Text = "Compra";
+            this.btnCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCompra.UseVisualStyleBackColor = false;
             // 
-            // cajaToolStripMenuItem
+            // btnVenta
             // 
-            this.cajaToolStripMenuItem.Name = "cajaToolStripMenuItem";
-            this.cajaToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.cajaToolStripMenuItem.Text = "Caja";
+            this.btnVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(232)))));
+            this.btnVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVenta.ForeColor = System.Drawing.Color.White;
+            this.btnVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnVenta.Image")));
+            this.btnVenta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVenta.Location = new System.Drawing.Point(215, 3);
+            this.btnVenta.Name = "btnVenta";
+            this.btnVenta.Size = new System.Drawing.Size(100, 100);
+            this.btnVenta.TabIndex = 5;
+            this.btnVenta.Text = "Venta";
+            this.btnVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnVenta.UseVisualStyleBackColor = false;
             // 
-            // reportesToolStripMenuItem
+            // btnCaja
             // 
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.reportesToolStripMenuItem.Text = "Reportes";
+            this.btnCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(232)))));
+            this.btnCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaja.ForeColor = System.Drawing.Color.White;
+            this.btnCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCaja.Image")));
+            this.btnCaja.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCaja.Location = new System.Drawing.Point(321, 3);
+            this.btnCaja.Name = "btnCaja";
+            this.btnCaja.Size = new System.Drawing.Size(100, 100);
+            this.btnCaja.TabIndex = 6;
+            this.btnCaja.Text = "Caja";
+            this.btnCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCaja.UseVisualStyleBackColor = false;
             // 
-            // sistemaToolStripMenuItem
+            // btnNegocio
             // 
-            this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
-            this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.sistemaToolStripMenuItem.Text = "Sistema";
-            // 
-            // ventaToolStripMenuItem
-            // 
-            this.ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
-            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.ventaToolStripMenuItem.Text = "Facturacion";
-            this.ventaToolStripMenuItem.Click += new System.EventHandler(this.ventaToolStripMenuItem_Click);
+            this.btnNegocio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(232)))));
+            this.btnNegocio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNegocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNegocio.ForeColor = System.Drawing.Color.White;
+            this.btnNegocio.Image = ((System.Drawing.Image)(resources.GetObject("btnNegocio.Image")));
+            this.btnNegocio.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNegocio.Location = new System.Drawing.Point(427, 3);
+            this.btnNegocio.Name = "btnNegocio";
+            this.btnNegocio.Size = new System.Drawing.Size(100, 100);
+            this.btnNegocio.TabIndex = 7;
+            this.btnNegocio.Text = "Negocio";
+            this.btnNegocio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNegocio.UseVisualStyleBackColor = false;
             // 
             // FrmSistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 561);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.FrmUsuario);
             this.Controls.Add(this.panelSistema);
             this.Name = "FrmSistema";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSistema";
+            this.Load += new System.EventHandler(this.FrmSistema_Load);
             this.FrmUsuario.ResumeLayout(false);
             this.FrmUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridUsuario)).EndInit();
             this.panelSistema.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -323,18 +362,17 @@
         private System.Windows.Forms.Button BtnPermiso;
         private System.Windows.Forms.Button BtnUser;
         private System.Windows.Forms.Button BtnRoles;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem negocioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cajaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ventaToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_usr_eid;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_usr_id;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnSistema;
+        private System.Windows.Forms.Button btnCompra;
+        private System.Windows.Forms.Button btnVenta;
+        private System.Windows.Forms.Button btnCaja;
+        private System.Windows.Forms.Button btnNegocio;
     }
 }

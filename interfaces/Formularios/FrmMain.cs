@@ -9,21 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad;
 using interfaces.Clases;
+using interfaces.Utilidades;
 
 namespace interfaces.Formularios
 {
     public partial class FrmMain : Form
     {
-        private ClsNavbar menuHandler;
+        private Navy menuHandler;
         private E_usuario e_usr = new E_usuario();
         private int e_id;
         public FrmMain(int eid)
         {
             this.e_id = eid;
             InitializeComponent();
-            menuHandler = new ClsNavbar(this, eid);
-            menuHandler.SetupMenu(menuStrip1);
-            menuHandler.configAcceso(menuStrip1);
+            //menuHandler = new ClsNavbar(this, eid);
+            //menuHandler.SetupMenu(menuStrip1);
+            //menuHandler.configAcceso(menuStrip1);
 
         }
 

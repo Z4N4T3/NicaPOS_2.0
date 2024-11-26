@@ -14,6 +14,7 @@ using Entidad.Tienda;
 using Entidad.Venta;
 using interfaces.Clases;
 using interfaces.Formularios.Venta;
+using interfaces.Utilidades;
 using Negocio.Producto;
 using Negocio.Tienda;
 
@@ -21,7 +22,8 @@ namespace interfaces.Formularios
 {
     public partial class FrmFacturacion : Form
     {
-        private ClsNavbar menuHandler;
+        private Navy menuHandler;
+        
         double iva = E_tienda.IVA;
         double tasa = E_tienda.TASA;
         private E_usuario e_usr = new E_usuario();
@@ -30,10 +32,10 @@ namespace interfaces.Formularios
         {
             this.e_id = eid;
             InitializeComponent();
-            menuHandler = new ClsNavbar(this, eid);
+            menuHandler = new Navy(this, eid);
 
-            menuHandler.SetupMenu(menuStrip1);
-            menuHandler.configAcceso(menuStrip1);
+            menuHandler.SetupMenu(flowLayoutPanel1);
+            menuHandler.configAcceso(flowLayoutPanel1);
             loadProdPrecio();
             getTienda();
 
@@ -124,15 +126,7 @@ namespace interfaces.Formularios
 
         private void dtGrid_det_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //int qty = 1;
-
-            //DataGridViewRow selectedRow = dtGrid_det.Rows[e.RowIndex];
-            //qty = Convert.ToInt32(dtGrid_det.Rows[e.RowIndex].Cells["Column1"].Value);
-            //if (selectedRow.Cells["Column4"].Value != DBNull.Value)
-            //{
-            //    selectedRow.Cells["Column4"].Value = Convert.ToDecimal(selectedRow.Cells["Column4"].Value) * qty;
-            //}
-            //cal_subtotal(iva);
+  
 
         }
 
@@ -245,6 +239,24 @@ namespace interfaces.Formularios
 
         }
 
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Close();
+            login.Show();
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            dtGrid_det.Rows.Clear();
+           
+        }
+
         private void btn_facturar_Click(object sender, EventArgs e)
         {
             // verificar si contiene filas
@@ -255,7 +267,20 @@ namespace interfaces.Formularios
             }
             else
             {
-                FrmPago frmPago = new FrmPago(listaDetVenta);
+                E_venta venta = new E_venta()
+                {
+
+                    Subtotal = Convert.ToDecimal(lb_subtotal.Text),
+                    Impuesto = Convert.ToDecimal(lb_iva.Text),
+                    Descuento = Convert.ToDecimal(lb_descuento.Text),
+                    Total = Convert.ToDecimal(lb_total.Text),
+
+                };
+
+                
+
+
+                FrmPago frmPago = new FrmPago(listaDetVenta,venta);
                 frmPago.Show();
             }
         }

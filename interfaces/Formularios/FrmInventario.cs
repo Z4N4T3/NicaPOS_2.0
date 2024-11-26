@@ -12,12 +12,13 @@ using System.Windows.Forms;
 using Entidad;
 using interfaces.Clases;
 using interfaces.Formularios.Clasificacion;
+using interfaces.Utilidades;
 
 namespace interfaces.Formularios
 {
     public partial class FrmInventario : Form
     {
-        private ClsNavbar menuHandler;
+        private Navy menuHandler;
         private Clases.ClsDatabase objDB;
         private E_usuario e_usr = new E_usuario();
         private int e_id;
@@ -25,9 +26,9 @@ namespace interfaces.Formularios
         {
             this.e_id = eid;
             InitializeComponent();
-            menuHandler = new ClsNavbar(this, eid);
-            menuHandler.SetupMenu(menuStrip1);
-            menuHandler.configAcceso(menuStrip1);
+            menuHandler = new Navy(this, eid);
+            menuHandler.SetupMenu(flowLayoutPanel1);
+            menuHandler.configAcceso(flowLayoutPanel1);
             objDB = new Clases.ClsDatabase();
             objDB.conectarBD();
         }
@@ -52,13 +53,7 @@ namespace interfaces.Formularios
 
         }
 
-        private void BtnCatProductos_Click(object sender, EventArgs e)
-        {
-            
-            panelProducto.Visible = true;
-            CargarData("sp_mostrar_informacion_productos");
-
-        }
+   
 
 
         private void CargarData(String nombreSP)
@@ -105,6 +100,29 @@ namespace interfaces.Formularios
         {
             Frm_Subcategoria frm_Subcategoria = new Frm_Subcategoria();
             frm_Subcategoria.Show();
+        }
+
+        private void FrmInventario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Close();
+            login.Show();
+        }
+
+        private void BtnCatProd_Click(object sender, EventArgs e)
+        {
+            panelProducto.Visible = true;
+            CargarData("sp_mostrar_informacion_productos");
         }
     }
 }

@@ -15,12 +15,21 @@ namespace interfaces.Formularios.Venta
     {
         int tipoPago = 1;
         private List<E_Det_venta> listaDetalleVenta;
+        private E_venta venta;
 
-        public FrmPago(List<E_Det_venta> listaDetalle)
+        
+        public FrmPago(List<E_Det_venta> listaDetalle, E_venta venta)
         {
             this.listaDetalleVenta = listaDetalle;
 
             InitializeComponent();
+            this.venta = venta;
+
+            lb_subtotal.Text =venta.Subtotal.ToString();
+            lb_descuento.Text = venta.Descuento.ToString();
+            lb_iva.Text = venta.Impuesto.ToString();
+            lb_total.Text = venta.Total.ToString();
+            total.Text = venta.Total.ToString();
         }
 
         void colores(Button btn)
