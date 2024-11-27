@@ -37,6 +37,7 @@ namespace interfaces.Formularios
             loadSuc();
 
             cargarCompTel();
+            checkBox_estado.Checked = true;
         }
 
         private void FrmNegocio_Load(object sender, EventArgs e)

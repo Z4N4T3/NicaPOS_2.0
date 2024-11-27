@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad;
+using interfaces.Formularios;
 using interfaces.Utilidades;
 
 namespace interfaces
@@ -35,6 +36,13 @@ namespace interfaces
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Close();
+            login.Show();
         }
     }
 }

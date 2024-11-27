@@ -25,11 +25,11 @@ namespace interfaces.Formularios.Venta
             InitializeComponent();
             this.venta = venta;
 
-            lb_subtotal.Text =venta.Subtotal.ToString();
-            lb_descuento.Text = venta.Descuento.ToString();
-            lb_iva.Text = venta.Impuesto.ToString();
-            lb_total.Text = venta.Total.ToString();
-            total.Text = venta.Total.ToString();
+            lb_subtotal.Text =venta.Subtotal.ToString("F2");
+            lb_descuento.Text = venta.Descuento.ToString("F2");
+            lb_iva.Text = venta.Impuesto.ToString("F2");
+            lb_total.Text = venta.Total.ToString("F2");
+            total.Text = venta.Total.ToString("F2");
         }
 
         void colores(Button btn)
@@ -87,6 +87,11 @@ namespace interfaces.Formularios.Venta
         }
 
         private void FrmPago_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void total_Click(object sender, EventArgs e)
         {
 
         }

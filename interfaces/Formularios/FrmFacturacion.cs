@@ -27,6 +27,14 @@ namespace interfaces.Formularios
         double iva = E_tienda.IVA;
         double tasa = E_tienda.TASA;
         private E_usuario e_usr = new E_usuario();
+        private E_venta venta = new E_venta()
+        {
+
+            Subtotal = 0.0m,
+            Impuesto = 0.0m,
+            Descuento = 0.0m,
+            Total = 0.0m,
+        };
         private int e_id;
         public FrmFacturacion(int eid)
         {
@@ -166,12 +174,13 @@ namespace interfaces.Formularios
             nuevaFila.Cells["Column4"].Value = precioU * qty;
             E_Det_venta detalleVenta = new E_Det_venta()
             {
-                Id = idProducto,        
-                Cantidad = qty,         
+                Id = idProducto,
+                Cantidad = qty,
                 PrecioU = precioU,
                 Total = qty * precioU,
                 Descuento = 1,
                 Impuesto = 0,
+             
             };
 
             listaDetVenta.Add(detalleVenta);
@@ -215,23 +224,24 @@ namespace interfaces.Formularios
         
         private void cal_subtotal(double iva)
         {
-            double subtotal = 0, total =0, impuesto =0,descuento=0.0;
+            
+            
             foreach (DataGridViewRow row in dtGrid_det.Rows)
             {
                 // valida si no es una fila vacia
                 if (row.Cells["Column4"].Value != null && row.Cells["Column4"].Value != DBNull.Value)
                 {
-                    subtotal += Convert.ToDouble(row.Cells["Column4"].Value);
+                    venta.Subtotal += Convert.ToDecimal(row.Cells["Column4"].Value);
                 }
             }
 
-            impuesto = subtotal * iva;
-            total = subtotal+ impuesto - descuento;
+            venta.Impuesto = venta.Subtotal * Convert.ToDecimal(iva);
+            venta.Total= venta.Subtotal + venta.Impuesto - venta.Descuento;
            
-            lb_subtotal.Text = subtotal.ToString("F2");
-            lb_descuento.Text = descuento.ToString("F2");
-            lb_iva.Text = impuesto.ToString("F2");
-            lb_total.Text = total.ToString("F2");
+            lb_subtotal.Text = venta.Subtotal.ToString("F2");
+            lb_descuento.Text = venta.Descuento.ToString("F2");
+            lb_iva.Text = venta.Impuesto.ToString("F2");
+            lb_total.Text = venta.Total.ToString("F2");
         }
 
         private void negocioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -253,10 +263,21 @@ namespace interfaces.Formularios
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            dtGrid_det.Rows.Clear();
-           
+            limpiarVenta();
         }
+        private void limpiarVenta()
+        {
+            dtGrid_det.Rows.Clear();
+            venta.Subtotal = 0.0m;
+            venta.Descuento = 0.0m;
+            venta.Impuesto = 0.0m;
+            venta.Total = 0.0m;
+            lb_subtotal.Text = venta.Subtotal.ToString("F2");
+            lb_descuento.Text = venta.Descuento.ToString("F2");
+            lb_iva.Text = venta.Impuesto.ToString("F2");
+            lb_total.Text = venta.Total.ToString("F2");
 
+        }
         private void btn_facturar_Click(object sender, EventArgs e)
         {
             // verificar si contiene filas
@@ -267,18 +288,11 @@ namespace interfaces.Formularios
             }
             else
             {
-                E_venta venta = new E_venta()
-                {
 
-                    Subtotal = Convert.ToDecimal(lb_subtotal.Text),
-                    Impuesto = Convert.ToDecimal(lb_iva.Text),
-                    Descuento = Convert.ToDecimal(lb_descuento.Text),
-                    Total = Convert.ToDecimal(lb_total.Text),
+                venta.id_empleado = e_id;
 
-                };
 
-                
-
+                MessageBox.Show(""+ venta.id_empleado);
 
                 FrmPago frmPago = new FrmPago(listaDetVenta,venta);
                 frmPago.Show();

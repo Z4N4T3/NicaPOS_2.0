@@ -21,6 +21,8 @@ namespace Entidad.Venta
         public int Id_sucursal { get; set; }
         public int Id_cliente { get; set; }
         public int Id_tipo_pago { get; set; }
+        public int id_empleado { get; set; }
+
     }
 
     public class E_Det_venta {

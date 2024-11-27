@@ -44,7 +44,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(134, 126);
+            this.button1.Location = new System.Drawing.Point(134, 96);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(219, 126);
+            this.button2.Location = new System.Drawing.Point(219, 96);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -65,24 +65,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 69);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(42, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.Size = new System.Drawing.Size(86, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Contraseña";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 33);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(67, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.Size = new System.Drawing.Size(61, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Usuario";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(134, 36);
+            this.textBox1.Location = new System.Drawing.Point(134, 19);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(160, 20);
             this.textBox1.TabIndex = 5;
@@ -90,7 +94,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(134, 62);
+            this.textBox2.Location = new System.Drawing.Point(134, 45);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(160, 20);
             this.textBox2.TabIndex = 6;
@@ -99,7 +103,7 @@
             // 
             this.messageTextBox.AutoSize = true;
             this.messageTextBox.ForeColor = System.Drawing.Color.Crimson;
-            this.messageTextBox.Location = new System.Drawing.Point(109, 100);
+            this.messageTextBox.Location = new System.Drawing.Point(146, 80);
             this.messageTextBox.Name = "messageTextBox";
             this.messageTextBox.Size = new System.Drawing.Size(148, 13);
             this.messageTextBox.TabIndex = 7;
@@ -109,7 +113,7 @@
             // 
             // panelMain
             // 
-            this.panelMain.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panelMain.BackColor = System.Drawing.SystemColors.Highlight;
             this.panelMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelMain.Controls.Add(this.textBox1);
             this.panelMain.Controls.Add(this.messageTextBox);
@@ -118,33 +122,36 @@
             this.panelMain.Controls.Add(this.button1);
             this.panelMain.Controls.Add(this.textBox2);
             this.panelMain.Controls.Add(this.label1);
-            this.panelMain.Location = new System.Drawing.Point(12, 190);
+            this.panelMain.Location = new System.Drawing.Point(216, 110);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(406, 169);
+            this.panelMain.Size = new System.Drawing.Size(335, 140);
             this.panelMain.TabIndex = 8;
+            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(145, 57);
+            this.pictureBox2.Location = new System.Drawing.Point(45, 110);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(163, 105);
+            this.pictureBox2.Size = new System.Drawing.Size(174, 140);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(430, 422);
+            this.ClientSize = new System.Drawing.Size(654, 330);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panelMain);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

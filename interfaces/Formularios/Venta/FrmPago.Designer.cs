@@ -241,6 +241,7 @@
             this.total.Size = new System.Drawing.Size(39, 13);
             this.total.TabIndex = 8;
             this.total.Text = "00.00";
+            this.total.Click += new System.EventHandler(this.total_Click);
             // 
             // FrmPago
             // 
