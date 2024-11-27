@@ -284,6 +284,7 @@
             this.Controls.Add(this.panelOpt);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Frm_Nav";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Nav";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panelOpt.ResumeLayout(false);

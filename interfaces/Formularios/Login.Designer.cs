@@ -98,6 +98,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(160, 20);
             this.textBox2.TabIndex = 6;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // messageTextBox
             // 
@@ -122,7 +123,7 @@
             this.panelMain.Controls.Add(this.button1);
             this.panelMain.Controls.Add(this.textBox2);
             this.panelMain.Controls.Add(this.label1);
-            this.panelMain.Location = new System.Drawing.Point(216, 110);
+            this.panelMain.Location = new System.Drawing.Point(232, 89);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(335, 140);
             this.panelMain.TabIndex = 8;
@@ -132,7 +133,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(45, 110);
+            this.pictureBox2.Location = new System.Drawing.Point(61, 89);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(174, 140);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

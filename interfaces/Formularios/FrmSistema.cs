@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad;
 using interfaces.Clases;
+using interfaces.Formularios.usuarios;
 using interfaces.Utilidades;
 using Negocio;
 
@@ -66,38 +67,10 @@ namespace interfaces.Formularios
         {
             N_usuario n_usr = new N_usuario();
 
-            crearUsuario(n_usr);
+          
         }
 
-        void crearUsuario(N_usuario n_usr)
-        {
-
-
-            if (String.IsNullOrEmpty(txt_usr_name.Text) || String.IsNullOrEmpty(txt_usr_pw.Text)|| String.IsNullOrEmpty(txt_usr_eid.Text))
-            {
-                MessageBox.Show("No se permiten campos vacios");
-            }
-            else
-            {
-                E_usuario usr = new E_usuario();
-                usr.usr_name = txt_usr_name.Text;
-                usr.usr_pw = txt_usr_pw.Text;
-                
-                if (int.TryParse(txt_usr_eid.Text, out int eid))
-                {
-                    usr.id_emp = eid;
-                }
-                else
-                {
-                    MessageBox.Show("El eid debe ser un número.");
-                    return;
-                }
-                bool creado = n_usr.n_crear(usr);
-                MessageBox.Show(creado ? "Usuario creado exitosamente." : "Error al crear el usuario.");
-                loadData();
-            }
-            
-        }
+        
 
         private void txt_usr_name_TextChanged(object sender, EventArgs e)
         {
@@ -177,6 +150,29 @@ namespace interfaces.Formularios
         private void FrmSistema_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Close();
+            login.Show();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_usr_eid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nuevoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCrearUsuario frmCrearUsuario = new FrmCrearUsuario();
+            frmCrearUsuario.Show();
         }
     }
 }

@@ -88,5 +88,10 @@ namespace interfaces.Formularios
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

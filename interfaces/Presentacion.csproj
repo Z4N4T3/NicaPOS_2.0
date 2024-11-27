@@ -70,6 +70,12 @@
     <Compile Include="Formularios\Empleados\FrmCargo.Designer.cs">
       <DependentUpon>FrmCargo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\usuarios\FrmCrearUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\usuarios\FrmCrearUsuario.Designer.cs">
+      <DependentUpon>FrmCrearUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Venta\FrmPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\usuarios\FrmCrearUsuario.resx">
+      <DependentUpon>FrmCrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Venta\FrmPago.resx">
       <DependentUpon>FrmPago.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,7 +210,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Formularios\usuarios\" />
     <Folder Include="img\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
