@@ -542,9 +542,10 @@
             this.flowLayoutPanel1.Controls.Add(this.btnVenta);
             this.flowLayoutPanel1.Controls.Add(this.btnCaja);
             this.flowLayoutPanel1.Controls.Add(this.btnNegocio);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1187, 110);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1184, 110);
             this.flowLayoutPanel1.TabIndex = 7;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -782,6 +783,7 @@
             this.Name = "FrmFacturacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmFacturacion";
+            this.Load += new System.EventHandler(this.FrmFacturacion_Load);
             this.panelMain.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

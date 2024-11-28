@@ -78,7 +78,10 @@ namespace interfaces.Utilidades
                     abrirFrm(new FrmFacturacion(e_id));
                     break;
 
-            
+
+                case "btnCaja":
+                    abrirFrm(new FrmCaja(e_id));
+                    break;
 
                 default:
                     MessageBox.Show("Módulo no disponible");

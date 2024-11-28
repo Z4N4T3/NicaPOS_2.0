@@ -13,6 +13,7 @@ using Entidad;
 using interfaces.Clases;
 using interfaces.Formularios.Clasificacion;
 using interfaces.Utilidades;
+using Negocio.Empleado;
 
 namespace interfaces.Formularios
 {
@@ -31,8 +32,22 @@ namespace interfaces.Formularios
             menuHandler.configAcceso(flowLayoutPanel1);
             objDB = new Clases.ClsDatabase();
             objDB.conectarBD();
+            loadEmpleado();
         }
+        private void loadEmpleado()
+        {
 
+            N_Cargo cargo = new N_Cargo();
+            E_empleado emp = new E_empleado();
+            DataTable dt = cargo.buscar(e_id);
+            foreach (DataRow dr in dt.Rows)
+            {
+                lb_eid.Text = dr[0].ToString();
+                lbl_name.Text = dr[1].ToString();
+                lbl_cargo.Text = dr[2].ToString();
+            }
+
+        }
         private void panelMain_Paint(object sender, PaintEventArgs e)
         {
 

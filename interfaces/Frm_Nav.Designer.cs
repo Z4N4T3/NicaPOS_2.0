@@ -62,9 +62,10 @@
             this.flowLayoutPanel1.Controls.Add(this.btnVenta);
             this.flowLayoutPanel1.Controls.Add(this.btnCaja);
             this.flowLayoutPanel1.Controls.Add(this.btnNegocio);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(-1, -3);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1187, 110);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1184, 110);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 

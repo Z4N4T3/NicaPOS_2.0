@@ -620,3 +620,48 @@ create table detalle_venta_servicio(
 	id_promo int foreign key references promocion(id)
 );
 
+use DB_NicaPOS
+
+create table caja(
+	
+	id_caja int primary key identity(1,1),
+	nombre varchar(15),
+	estado_caja int foreign key references estado(id), -- 1 abierta 2 cerrada 
+	fecha_creacion datetime default getdate() not null
+)
+
+create table apertura_caja(
+	id int primary key identity(1,1),
+	id_caja int foreign key references caja(id_caja) not null,
+	id_empleado int foreign key references Empleado(id) not null,
+	fecha_apertura datetime default getdate() not null,
+	monto_inicial decimal(9,2) not null,
+	estado int foreign key references estado(id) not null, -- Solicitado, autorizado, denegado 
+	fecha_cierre datetime default getdate()
+
+);
+create table tipo_movimiento_caja(
+	id int primary key identity(1,1),
+	nombre varchar(50) not null, -- pago en efectivo, Entrada de efectivo, retiro efectivo
+	descripcion varchar(100),
+	estado int foreign key references estado(id) not null, -- Solicitado, autorizado, denegado 
+
+);
+
+
+INSERT INTO tipo_movimiento_caja (nombre, descripcion, estado)
+VALUES
+('Pago en efectivo', 'Movimientos por pagos realizados en efectivo', 1), 
+('Entrada de efectivo', 'Ingresos en efectivo a la caja', 1),          
+('Retiro efectivo', 'Retiros en efectivo desde la caja', 1);           
+
+create table movimiento_caja(
+	id_mov int primary key identity(1,1),
+	id_apertura int foreign key references apertura_caja(id) not null,
+	tipo_movimeinto int foreign key references tipo_movimiento_caja(id) not null,
+	concepto varchar(50) not null,
+	monto decimal(9,2) not null,
+
+	fecha_mov datetime default getdate() not null,
+	id_empleado int foreign key references Empleado(id) not null,
+);

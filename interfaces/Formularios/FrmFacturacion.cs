@@ -15,6 +15,7 @@ using Entidad.Venta;
 using interfaces.Clases;
 using interfaces.Formularios.Venta;
 using interfaces.Utilidades;
+using Negocio.Empleado;
 using Negocio.Producto;
 using Negocio.Tienda;
 
@@ -51,7 +52,7 @@ namespace interfaces.Formularios
 
             dtGrid_producto.ReadOnly = true;
             dtGrid_det.ReadOnly = true;
-
+            loadEmpleado();
 
         }
         private void getTienda()
@@ -127,6 +128,7 @@ namespace interfaces.Formularios
                 input_qty.Value = 1;
                 loadProdPrecio();
                 cal_subtotal(iva);
+                
             }
             
 
@@ -253,7 +255,20 @@ namespace interfaces.Formularios
         {
 
         }
+        private void loadEmpleado()
+        {
 
+            N_Cargo cargo = new N_Cargo();
+            E_empleado emp = new E_empleado();
+            DataTable dt = cargo.buscar(e_id);
+            foreach (DataRow dr in dt.Rows)
+            {
+                lb_eid.Text = dr[0].ToString();
+                lbl_name.Text = dr[1].ToString();
+                lbl_cargo.Text = dr[2].ToString();
+            }
+
+        }
         private void btn_salir_Click(object sender, EventArgs e)
         {
             Login login = new Login();
@@ -278,6 +293,12 @@ namespace interfaces.Formularios
             lb_total.Text = venta.Total.ToString("F2");
 
         }
+
+        private void FrmFacturacion_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btn_facturar_Click(object sender, EventArgs e)
         {
             // verificar si contiene filas
