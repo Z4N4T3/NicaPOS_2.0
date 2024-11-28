@@ -64,24 +64,26 @@
             this.btnVenta = new System.Windows.Forms.Button();
             this.btnCaja = new System.Windows.Forms.Button();
             this.btnNegocio = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_cargo = new System.Windows.Forms.Label();
-            this.lb_eid = new System.Windows.Forms.Label();
-            this.lbl_name = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelOpt = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_salir = new System.Windows.Forms.Button();
             this.BtnCatProd = new System.Windows.Forms.Button();
             this.BtnSoli = new System.Windows.Forms.Button();
             this.BtnProveedor = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbl_name = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_cargo = new System.Windows.Forms.Label();
+            this.lb_eid = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.panelProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelOpt.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
@@ -431,61 +433,6 @@
             this.btnNegocio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNegocio.UseVisualStyleBackColor = false;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(167)))));
-            this.panel1.Controls.Add(this.lbl_cargo);
-            this.panel1.Controls.Add(this.lb_eid);
-            this.panel1.Controls.Add(this.lbl_name);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(1, 109);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(214, 289);
-            this.panel1.TabIndex = 11;
-            // 
-            // lbl_cargo
-            // 
-            this.lbl_cargo.AutoSize = true;
-            this.lbl_cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cargo.ForeColor = System.Drawing.Color.White;
-            this.lbl_cargo.Location = new System.Drawing.Point(28, 243);
-            this.lbl_cargo.Name = "lbl_cargo";
-            this.lbl_cargo.Size = new System.Drawing.Size(57, 20);
-            this.lbl_cargo.TabIndex = 3;
-            this.lbl_cargo.Text = "Cargo";
-            // 
-            // lb_eid
-            // 
-            this.lb_eid.AutoSize = true;
-            this.lb_eid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_eid.ForeColor = System.Drawing.Color.White;
-            this.lb_eid.Location = new System.Drawing.Point(28, 212);
-            this.lb_eid.Name = "lb_eid";
-            this.lb_eid.Size = new System.Drawing.Size(116, 20);
-            this.lb_eid.TabIndex = 2;
-            this.lb_eid.Text = "ID_empleado";
-            // 
-            // lbl_name
-            // 
-            this.lbl_name.AutoSize = true;
-            this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_name.ForeColor = System.Drawing.Color.White;
-            this.lbl_name.Location = new System.Drawing.Point(22, 177);
-            this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(155, 20);
-            this.lbl_name.TabIndex = 1;
-            this.lbl_name.Text = "Nombre Y apellido";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(26, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 140);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panelOpt
             // 
             this.panelOpt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(167)))));
@@ -557,6 +504,77 @@
             this.BtnProveedor.Text = "Proveedores";
             this.BtnProveedor.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(167)))));
+            this.panel1.Controls.Add(this.flowLayoutPanel2);
+            this.panel1.Location = new System.Drawing.Point(1, 109);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(214, 292);
+            this.panel1.TabIndex = 11;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel2.Controls.Add(this.lbl_name);
+            this.flowLayoutPanel2.Controls.Add(this.pictureBox1);
+            this.flowLayoutPanel2.Controls.Add(this.lbl_cargo);
+            this.flowLayoutPanel2.Controls.Add(this.lb_eid);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(25, 34);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(161, 201);
+            this.flowLayoutPanel2.TabIndex = 4;
+            // 
+            // lbl_name
+            // 
+            this.lbl_name.AutoSize = true;
+            this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_name.ForeColor = System.Drawing.Color.White;
+            this.lbl_name.Location = new System.Drawing.Point(3, 0);
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.Size = new System.Drawing.Size(155, 20);
+            this.lbl_name.TabIndex = 1;
+            this.lbl_name.Text = "Nombre Y apellido";
+            this.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 140);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lbl_cargo
+            // 
+            this.lbl_cargo.AutoSize = true;
+            this.lbl_cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cargo.ForeColor = System.Drawing.Color.White;
+            this.lbl_cargo.Location = new System.Drawing.Point(3, 166);
+            this.lbl_cargo.Name = "lbl_cargo";
+            this.lbl_cargo.Size = new System.Drawing.Size(49, 16);
+            this.lbl_cargo.TabIndex = 3;
+            this.lbl_cargo.Text = "Cargo";
+            this.lbl_cargo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_eid
+            // 
+            this.lb_eid.AutoSize = true;
+            this.lb_eid.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_eid.ForeColor = System.Drawing.Color.White;
+            this.lb_eid.Location = new System.Drawing.Point(3, 182);
+            this.lb_eid.Name = "lb_eid";
+            this.lb_eid.Size = new System.Drawing.Size(108, 19);
+            this.lb_eid.TabIndex = 2;
+            this.lb_eid.Text = "ID_empleado";
+            this.lb_eid.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,11 +596,13 @@
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelOpt.ResumeLayout(false);
             this.panelOpt.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -622,15 +642,16 @@
         private System.Windows.Forms.Button btnVenta;
         private System.Windows.Forms.Button btnCaja;
         private System.Windows.Forms.Button btnNegocio;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbl_cargo;
-        private System.Windows.Forms.Label lb_eid;
-        private System.Windows.Forms.Label lbl_name;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel panelOpt;
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.Button BtnCatProd;
         private System.Windows.Forms.Button BtnSoli;
         private System.Windows.Forms.Button BtnProveedor;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label lbl_name;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbl_cargo;
+        private System.Windows.Forms.Label lb_eid;
     }
 }

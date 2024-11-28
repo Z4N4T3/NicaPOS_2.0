@@ -36,32 +36,34 @@
             this.BtnDeshabilitar_usr = new System.Windows.Forms.Button();
             this.BtnActualizar_usr = new System.Windows.Forms.Button();
             this.gridUsuario = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.nuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSistema = new System.Windows.Forms.Button();
             this.btnCompra = new System.Windows.Forms.Button();
             this.btnVenta = new System.Windows.Forms.Button();
             this.btnCaja = new System.Windows.Forms.Button();
             this.btnNegocio = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_cargo = new System.Windows.Forms.Label();
-            this.lb_eid = new System.Windows.Forms.Label();
-            this.lbl_name = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelOpt = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_salir = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.nuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbl_name = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_cargo = new System.Windows.Forms.Label();
+            this.lb_eid = new System.Windows.Forms.Label();
             this.FrmUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridUsuario)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelOpt.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panelOpt.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // FrmUsuario
@@ -134,6 +136,30 @@
             this.gridUsuario.Size = new System.Drawing.Size(945, 337);
             this.gridUsuario.TabIndex = 1;
             this.gridUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoUsuarioToolStripMenuItem,
+            this.editarToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(951, 24);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "Editar";
+            // 
+            // nuevoUsuarioToolStripMenuItem
+            // 
+            this.nuevoUsuarioToolStripMenuItem.Name = "nuevoUsuarioToolStripMenuItem";
+            this.nuevoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.nuevoUsuarioToolStripMenuItem.Text = "Crear ";
+            this.nuevoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.nuevoUsuarioToolStripMenuItem_Click);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.editarToolStripMenuItem.Text = "Editar";
             // 
             // flowLayoutPanel1
             // 
@@ -228,61 +254,6 @@
             this.btnNegocio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNegocio.UseVisualStyleBackColor = false;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(167)))));
-            this.panel1.Controls.Add(this.lbl_cargo);
-            this.panel1.Controls.Add(this.lb_eid);
-            this.panel1.Controls.Add(this.lbl_name);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(2, 110);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(214, 279);
-            this.panel1.TabIndex = 9;
-            // 
-            // lbl_cargo
-            // 
-            this.lbl_cargo.AutoSize = true;
-            this.lbl_cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cargo.ForeColor = System.Drawing.Color.White;
-            this.lbl_cargo.Location = new System.Drawing.Point(28, 243);
-            this.lbl_cargo.Name = "lbl_cargo";
-            this.lbl_cargo.Size = new System.Drawing.Size(57, 20);
-            this.lbl_cargo.TabIndex = 3;
-            this.lbl_cargo.Text = "Cargo";
-            // 
-            // lb_eid
-            // 
-            this.lb_eid.AutoSize = true;
-            this.lb_eid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_eid.ForeColor = System.Drawing.Color.White;
-            this.lb_eid.Location = new System.Drawing.Point(28, 212);
-            this.lb_eid.Name = "lb_eid";
-            this.lb_eid.Size = new System.Drawing.Size(116, 20);
-            this.lb_eid.TabIndex = 2;
-            this.lb_eid.Text = "ID_empleado";
-            // 
-            // lbl_name
-            // 
-            this.lbl_name.AutoSize = true;
-            this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_name.ForeColor = System.Drawing.Color.White;
-            this.lbl_name.Location = new System.Drawing.Point(22, 177);
-            this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(155, 20);
-            this.lbl_name.TabIndex = 1;
-            this.lbl_name.Text = "Nombre Y apellido";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(26, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 140);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panelOpt
             // 
             this.panelOpt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(167)))));
@@ -291,7 +262,7 @@
             this.panelOpt.Controls.Add(this.button3);
             this.panelOpt.Controls.Add(this.button4);
             this.panelOpt.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.panelOpt.Location = new System.Drawing.Point(2, 389);
+            this.panelOpt.Location = new System.Drawing.Point(1, 389);
             this.panelOpt.Name = "panelOpt";
             this.panelOpt.Size = new System.Drawing.Size(215, 370);
             this.panelOpt.TabIndex = 8;
@@ -345,29 +316,76 @@
             this.button4.Text = "Usuarios";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // menuStrip1
+            // panel1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevoUsuarioToolStripMenuItem,
-            this.editarToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(951, 24);
-            this.menuStrip1.TabIndex = 14;
-            this.menuStrip1.Text = "Editar";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(167)))));
+            this.panel1.Controls.Add(this.flowLayoutPanel2);
+            this.panel1.Location = new System.Drawing.Point(2, 110);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(214, 292);
+            this.panel1.TabIndex = 10;
             // 
-            // nuevoUsuarioToolStripMenuItem
+            // flowLayoutPanel2
             // 
-            this.nuevoUsuarioToolStripMenuItem.Name = "nuevoUsuarioToolStripMenuItem";
-            this.nuevoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.nuevoUsuarioToolStripMenuItem.Text = "Crear ";
-            this.nuevoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.nuevoUsuarioToolStripMenuItem_Click);
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel2.Controls.Add(this.lbl_name);
+            this.flowLayoutPanel2.Controls.Add(this.pictureBox1);
+            this.flowLayoutPanel2.Controls.Add(this.lbl_cargo);
+            this.flowLayoutPanel2.Controls.Add(this.lb_eid);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(25, 34);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(161, 201);
+            this.flowLayoutPanel2.TabIndex = 4;
             // 
-            // editarToolStripMenuItem
+            // lbl_name
             // 
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.editarToolStripMenuItem.Text = "Editar";
+            this.lbl_name.AutoSize = true;
+            this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_name.ForeColor = System.Drawing.Color.White;
+            this.lbl_name.Location = new System.Drawing.Point(3, 0);
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.Size = new System.Drawing.Size(155, 20);
+            this.lbl_name.TabIndex = 1;
+            this.lbl_name.Text = "Nombre Y apellido";
+            this.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 140);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lbl_cargo
+            // 
+            this.lbl_cargo.AutoSize = true;
+            this.lbl_cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cargo.ForeColor = System.Drawing.Color.White;
+            this.lbl_cargo.Location = new System.Drawing.Point(3, 166);
+            this.lbl_cargo.Name = "lbl_cargo";
+            this.lbl_cargo.Size = new System.Drawing.Size(49, 16);
+            this.lbl_cargo.TabIndex = 3;
+            this.lbl_cargo.Text = "Cargo";
+            this.lbl_cargo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_eid
+            // 
+            this.lb_eid.AutoSize = true;
+            this.lb_eid.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_eid.ForeColor = System.Drawing.Color.White;
+            this.lb_eid.Location = new System.Drawing.Point(3, 182);
+            this.lb_eid.Name = "lb_eid";
+            this.lb_eid.Size = new System.Drawing.Size(108, 19);
+            this.lb_eid.TabIndex = 2;
+            this.lb_eid.Text = "ID_empleado";
+            this.lb_eid.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmSistema
             // 
@@ -386,14 +404,16 @@
             this.FrmUsuario.ResumeLayout(false);
             this.FrmUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridUsuario)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelOpt.ResumeLayout(false);
-            this.panelOpt.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panelOpt.ResumeLayout(false);
+            this.panelOpt.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -413,11 +433,6 @@
         private System.Windows.Forms.Button btnVenta;
         private System.Windows.Forms.Button btnCaja;
         private System.Windows.Forms.Button btnNegocio;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbl_cargo;
-        private System.Windows.Forms.Label lb_eid;
-        private System.Windows.Forms.Label lbl_name;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel panelOpt;
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.Button button2;
@@ -426,5 +441,11 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label lbl_name;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbl_cargo;
+        private System.Windows.Forms.Label lb_eid;
     }
 }

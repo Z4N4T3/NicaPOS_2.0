@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Entidad;
 using interfaces.Formularios;
 using interfaces.Utilidades;
+using Negocio;
+using Negocio.Empleado;
 
 namespace interfaces
 {
@@ -26,6 +28,7 @@ namespace interfaces
             navy = new Navy(this,  eid);
             navy.SetupMenu(flowLayoutPanel1);
             navy.configAcceso(flowLayoutPanel1);
+            loadEmpleado();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -43,6 +46,26 @@ namespace interfaces
             Login login = new Login();
             this.Close();
             login.Show();
+        }
+
+        private void Frm_Nav_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loadEmpleado()
+        {
+            
+            N_Cargo cargo = new N_Cargo();
+            E_empleado emp = new E_empleado();
+            DataTable dt = cargo.buscar(e_id);
+            foreach(DataRow dr in dt.Rows)
+            {
+                lb_eid.Text = dr[0].ToString();
+                lbl_name.Text = dr[1].ToString();
+                lbl_cargo.Text = dr[2].ToString();
+            }
+            
         }
     }
 }
