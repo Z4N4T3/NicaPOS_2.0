@@ -59,6 +59,7 @@
             this.solicitudToolStripMenuItem.Name = "solicitudToolStripMenuItem";
             this.solicitudToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.solicitudToolStripMenuItem.Text = "Solicitud";
+            this.solicitudToolStripMenuItem.Click += new System.EventHandler(this.solicitudToolStripMenuItem_Click);
             // 
             // pedidoToolStripMenuItem
             // 

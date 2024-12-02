@@ -173,8 +173,8 @@ namespace interfaces.Formularios
 
         private void BtnSoli_Click(object sender, EventArgs e)
         {
-            Frm_Compra Fcompra = new Frm_Compra();
-            Fcompra.Show(e_id);
+            Frm_Compra Fcompra = new Frm_Compra(e_id);
+            Fcompra.Show();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace interfaces.Formularios.Compra
 {
     public partial class Frm_Compra : Form
     {
-        int eid;
+        private int eid;
         public Frm_Compra(int eid)
         {
             InitializeComponent();
@@ -25,6 +25,14 @@ namespace interfaces.Formularios.Compra
         }
 
         private void nuevaSolicitudToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_NuevaSoli nueva = new Frm_NuevaSoli(eid);
+            this.Close();
+            nueva.Show();
+
+        }
+
+        private void solicitudToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

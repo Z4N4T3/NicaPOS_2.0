@@ -106,6 +106,12 @@
     <Compile Include="Formularios\Venta\FrmPago.Designer.cs">
       <DependentUpon>FrmPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Venta\Frm_cash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Venta\Frm_cash.Designer.cs">
+      <DependentUpon>Frm_cash.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Nav.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Venta\FrmPago.resx">
       <DependentUpon>FrmPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Venta\Frm_cash.resx">
+      <DependentUpon>Frm_cash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Nav.resx">
       <DependentUpon>Frm_Nav.cs</DependentUpon>

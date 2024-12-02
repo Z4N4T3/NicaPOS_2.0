@@ -361,6 +361,7 @@
             this.Name = "FrmAsignarCargo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAsignarCargo";
+            this.Load += new System.EventHandler(this.FrmAsignarCargo_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -143,7 +143,9 @@ namespace interfaces.Formularios.Empleados
 
         }
 
+        private void FrmAsignarCargo_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
