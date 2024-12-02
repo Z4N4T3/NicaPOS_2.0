@@ -70,6 +70,18 @@
     <Compile Include="Formularios\Clasificacion\Frm_Subcategoria.Designer.cs">
       <DependentUpon>Frm_Subcategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Compra\Frm_Compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Compra\Frm_Compra.Designer.cs">
+      <DependentUpon>Frm_Compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Compra\Frm_NuevaSoli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Compra\Frm_NuevaSoli.Designer.cs">
+      <DependentUpon>Frm_NuevaSoli.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Empleados\FrmAsignarCargo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +170,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Clasificacion\Frm_Subcategoria.resx">
       <DependentUpon>Frm_Subcategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Compra\Frm_Compra.resx">
+      <DependentUpon>Frm_Compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Compra\Frm_NuevaSoli.resx">
+      <DependentUpon>Frm_NuevaSoli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Empleados\FrmAsignarCargo.resx">
       <DependentUpon>FrmAsignarCargo.cs</DependentUpon>

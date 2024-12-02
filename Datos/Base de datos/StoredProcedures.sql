@@ -16,7 +16,7 @@ SELECT p.nombre as Accesso --> se podria devolver el id del perfil y trabajar co
 	where ure.id_usuario = @UUID
 END
 
-
+exec sp_mostrar_categoria
 
 
 
@@ -377,7 +377,15 @@ BEGIN
 END;
 GO
 
+-- insertar producto
 
+CREATE PROCEDURE sp_insertar_producto
+	@nombre varchar
+as
+begin 
+	INSERT INTO producto (id, nombre, codigoProducto, descripcion, id_Subcategoria, id_marca, id_UM, estado)
+	VALUES 
+end
 
 
 
@@ -534,6 +542,19 @@ BEGIN
     SELECT psc.id, psc.nombre as SUBCATEGORIA,pc.nombre as CATEGORIA, psc.descripcion as DESCRIPCION, psc.estado
     FROM producto_sub_categoria psc
     INNER JOIN producto_categoria pc ON pc.id=psc.id_cat
+END
+
+
+CREATE PROCEDURE sp_buscar_subcategoria
+	@id int
+
+AS
+BEGIN
+   
+    SELECT psc.id, psc.nombre
+    FROM producto_sub_categoria psc
+    
+	where id= @id and estado = 1
 END
 
 
@@ -824,3 +845,67 @@ begin
 
 end
 
+-- flijo pedido y compra
+
+
+CREATE  PROCEDURE sp_insertar_solicitud_compra
+    @id_empleado INT,
+    @tipo_solicitud VARCHAR(50),
+    @estado INT,
+    @subtotal DECIMAL(9, 2),
+    @impuesto DECIMAL(9, 2),
+    @descuento DECIMAL(9, 2),
+    @total DECIMAL(9, 2),
+    @id_sucursal INT,
+	@fecha_req DATETIME
+AS
+BEGIN
+    -- Manejo de errores
+	DECLARE @newId INT;
+		SELECT @newId = ISNULL(MAX(id), 0) + 1 FROM solicitud_compra;
+    BEGIN TRY
+        -- Insertar los datos en la tabla
+        INSERT INTO solicitud_compra(
+			id,
+   
+            id_empleado,
+            tipo_solicitud,
+            estado,
+            subtotal,
+            impuesto,
+            descuento,
+            total,
+            id_sucursal,
+            fecha_solicitud -- fecha_requerida
+        )
+        VALUES (
+			@newId,
+       
+            @id_empleado,
+            @tipo_solicitud,
+            @estado,
+            @subtotal,
+            @impuesto,
+            @descuento,
+            @total,
+            @id_sucursal,
+            @fecha_req
+        );
+
+        -- Confirmación de éxito
+        PRINT 'Solicitud de compra insertada correctamente';
+    END TRY
+    BEGIN CATCH
+        -- Manejo de errores en caso de fallos
+        DECLARE @ErrorMessage NVARCHAR(4000);
+        DECLARE @ErrorSeverity INT;
+        DECLARE @ErrorState INT;
+
+        SELECT 
+            @ErrorMessage = ERROR_MESSAGE(),
+            @ErrorSeverity = ERROR_SEVERITY(),
+            @ErrorState = ERROR_STATE();
+
+        RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState);
+    END CATCH
+END;

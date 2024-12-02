@@ -455,6 +455,14 @@ create table solicitud_compra(
 	id_proveedor int foreign key references proveedor(id) not null,
 	id_sucursal int foreign key references sucursal(id) not null
 );
+use DB_NicaPOS
+
+ALTER TABLE solicitud_compra
+DROP CONSTRAINT FK__solicitud__id_pr__6CD828CA;
+ALTER TABLE solicitud_compra
+DROP COLUMN id_proveedor;
+ALTER TABLE solicitud_compra
+ADD fecha_solicitud datetime DEFAULT GETDATE() NOT NULL;	
 
 create table detalle_solicitud(
     id int PRIMARY KEY,

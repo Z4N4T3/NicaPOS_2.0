@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Entidad;
 using interfaces.Clases;
 using interfaces.Formularios.Clasificacion;
+using interfaces.Formularios.Compra;
 using interfaces.Utilidades;
 using Negocio;
 using Negocio.Empleado;
@@ -168,6 +169,12 @@ namespace interfaces.Formularios
             cb_subCate.DataSource = dt;
             cb_subCate.DisplayMember = "nombre";
             cb_subCate.ValueMember= "id";
+        }
+
+        private void BtnSoli_Click(object sender, EventArgs e)
+        {
+            Frm_Compra Fcompra = new Frm_Compra();
+            Fcompra.Show(e_id);
         }
     }
 }
