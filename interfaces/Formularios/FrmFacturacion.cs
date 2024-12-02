@@ -102,8 +102,8 @@ namespace interfaces.Formularios
 
             N_Producto prod =new N_Producto();
 
-            DataTable dt = prod.listarProductoPrecio();
-
+            //DataTable dt = prod.listarProductoPrecio();
+            DataTable dt = prod.listarProductoTemp();
             dtGrid_producto.DataSource = dt;
             
 

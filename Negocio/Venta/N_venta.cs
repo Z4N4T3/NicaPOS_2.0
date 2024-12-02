@@ -17,5 +17,18 @@ namespace Negocio.Venta
             return d_venta.d_InsertarVenta(venta);
         }
 
+
+        
+        public bool insertar_temp(E_venta venta)
+        {
+            return d_venta.d_InsertarVenta_temp(venta);
+        }
+
+
+        // eliminar o cambiar esta vaina tambien
+        public bool insertarDet_temp(E_Det_venta venta)
+        {
+            return d_venta.d_InsertarDetVenta_temp(venta);
+        }
     }
 }

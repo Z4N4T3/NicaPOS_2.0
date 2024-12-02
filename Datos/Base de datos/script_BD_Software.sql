@@ -200,14 +200,12 @@ CREATE PROCEDURE sp_leer_productos_temp
 AS
 BEGIN
     SELECT 
-        p.id AS ProductoID,
-        p.nombre AS Producto,
-        p.descripcion,
-        p.precio,
-        p.stock,
-        pr.nombre AS Proveedor,
-		psc.nombre AS SUBCATEGORIA,
-		pc.nombre AS CATEGORIA
+		p.id as ID,
+		p.nombre as PRODUCTO, 
+		pc.nombre as CATEGORIA,
+		psc.nombre AS SUBCATEGORIA, 
+		
+		p.precio as PRECIO 
     FROM producto_temp p
     INNER JOIN proveedor_temp pr ON p.id_proveedor = pr.id
 	INNER JOIN producto_sub_categoria psc ON p.id_Subcategoria = psc.id

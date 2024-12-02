@@ -52,6 +52,42 @@ namespace Datos.Venta
             }
         }
 
+        // sp_venta_producto_insertar_temp borrar esta vaina despues
+        public bool d_InsertarDetVenta_temp(E_Det_venta venta)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_venta_producto_insertar_temp", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@id_venta", venta.Id_venta);
+                    cmd.Parameters.AddWithValue("@id_prod", venta.Id_producto);
+                    cmd.Parameters.AddWithValue("@qty", venta.Cantidad);
+                    cmd.Parameters.AddWithValue("@precioU", venta.PrecioU);
+                    
+
+                    conn.Open();
+                    int result = cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    return result > 0;
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al insertar venta: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
 
         public bool d_InsertarVenta_temp(E_venta venta)
         {

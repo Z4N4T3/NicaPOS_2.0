@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad.Venta;
+using Negocio.Venta;
 
 namespace interfaces.Formularios.Venta
 {
@@ -79,7 +80,14 @@ namespace interfaces.Formularios.Venta
 
         private void button4_Click(object sender, EventArgs e)
         {
+            N_venta n_venta = new N_venta();
 
+            n_venta.insertar_temp(venta);
+
+            foreach(E_Det_venta det in listaDetalleVenta)
+            {
+
+            }
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
