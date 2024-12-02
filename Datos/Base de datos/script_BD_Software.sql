@@ -253,7 +253,12 @@ AS
 	
 BEGIN
 	INSERT INTO venta_temp(id_cliente,total,id_empleado,estado)
-		VALUES(@id_cliente,@total,@id_empleado,1)
+		VALUES(@id_cliente,@total,@id_empleado,1);
+
+		 DECLARE @venta_id INT = SCOPE_IDENTITY();
+
+    -- Devolver el ID de la venta
+    SELECT @venta_id AS VentaID;
 END
 
 select * from venta_producto_temp

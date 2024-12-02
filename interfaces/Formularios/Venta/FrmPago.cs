@@ -80,15 +80,21 @@ namespace interfaces.Formularios.Venta
 
         private void button4_Click(object sender, EventArgs e)
         {
-            N_venta n_venta = new N_venta();
 
+            // modificar o eliminar esta vaina despues
+            N_venta n_venta = new N_venta();
+            
             n_venta.insertar_temp(venta);
 
             foreach(E_Det_venta det in listaDetalleVenta)
             {
-
+                det.Id_venta = 
+                n_venta.insertarDet_temp(det);
             }
+
         }
+
+       
 
         private void groupBox3_Enter(object sender, EventArgs e)
         {

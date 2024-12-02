@@ -89,39 +89,47 @@ namespace Datos.Venta
             }
         }
 
-        public bool d_InsertarVenta_temp(E_venta venta)
+        public int d_InsertarVenta_temp(E_venta venta)
         {
             try
             {
                 using (SqlCommand cmd = new SqlCommand("sp_venta_insertear_temp", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-          
+
+                    // Agregar parámetros de entrada
                     cmd.Parameters.AddWithValue("@total", venta.Total);
                     cmd.Parameters.AddWithValue("@id_cliente", 1);
                     cmd.Parameters.AddWithValue("@id_empleado", venta.Eid);
-                  
+
+                    // Agregar parámetro de salida para el VentaID
+                    SqlParameter outputIdParam = new SqlParameter("@VentaID", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(outputIdParam);
 
                     conn.Open();
-                    int result = cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
                     conn.Close();
 
-                    return result > 0;
+                    // Retornar el ID de la venta insertada
+                    return (int)outputIdParam.Value;
                 }
             }
             catch (SqlException ex)
             {
                 Console.WriteLine("Error al insertar venta: " + ex.Message);
-                return false;
+                return -1; // Indicar error con un valor especial
             }
             finally
             {
-
                 if (conn.State == ConnectionState.Open)
                 {
                     conn.Close();
                 }
             }
         }
+
     }
 }
