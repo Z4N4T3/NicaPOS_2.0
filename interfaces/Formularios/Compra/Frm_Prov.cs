@@ -8,23 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace interfaces.Formularios.Venta
+namespace interfaces.Formularios.Compra
 {
-    public partial class Frm_cash : Form
+    public partial class Frm_Prov : Form
     {
-        public Frm_cash()
+        public Frm_Prov()
         {
             InitializeComponent();
+        }
+
+        private void BtnAgregar_usr_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

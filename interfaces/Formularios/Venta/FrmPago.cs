@@ -60,6 +60,7 @@ namespace interfaces.Formularios.Venta
         {
             colores(btn_tarjeta);
             tipoPago = 2;
+            
         }
 
         private void btn_cash_Click(object sender, EventArgs e)

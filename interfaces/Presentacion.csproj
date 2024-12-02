@@ -82,6 +82,12 @@
     <Compile Include="Formularios\Compra\Frm_NuevaSoli.Designer.cs">
       <DependentUpon>Frm_NuevaSoli.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Compra\Frm_Prov.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Compra\Frm_Prov.Designer.cs">
+      <DependentUpon>Frm_Prov.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Empleados\FrmAsignarCargo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Compra\Frm_NuevaSoli.resx">
       <DependentUpon>Frm_NuevaSoli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Compra\Frm_Prov.resx">
+      <DependentUpon>Frm_Prov.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Empleados\FrmAsignarCargo.resx">
       <DependentUpon>FrmAsignarCargo.cs</DependentUpon>

@@ -176,5 +176,11 @@ namespace interfaces.Formularios
             Frm_Compra Fcompra = new Frm_Compra(e_id);
             Fcompra.Show();
         }
+
+        private void BtnProveedor_Click(object sender, EventArgs e)
+        {
+            Frm_Prov prove = new Frm_Prov();
+            prove.Show();
+        }
     }
 }
