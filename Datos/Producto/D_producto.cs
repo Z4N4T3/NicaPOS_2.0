@@ -27,6 +27,22 @@ namespace Datos.Producto
             }
         }
 
+        //
+
+        public DataTable listarProductoPrecioTemp()
+        {
+            using (SqlCommand cmd = new SqlCommand("sp_leer_productos_temp", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
         public DataTable BuscarProductoPrecio(string cod)
         {
             using (SqlCommand cmd = new SqlCommand("sp_FlistarProducto", conn))

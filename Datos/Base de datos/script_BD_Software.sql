@@ -14,6 +14,12 @@ CREATE TABLE proveedor_temp (
     estado INT NOT NULL,             -- Estado (activo/inactivo)
     fecha_registro DATETIME DEFAULT GETDATE() NOT NULL -- Fecha de registro
 );
+-- Proveedores de prueba
+INSERT INTO proveedor_temp (nombre, telefono, email, direccion, estado)
+VALUES 
+('Proveedor A', '123456789', 'proveedora@ejemplo.com', 'Calle 123', 1),
+('Proveedor B', '987654321', 'proveedorb@ejemplo.com', 'Avenida 456', 1),
+('Proveedor C', '555123456', 'proveedorc@ejemplo.com', 'Boulevard 789', 0); -- Inactivo
 
 
 CREATE TABLE producto_temp (
@@ -32,6 +38,31 @@ CREATE TABLE producto_temp (
         ON UPDATE CASCADE             -- Actualiza productos si cambia el ID del proveedor
 );
 
+select * from producto_temp
+-- Productos típicos para una tienda de conveniencia
+INSERT INTO producto_temp (nombre, descripcion, precio, stock, id_proveedor,id_Subcategoria)
+VALUES 
+('Agua Embotellada', 'Botella de agua natural 500ml', 0.75, 200, 1,1),
+('Refresco Coca-Cola', 'Lata de refresco 355ml', 1.00, 150, 1,1),
+('Papas Fritas', 'Bolsa de papas fritas clásica 150g', 1.50, 100, 2,1),
+('Galletas de Chocolate', 'Paquete de galletas rellenas de chocolate 200g', 2.00,20, 2,1),
+('Barra de Cereal', 'Barra energética con granola y chocolate', 1.20, 75, 3,1),
+('Chicles', 'Paquete de chicles de menta', 0.90, 50, 3,1),
+('Café Instantáneo', 'Paquete de café instantáneo 100g', 5.00, 25, 2,1),
+('Baterías AA', 'Paquete de 2 baterías alcalinas AA', 3.50, 30, 2,1),
+('Jugo de Naranja', 'Botella de jugo natural 1L', 2.50, 50, 1,1),
+('Leche Entera', 'Litro de leche entera', 1.30, 60, 1,1),
+('Pan de Caja', 'Bolsa de pan rebanado', 2.20, 40, 2,1),
+('Detergente en Polvo', 'Paquete de detergente para ropa 1kg', 4.50, 20, 2,1),
+('Shampoo', 'Botella de shampoo 500ml', 6.00, 15, 2,1),
+('Papel Higiénico', 'Paquete de 4 rollos de papel higiénico', 3.80, 35, 2,1),
+('Cerveza Lager', 'Lata de cerveza lager 355ml', 1.50, 100, 1,1),
+('Aceite de Cocina', 'Botella de aceite vegetal 1L', 3.00, 20, 2,1),
+('Huevo', 'Paquete de 12 huevos', 2.50, 30, 2,1),
+('Atún en Lata', 'Lata de atún en agua 140g', 1.00, 40, 3,1),
+('Sopa Instantánea', 'Vaso de sopa instantánea sabor pollo', 0.80, 75, 2,1),
+('Arroz Blanco', 'Bolsa de arroz blanco 1kg', 1.80, 50, 2,1);
+
 
 CREATE TABLE venta_temp (
     id INT IDENTITY(1,1) PRIMARY KEY,       -- Identificador único de la venta
@@ -40,7 +71,46 @@ CREATE TABLE venta_temp (
     total DECIMAL(10, 2) NOT NULL,          -- Total de la venta
     estado INT NOT NULL DEFAULT 1,          -- Estado de la venta (1 = activa, 0 = anulada)
     CONSTRAINT CHK_Venta_Total CHECK (total >= 0) -- Validación para total no negativo
+
 );
+
+alter table venta_temp
+-- Agregar la columna id_empleado con clave foránea
+ALTER TABLE venta_temp
+ADD id_empleado INT;
+
+-- Crear la clave foránea que referencia la tabla empleado
+ALTER TABLE venta_temp
+ADD CONSTRAINT FK_venta_temp_empleado
+FOREIGN KEY (id_empleado)
+REFERENCES empleado(id);
+
+
+-- Ventas de prueba
+INSERT INTO venta_temp (id_cliente, total, fecha, estado)
+VALUES 
+(1, 0, GETDATE(), 1), -- Total se actualizará después
+(2, 0, GETDATE(), 1), -- Total se actualizará después
+(NULL, 0, GETDATE(), 1); -- Venta sin cliente
+
+-- Venta 1
+insert into venta_producto_temp()
+
+INSERT INTO venta_producto_temp(id_venta, id_producto, cantidad, precio_unitario)
+VALUES 
+(1, 14, 2, 100.00), -- 2 unidades de Producto 1
+(1, 25, 1, 200.00); -- 1 unidad de Producto 2
+
+-- Venta 2
+INSERT INTO venta_producto_temp (id_venta, id_producto, cantidad, precio_unitario)
+VALUES 
+(2, 17, 3, 150.00), -- 3 unidades de Producto 3
+(2, 16, 1, 250.00); -- 1 unidad de Producto 4
+
+-- Venta 3 (sin cliente)
+INSERT INTO venta_producto_temp (id_venta, id_producto, cantidad, precio_unitario)
+VALUES 
+(3, 23, 5, 50.00); -- 5 unidades de Producto 5
 
 
 CREATE TABLE venta_producto_temp (
@@ -126,7 +196,7 @@ BEGIN
     SELECT SCOPE_IDENTITY() AS NuevoProductoID;
 END;
 
-CREATE  PROCEDURE sp_leer_productos_temp
+CREATE PROCEDURE sp_leer_productos_temp
 AS
 BEGIN
     SELECT 
@@ -135,9 +205,13 @@ BEGIN
         p.descripcion,
         p.precio,
         p.stock,
-        pr.nombre AS Proveedor
+        pr.nombre AS Proveedor,
+		psc.nombre AS SUBCATEGORIA,
+		pc.nombre AS CATEGORIA
     FROM producto_temp p
-    INNER JOIN proveedor_temp pr ON p.id_proveedor = pr.id;
+    INNER JOIN proveedor_temp pr ON p.id_proveedor = pr.id
+	INNER JOIN producto_sub_categoria psc ON p.id_Subcategoria = psc.id
+    INNER JOIN producto_categoria pc ON psc.id_cat = pc.id
 END;
 
 CREATE PROCEDURE sp_actualizar_producto_temp
@@ -171,8 +245,63 @@ BEGIN
     WHERE id = @id;
 END;
 
+select * from venta_temp
+
+CREATE PROCEDURE sp_venta_insertear_temp
+	@id_cliente int,
+	@total DECIMAL(10, 2),
+	@id_empleado int
+AS
+	
+BEGIN
+	INSERT INTO venta_temp(id_cliente,total,id_empleado,estado)
+		VALUES(@id_cliente,@total,@id_empleado,1)
+END
+
+select * from venta_producto_temp
 
 
+-- con un foreach insertar los productos relacionados a esa venta 
+CREATE PROCEDURE sp_venta_producto_insertar_temp
+	@id_venta int,
+	@id_prod int,
+	@qty int,
+	@precioU decimal(10,2)
+AS
+	
+BEGIN
+
+INSERT INTO venta_producto_temp (id_venta, id_producto, cantidad, precio_unitario)
+		VALUES(@id_venta,@id_prod,@qty,@precioU)
+END
+
+
+
+CREATE  TRIGGER trg_reducir_stock
+ON venta_producto_temp
+AFTER INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Actualizar el stock en la tabla producto
+    UPDATE p
+    SET p.stock = p.stock - i.cantidad
+    FROM producto_temp p
+    INNER JOIN inserted i ON p.id = i.id_producto;
+
+    -- Verificar que ningún producto tenga stock negativo
+    IF EXISTS (
+        SELECT 1 
+        FROM producto_temp 
+        WHERE stock < 0
+    )
+    BEGIN
+        -- Revertir la operación si el stock es negativo
+        RAISERROR ('Stock insuficiente para uno o más productos', 16, 1);
+        ROLLBACK TRANSACTION;
+    END
+END;
 
 
 

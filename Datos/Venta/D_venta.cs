@@ -51,5 +51,41 @@ namespace Datos.Venta
                 }
             }
         }
+
+
+        public bool d_InsertarVenta_temp(E_venta venta)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_venta_insertear_temp", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+          
+                    cmd.Parameters.AddWithValue("@total", venta.Total);
+                    cmd.Parameters.AddWithValue("@id_cliente", 1);
+                    cmd.Parameters.AddWithValue("@id_empleado", venta.Eid);
+                  
+
+                    conn.Open();
+                    int result = cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    return result > 0;
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error al insertar venta: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

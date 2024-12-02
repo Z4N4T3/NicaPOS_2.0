@@ -358,7 +358,7 @@
             this.panelProducto.Controls.Add(this.menuStrip2);
             this.panelProducto.Location = new System.Drawing.Point(221, 116);
             this.panelProducto.Name = "panelProducto";
-            this.panelProducto.Size = new System.Drawing.Size(951, 525);
+            this.panelProducto.Size = new System.Drawing.Size(951, 633);
             this.panelProducto.TabIndex = 7;
             this.panelProducto.Visible = false;
             this.panelProducto.Paint += new System.Windows.Forms.PaintEventHandler(this.panelProducto_Paint);
@@ -400,7 +400,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(682, 312);
+            this.button3.Location = new System.Drawing.Point(788, 312);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 29;
@@ -409,12 +409,13 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(779, 312);
+            this.button2.Location = new System.Drawing.Point(707, 312);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 28;
-            this.button2.Text = "Actualizar";
+            this.button2.Text = "Cargar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -479,10 +480,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 341);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(941, 177);
+            this.dataGridView1.Size = new System.Drawing.Size(941, 285);
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 

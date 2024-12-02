@@ -23,5 +23,11 @@ namespace Negocio.Producto
         {
             return d_Producto.BuscarProductoPrecio(cod);
         }
+
+        public DataTable listarProductoTemp()
+        {
+            return d_Producto.listarProductoPrecioTemp();
+        }
+
     }
 }

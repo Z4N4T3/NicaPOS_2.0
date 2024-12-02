@@ -16,6 +16,7 @@ using interfaces.Formularios.Compra;
 using interfaces.Utilidades;
 using Negocio;
 using Negocio.Empleado;
+using Negocio.Producto;
 
 namespace interfaces.Formularios
 {
@@ -72,7 +73,13 @@ namespace interfaces.Formularios
         }
 
    
+        private void loadDataProd()
+        {
+            N_Producto prod = new N_Producto();
+            DataTable dt = prod.listarProductoTemp();
 
+            dataGridView1.DataSource = dt;
+        }
 
    
 
@@ -181,6 +188,11 @@ namespace interfaces.Formularios
         {
             Frm_Prov prove = new Frm_Prov();
             prove.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            loadDataProd();
         }
     }
 }
