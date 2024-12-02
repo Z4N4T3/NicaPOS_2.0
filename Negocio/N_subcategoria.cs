@@ -22,5 +22,10 @@ namespace Negocio
         {
             return sub.D_insertar(Esub);
         }
+
+        public DataTable buscar(int id)
+        {
+            return sub.D_buscar(id);
+        }
     }
 }

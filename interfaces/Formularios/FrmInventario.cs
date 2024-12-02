@@ -13,6 +13,7 @@ using Entidad;
 using interfaces.Clases;
 using interfaces.Formularios.Clasificacion;
 using interfaces.Utilidades;
+using Negocio;
 using Negocio.Empleado;
 
 namespace interfaces.Formularios
@@ -33,6 +34,7 @@ namespace interfaces.Formularios
             objDB = new Clases.ClsDatabase();
             objDB.conectarBD();
             loadEmpleado();
+            loadCate();
         }
         private void loadEmpleado()
         {
@@ -71,19 +73,7 @@ namespace interfaces.Formularios
    
 
 
-        private void CargarData(String nombreSP)
-        {
-            try
-            {
-                DataTable dataTable = objDB.ExecStoredProc(nombreSP);
-                dataGridView1.DataSource = dataTable;
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Error al cargar la data: " + ex.ToString());
-
-            }
-        }
+   
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -137,7 +127,47 @@ namespace interfaces.Formularios
         private void BtnCatProd_Click(object sender, EventArgs e)
         {
             panelProducto.Visible = true;
-            CargarData("sp_mostrar_informacion_productos");
+           
+        }
+
+        private void cb_cate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_cate.SelectedIndex >= 0)
+            {
+                int cateSelected;
+                if (int.TryParse(cb_cate.SelectedValue.ToString(), out cateSelected))
+                {
+                    loadSubcate(cateSelected);
+                    //MessageBox.Show("" + munSelec);
+
+                }
+                else
+                {
+                    Console.WriteLine("El municipio seleccionado no es válido");
+                }
+
+            }
+        }
+
+        private void loadCate()
+        {
+            N_categoria cate = new N_categoria();
+
+            DataTable dt = cate.N_mostrarCategorias();
+            cb_cate.DataSource = dt;
+            cb_cate.DisplayMember = "nombre";
+            cb_cate.ValueMember = "id";
+
+        }
+
+        private void loadSubcate(int idCate)
+        {
+            N_subcategoria subcategoria = new N_subcategoria();
+            DataTable dt = subcategoria.buscar(idCate);
+
+            cb_subCate.DataSource = dt;
+            cb_subCate.DisplayMember = "nombre";
+            cb_subCate.ValueMember= "id";
         }
     }
 }

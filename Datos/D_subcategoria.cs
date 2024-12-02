@@ -29,6 +29,22 @@ namespace Datos
             }
         }
 
+        public DataTable D_buscar(int id)
+        {
+            using (SqlCommand cmd = new SqlCommand("sp_buscar_subcategoria", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id);
+
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
 
         public bool D_insertar(E_subcategoria sub)
         {
