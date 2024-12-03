@@ -280,6 +280,7 @@
             this.ClientSize = new System.Drawing.Size(453, 292);
             this.Controls.Add(this.groupBox2);
             this.Name = "Frm_Prov";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Prov";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

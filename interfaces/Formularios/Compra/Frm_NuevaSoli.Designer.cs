@@ -410,6 +410,7 @@
             this.ClientSize = new System.Drawing.Size(800, 483);
             this.Controls.Add(this.panel1);
             this.Name = "Frm_NuevaSoli";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_NuevaSoli";
             this.Load += new System.EventHandler(this.Frm_NuevaSoli_Load);
             this.panel1.ResumeLayout(false);

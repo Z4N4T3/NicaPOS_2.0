@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using interfaces.Formularios.Caja;
 
 namespace interfaces.Formularios
 {
@@ -38,6 +39,14 @@ namespace interfaces.Formularios
 
             this.Close();
             nav.Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Frm_DetCaja frm_DetCaja = new Frm_DetCaja();
+
+            this.Close();
+            frm_DetCaja.Show();
         }
     }
 }

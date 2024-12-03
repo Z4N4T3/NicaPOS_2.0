@@ -19,7 +19,11 @@ namespace interfaces.Formularios.Caja
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            FrmCaja frm_DetCaja = new FrmCaja(1);
+
             this.Close();
+            frm_DetCaja.Show();
+            
 
         }
     }

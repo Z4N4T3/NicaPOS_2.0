@@ -47,8 +47,6 @@
             this.btnNegocio = new System.Windows.Forms.Button();
             this.panelOpt = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_salir = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -259,8 +257,6 @@
             // 
             this.panelOpt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(167)))));
             this.panelOpt.Controls.Add(this.btn_salir);
-            this.panelOpt.Controls.Add(this.button2);
-            this.panelOpt.Controls.Add(this.button3);
             this.panelOpt.Controls.Add(this.button4);
             this.panelOpt.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.panelOpt.Location = new System.Drawing.Point(1, 389);
@@ -281,36 +277,12 @@
             this.btn_salir.UseVisualStyleBackColor = true;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
-            // button2
-            // 
-            this.button2.AutoSize = true;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(23)))), ((int)(((byte)(31)))));
-            this.button2.Location = new System.Drawing.Point(3, 245);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(196, 58);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Texto";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.AutoSize = true;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(23)))), ((int)(((byte)(31)))));
-            this.button3.Location = new System.Drawing.Point(3, 181);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(196, 58);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Texto";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // button4
             // 
             this.button4.AutoSize = true;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(23)))), ((int)(((byte)(31)))));
-            this.button4.Location = new System.Drawing.Point(3, 117);
+            this.button4.Location = new System.Drawing.Point(3, 245);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(196, 58);
             this.button4.TabIndex = 3;
@@ -436,8 +408,6 @@
         private System.Windows.Forms.Button btnNegocio;
         private System.Windows.Forms.FlowLayoutPanel panelOpt;
         private System.Windows.Forms.Button btn_salir;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioToolStripMenuItem;

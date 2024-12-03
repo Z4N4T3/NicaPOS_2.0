@@ -84,8 +84,6 @@
             this.btnNegocio = new System.Windows.Forms.Button();
             this.panelOpt = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_salir = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.BtnEmpleado = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -658,8 +656,6 @@
             // 
             this.panelOpt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(167)))));
             this.panelOpt.Controls.Add(this.btn_salir);
-            this.panelOpt.Controls.Add(this.button5);
-            this.panelOpt.Controls.Add(this.button6);
             this.panelOpt.Controls.Add(this.BtnEmpleado);
             this.panelOpt.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.panelOpt.Location = new System.Drawing.Point(-2, 392);
@@ -682,34 +678,6 @@
             this.btn_salir.UseVisualStyleBackColor = false;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
-            // button5
-            // 
-            this.button5.AutoSize = true;
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(23)))), ((int)(((byte)(31)))));
-            this.button5.Location = new System.Drawing.Point(3, 245);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(211, 58);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Texto";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.AutoSize = true;
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(23)))), ((int)(((byte)(31)))));
-            this.button6.Location = new System.Drawing.Point(3, 181);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(211, 58);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Texto";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
             // BtnEmpleado
             // 
             this.BtnEmpleado.AutoSize = true;
@@ -717,7 +685,7 @@
             this.BtnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(23)))), ((int)(((byte)(31)))));
-            this.BtnEmpleado.Location = new System.Drawing.Point(3, 117);
+            this.BtnEmpleado.Location = new System.Drawing.Point(3, 245);
             this.BtnEmpleado.Name = "BtnEmpleado";
             this.BtnEmpleado.Size = new System.Drawing.Size(211, 58);
             this.BtnEmpleado.TabIndex = 3;
@@ -887,8 +855,6 @@
         private System.Windows.Forms.Button btnNegocio;
         private System.Windows.Forms.FlowLayoutPanel panelOpt;
         private System.Windows.Forms.Button btn_salir;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button BtnEmpleado;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;

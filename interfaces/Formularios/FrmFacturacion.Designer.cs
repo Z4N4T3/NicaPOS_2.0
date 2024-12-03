@@ -78,8 +78,6 @@
             this.panelOpt = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_salir = new System.Windows.Forms.Button();
             this.Btn_reporte = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lbl_name = new System.Windows.Forms.Label();
@@ -155,7 +153,7 @@
             // dtGrid_servicio
             // 
             this.dtGrid_servicio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtGrid_servicio.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dtGrid_servicio.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(54)))), ((int)(((byte)(56)))));
             this.dtGrid_servicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrid_servicio.Location = new System.Drawing.Point(6, 19);
             this.dtGrid_servicio.Name = "dtGrid_servicio";
@@ -175,7 +173,7 @@
             // dtGrid_producto
             // 
             this.dtGrid_producto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtGrid_producto.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dtGrid_producto.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(54)))), ((int)(((byte)(56)))));
             this.dtGrid_producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrid_producto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtGrid_producto.Location = new System.Drawing.Point(3, 16);
@@ -501,7 +499,7 @@
             // dtGrid_det
             // 
             this.dtGrid_det.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtGrid_det.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dtGrid_det.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(54)))), ((int)(((byte)(56)))));
             this.dtGrid_det.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrid_det.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -536,7 +534,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(232)))));
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.flowLayoutPanel1.Controls.Add(this.btnSistema);
             this.flowLayoutPanel1.Controls.Add(this.btnCompra);
             this.flowLayoutPanel1.Controls.Add(this.btnVenta);
@@ -631,11 +629,9 @@
             // 
             // panelOpt
             // 
-            this.panelOpt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(167)))));
+            this.panelOpt.BackColor = System.Drawing.SystemColors.Highlight;
             this.panelOpt.Controls.Add(this.btn_salir);
             this.panelOpt.Controls.Add(this.Btn_reporte);
-            this.panelOpt.Controls.Add(this.button3);
-            this.panelOpt.Controls.Add(this.button4);
             this.panelOpt.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.panelOpt.Location = new System.Drawing.Point(-3, 394);
             this.panelOpt.Name = "panelOpt";
@@ -672,37 +668,9 @@
             this.Btn_reporte.UseVisualStyleBackColor = false;
             this.Btn_reporte.Click += new System.EventHandler(this.Btn_reporte_Click);
             // 
-            // button3
-            // 
-            this.button3.AutoSize = true;
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(23)))), ((int)(((byte)(31)))));
-            this.button3.Location = new System.Drawing.Point(3, 181);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(211, 58);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Texto";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.AutoSize = true;
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(23)))), ((int)(((byte)(31)))));
-            this.button4.Location = new System.Drawing.Point(3, 117);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(211, 58);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Texto";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(167)))));
+            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel1.Controls.Add(this.flowLayoutPanel2);
             this.panel1.Location = new System.Drawing.Point(0, 109);
             this.panel1.Name = "panel1";
@@ -867,8 +835,6 @@
         private System.Windows.Forms.FlowLayoutPanel panelOpt;
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.Button Btn_reporte;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label lbl_name;
