@@ -245,8 +245,11 @@ END;
 
 select * from venta_producto_temp
 
-
-
+select * from venta_temp
+exec sp_venta_insertear_temp
+	@id_cliente =1,
+	@total = 20.0,
+	@id_empleado = 1
 CREATE  PROCEDURE sp_venta_insertear_temp
 	@id_cliente int,
 	@total DECIMAL(10, 2),
@@ -312,5 +315,31 @@ BEGIN
     END
 END;
 
+select * from venta_temp
+CREATE PROCEDURE sp_listar_ventas
 
+@fecha_inicio datetime,
+@fecha_fin datetime,
+@eid int
 
+AS
+BEGIN
+
+-- Reporte de ventas con filtros por fecha y monto
+	SELECT 
+		v.id AS VentaID,
+		v.fecha AS FechaVenta,
+		v.total AS MontoTotal,
+		c.nombre_completo AS Cliente,
+		CONCAT(e.nombre1,' ',e.[apellido1]) AS Empleado,
+		v.estado AS Estado
+	FROM 
+		venta_temp v
+	LEFT JOIN cliente c ON v.id_cliente = c.id -- Asumiendo una tabla cliente
+	LEFT JOIN empleado e ON v.id_empleado = e.id -- Relación con empleado
+	WHERE 
+		v.fecha BETWEEN @fecha_inicio AND @fecha_fin -- Filtro por rango de fechas
+		AND  e.id = @eid
+	ORDER BY 
+		v.fecha DESC; -- Ordenar por fecha de venta
+END

@@ -670,6 +670,7 @@
             this.Btn_reporte.TabIndex = 0;
             this.Btn_reporte.Text = "Reportes";
             this.Btn_reporte.UseVisualStyleBackColor = false;
+            this.Btn_reporte.Click += new System.EventHandler(this.Btn_reporte_Click);
             // 
             // button3
             // 

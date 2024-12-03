@@ -299,6 +299,13 @@ namespace interfaces.Formularios
 
         }
 
+        private void Btn_reporte_Click(object sender, EventArgs e)
+        {
+            Frm_ReporteVenta rep = new Frm_ReporteVenta();
+
+            rep.Show();
+        }
+
         private void btn_facturar_Click(object sender, EventArgs e)
         {
             // verificar si contiene filas
