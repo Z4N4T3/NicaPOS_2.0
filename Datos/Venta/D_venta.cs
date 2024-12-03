@@ -76,7 +76,7 @@ namespace Datos.Venta
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Error al insertar venta: " + ex.Message);
+                Console.WriteLine("Error al insertar detalle venta: " + ex.Message);
                 return false;
             }
             finally
@@ -97,24 +97,25 @@ namespace Datos.Venta
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    // Agregar parámetros de entrada
-                    cmd.Parameters.AddWithValue("@total", venta.Total);
+                    // Agregar parámetros al comando
                     cmd.Parameters.AddWithValue("@id_cliente", 1);
-                    cmd.Parameters.AddWithValue("@id_empleado", venta.Eid);
-
-                    // Agregar parámetro de salida para el VentaID
-                    SqlParameter outputIdParam = new SqlParameter("@VentaID", SqlDbType.Int)
-                    {
-                        Direction = ParameterDirection.Output
-                    };
-                    cmd.Parameters.Add(outputIdParam);
+                    cmd.Parameters.AddWithValue("@total", venta.Total);
+                    cmd.Parameters.AddWithValue("@id_empleado", venta.id_empleado);
 
                     conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read()) // Leer la primera fila del resultado
+                        {
+                            int ventaId = Convert.ToInt32(reader["VentaID"]);
+                            conn.Close();
+                            return ventaId;
+                        }
+                    }
 
-                    // Retornar el ID de la venta insertada
-                    return (int)outputIdParam.Value;
+                    conn.Close();
+                    return -1; // No se devolvió un ID válido
+
                 }
             }
             catch (SqlException ex)
@@ -130,6 +131,7 @@ namespace Datos.Venta
                 }
             }
         }
+
 
     }
 }

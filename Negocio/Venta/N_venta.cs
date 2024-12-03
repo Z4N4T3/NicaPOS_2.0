@@ -19,7 +19,7 @@ namespace Negocio.Venta
 
 
         
-        public bool insertar_temp(E_venta venta)
+        public int insertar_temp(E_venta venta)
         {
             return d_venta.d_InsertarVenta_temp(venta);
         }

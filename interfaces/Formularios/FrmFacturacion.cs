@@ -18,6 +18,7 @@ using interfaces.Utilidades;
 using Negocio.Empleado;
 using Negocio.Producto;
 using Negocio.Tienda;
+using Negocio.Venta;
 
 namespace interfaces.Formularios
 {
@@ -176,7 +177,7 @@ namespace interfaces.Formularios
             nuevaFila.Cells["Column4"].Value = precioU * qty;
             E_Det_venta detalleVenta = new E_Det_venta()
             {
-                Id = idProducto,
+                Id_producto = idProducto,
                 Cantidad = qty,
                 PrecioU = precioU,
                 Total = qty * precioU,
@@ -184,7 +185,6 @@ namespace interfaces.Formularios
                 Impuesto = 0,
              
             };
-
             listaDetVenta.Add(detalleVenta);
         }
 
@@ -315,8 +315,20 @@ namespace interfaces.Formularios
 
                 MessageBox.Show(""+ venta.id_empleado);
 
+                foreach (E_Det_venta det in listaDetVenta)
+                {
+                    Console.WriteLine("det.IDventa" + det.Id_venta);
+                    Console.WriteLine("idProd" + det.Id_producto);
+                    Console.WriteLine("qty" + det.Cantidad);
+                    Console.WriteLine("Prec" + det.PrecioU);
+
+
+                   
+                }
+                
                 FrmPago frmPago = new FrmPago(listaDetVenta,venta);
                 frmPago.Show();
+                //limpiarVenta();
             }
         }
 

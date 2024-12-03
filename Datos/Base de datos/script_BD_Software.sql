@@ -73,7 +73,7 @@ CREATE TABLE venta_temp (
     CONSTRAINT CHK_Venta_Total CHECK (total >= 0) -- Validación para total no negativo
 
 );
-
+select * from venta_temp
 alter table venta_temp
 -- Agregar la columna id_empleado con clave foránea
 ALTER TABLE venta_temp
@@ -243,17 +243,23 @@ BEGIN
     WHERE id = @id;
 END;
 
-select * from venta_temp
+select * from venta_producto_temp
 
-CREATE PROCEDURE sp_venta_insertear_temp
+
+
+CREATE  PROCEDURE sp_venta_insertear_temp
 	@id_cliente int,
 	@total DECIMAL(10, 2),
 	@id_empleado int
 AS
 	
 BEGIN
-	INSERT INTO venta_temp(id_cliente,total,id_empleado,estado)
-		VALUES(@id_cliente,@total,@id_empleado,1);
+	INSERT INTO [dbo].[venta_temp]
+           ([id_cliente]
+           ,[total]
+           ,[estado]
+           ,[id_empleado])
+		VALUES(@id_cliente,@total,1,@id_empleado);
 
 		 DECLARE @venta_id INT = SCOPE_IDENTITY();
 

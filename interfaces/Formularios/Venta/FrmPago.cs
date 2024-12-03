@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,7 @@ namespace interfaces.Formularios.Venta
     public partial class FrmPago : Form
     {
         int tipoPago = 1;
+        private FrmFacturacion fact;
         private List<E_Det_venta> listaDetalleVenta;
         private E_venta venta;
 
@@ -83,14 +85,44 @@ namespace interfaces.Formularios.Venta
 
             // modificar o eliminar esta vaina despues
             N_venta n_venta = new N_venta();
+            Console.WriteLine("vemp" + venta.id_empleado);
+            Console.WriteLine("VT" + venta.Total);
             
-            n_venta.insertar_temp(venta);
+            int VentaActual = n_venta.insertar_temp(venta);
+            if (VentaActual < 0) {
+                MessageBox.Show("Error al Insertar la Venta");
 
-            foreach(E_Det_venta det in listaDetalleVenta)
-            {
-                det.Id_venta = 
-                n_venta.insertarDet_temp(det);
             }
+            else
+            {
+                bool todoGud=true;
+                foreach (E_Det_venta det in listaDetalleVenta)
+                {
+                    det.Id_venta = VentaActual;
+                    Console.WriteLine("det.IDventa" + det.Id_venta);
+                    Console.WriteLine("idProd" + det.Id_producto);
+                    Console.WriteLine("qty" + det.Cantidad);
+                    Console.WriteLine("Prec" + det.PrecioU);
+
+
+                    bool result = n_venta.insertarDet_temp(det);
+                    if (!result) {
+                        MessageBox.Show("Error al Insertar la Venta");
+                        todoGud = false;
+                        break;
+                    
+                    }
+                }
+                if (todoGud)
+                {
+                    MessageBox.Show("Venta registrada correctamente: "+ VentaActual);
+                    this.Close();
+                   
+                }
+
+            }
+
+           
 
         }
 
