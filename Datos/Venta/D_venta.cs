@@ -136,22 +136,22 @@ namespace Datos.Venta
 
         
 
-             public DataTable D_buscarVenta(int eid, DateTime Fini, DateTime FFin)
-        {
+        public DataTable D_buscarVenta(int eid, DateTime Fini, DateTime FFin)
+          {
 
-            using (SqlCommand cmd = new SqlCommand("sp_listar_ventas", conn))
-            {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@eid", eid);
-                cmd.Parameters.AddWithValue("@fecha_inicio", Fini);
-                cmd.Parameters.AddWithValue("@fecha_fin", FFin);
-                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                using (SqlCommand cmd = new SqlCommand("sp_listar_ventas", conn))
                 {
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    return dt;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@eid", eid);
+                    cmd.Parameters.AddWithValue("@fecha_inicio", Fini);
+                    cmd.Parameters.AddWithValue("@fecha_fin", FFin);
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
                 }
-            }
         }
 
     }
